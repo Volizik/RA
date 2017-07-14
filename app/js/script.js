@@ -28,7 +28,7 @@ $(function () {
         $('.tabs__body__buttons li>a').removeClass('active');
         $(this).addClass('active');
         $('.tabs__body__content').hide();
-        $(tabId).show();
+        $(tabId).fadeIn();
     });
 
     //for inside-tabs
@@ -44,7 +44,7 @@ $(function () {
         $('.tabs__body__content__inside-tabs li>a').removeClass('active');
         $(this).addClass('active');
         $('.tabs__body__content__inside-content').hide();
-        $(tabId).show();
+        $(tabId).fadeIn();
     });
 
 });
