@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Набор включенных технологий: HTML, CSS, JS, Gulp, SCSS, PostCSS, JQuery, Bower",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "browser-sync": "^2.18.12",
