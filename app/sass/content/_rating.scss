@@ -1,0 +1,157 @@
+.rating {
+  width: calc(100% - 360px);
+  margin: 30px;
+  margin-top: 0;
+  position: relative;
+  float: left;
+  .head {
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: #fff;
+    box-shadow: 3px 5px 10px 0 #ccc;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      position: relative;
+      float: left;
+    }
+    .drop {
+      position: relative;
+      float: right;
+      margin-top: 25px;
+      margin-left: 20px;
+      >a {
+        display: block;
+        background-color: #547df9;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 10px 20px;
+        width: 140px;
+        box-sizing: border-box;
+      }
+      ul {
+        display: none;
+        position: absolute;
+        padding: 0;
+        top:15px;
+        background-color: #547df9;
+        width: 140px;
+        li {
+          position: relative;
+          list-style: none;
+          width: 100%;
+        }
+        a {
+          display: block;
+          position: relative;
+          padding: 10px 20px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 300;
+          width: 100%;
+          box-sizing: border-box;
+          &:hover {
+            background-color: #4569d6;
+          }
+        }
+      }
+    }
+  }
+  .body {
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: #fff;
+    box-shadow: 3px 5px 10px 0 #ccc;
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 20px 50px;
+    .block {
+      position: relative;
+      float: left;
+      width: 100%;
+      font-size: 14px;
+      .grey {
+        color: #dbddde;
+      }
+      &__top {
+        width: 100%;
+        position: relative;
+        float:left;
+        >img {
+            position: relative;
+            float: left;
+            margin-right: 20px;
+        }
+        p {
+          position: relative;
+          float: left;
+          width: 130px;
+          margin-bottom: 0;
+        }
+        .star {
+          position: relative;
+          float: right;
+          width:auto;
+          height: 100%;
+          margin-top: 10px;
+          p {
+            position: absolute;
+            top: 0;
+            left: 18px;
+          }
+          span {
+            position: absolute;
+            top: -5px;
+            right: -3px;
+          }
+        }
+      }
+      &__middle {
+        position: relative;
+        //float:left;
+        width: 520px;
+        margin: 0 auto;
+        border-bottom: 1px solid #ccc;
+        a {
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+      &__bottom {
+        position: relative;
+        width: 520px;
+        margin: 10px auto;
+        p {
+          width: 25%;
+          position: relative;
+          float: left;
+          margin: 0;
+          &:nth-child(9) {
+            width: 50%;
+          }
+          &:nth-child(10) {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+  &__post {
+    position: relative;
+    float: left;
+    width:calc(50% - 15px);
+    margin-right: 30px;
+  }
+  &__commit {
+    position: relative;
+    float: left;
+    width:calc(50% - 15px);
+  }
+}

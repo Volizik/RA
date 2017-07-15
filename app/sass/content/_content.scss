@@ -1,6 +1,7 @@
 .content {
   width:calc(100% - 360px);
   margin: 30px;
+  margin-bottom: 0;
   position: relative;
   float: left;
   &__head {
@@ -54,6 +55,7 @@
         background-color: transparent;
         box-shadow: none;
         transition: .5s;
+        cursor: pointer;
       }
       &:hover .in-hover{
         margin-top: 0;
