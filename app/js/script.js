@@ -47,4 +47,37 @@ $(function () {
         $(tabId).fadeIn();
     });
 
+
+    //for show-text in posts
+    $(document).on('click', '.show-text-btn', function () {
+        event.preventDefault();
+        var text = $(this).parent().find('p');
+        text.css('display', 'block');
+        $(this).hide();
+    });
+
+    //for show-text in comments
+    $(document).on('click', '.show-text-btn', function () {
+        event.preventDefault();
+        var text = $(this).parent().find('.content');
+        text.css('height', 'auto');
+        $(this).hide();
+    });
+
+    //click on drop-button
+    $(document).on('click', '.drop a', function () {
+        event.preventDefault();
+        var submenu = $(this).parent().find('ul');
+        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('show-sub');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+
 });
