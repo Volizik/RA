@@ -21,12 +21,47 @@
       font-size: 34px;
       font-weight: 500;
     }
+
     .drop {
       margin-top: 30px;
       margin-left: 0;
-      a,
+      @include breakpoint(max-width 650px) {
+        float: left;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        >a{
+          display: none;
+        }
+
+      }
+      &:before {
+        content: '';
+        display: none;
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        background: url('../img/icons/down-black.png') center center no-repeat;
+        @include breakpoint(max-width 650px) {
+          display: block;
+        }
+      }
+      a {
+        width: 180px;
+        @include breakpoint(max-width 650px) {
+          width: 100%;
+        }
+      }
       ul {
         width: 180px;
+        @include breakpoint(max-width 650px) {
+          position: absolute;
+          width: 300px;
+          right: 20px;
+          text-align: center;
+          top: 30px;
+        }
       }
     }
   }

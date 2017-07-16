@@ -65,7 +65,7 @@ $(function () {
     });
 
     //click on drop-button
-    $(document).on('click', '.drop a', function () {
+    $(document).on('click', '.drop', function () {
         event.preventDefault();
         var submenu = $(this).parent().find('ul');
         if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
@@ -73,7 +73,7 @@ $(function () {
             submenu.hide();//скрываем сабменю
         }
         else {
-            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop').removeClass('show-sub');//удаляем класс у всех элементов
             $('.drop ul').hide();//скрываем все сабменю
             $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
             submenu.show();//показать табменю того элемента покоторому кликаем
