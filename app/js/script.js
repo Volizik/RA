@@ -65,7 +65,7 @@ $(function () {
     });
 
     //click on drop-button
-    $(document).on('click', '.drop', function () {
+    $(document).on('click', '.drop a', function () {
         event.preventDefault();
         var submenu = $(this).parent().find('ul');
         if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
@@ -73,7 +73,23 @@ $(function () {
             submenu.hide();//скрываем сабменю
         }
         else {
-            $('.drop').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+
+    //for russian-in-antalia
+    $(document).on('click', '.tabs .drop', function () {
+        event.preventDefault();
+        var submenu = $(this).parent().find('ul');
+        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('show-sub');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.tabs .drop').removeClass('show-sub');//удаляем класс у всех элементов
             $('.drop ul').hide();//скрываем все сабменю
             $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
             submenu.show();//показать табменю того элемента покоторому кликаем
@@ -100,5 +116,18 @@ $(function () {
         event.preventDefault();
         $('.slide').toggle();
     });
+
+    //for-mobile-menu
+    $(document).on('click', '.menu-for-little-screen a', function () {
+        event.preventDefault();
+        var submenu = $(document).find('.menu');
+        submenu.show();
+    });
+    $(document).on('click', '.menu h2', function () {
+        event.preventDefault();
+        var submenu = $(document).find('.menu');
+        submenu.hide();
+    });
+
 
 });
