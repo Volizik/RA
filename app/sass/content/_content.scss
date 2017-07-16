@@ -4,6 +4,12 @@
   margin-bottom: 0;
   position: relative;
   float: left;
+  @include breakpoint(max-width 940px) {
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 0px 15px;
+    box-sizing: border-box;
+  }
   &__head {
     background-color: #ffffff;
     box-sizing: border-box;
@@ -20,6 +26,11 @@
       padding-right: 20px;
       font-weight: 600;
       font-size: 18px;
+      @include breakpoint(max-width 510px) {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+      }
       span {
         font-weight: 300;
       }
@@ -29,6 +40,12 @@
       position: relative;
       float: left;
       font-size: 16px;
+      @include breakpoint(max-width 1450px) {
+        width: 100%;
+      }
+      @include breakpoint(max-width 510px) {
+        font-size: 13px;
+      }
       span {
         color: red;
       }
@@ -51,6 +68,18 @@
       height: 240px;
       overflow: hidden;
       transition: .5s;
+      @include breakpoint(max-width 1150px) {
+        display: none;
+        &:nth-child(1) {
+          display: block;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
+        &:nth-child(5) {
+          display: block;
+        }
+      }
       &:hover {
         background-color: transparent;
         box-shadow: none;
@@ -66,6 +95,29 @@
       &:nth-child(3n+3) {
         margin-right: 0;
       }
+      @include breakpoint(max-width 1600px) {
+        width: 49%;
+        &:nth-child(3n+3) {
+          margin-right: 2%;
+        }
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+      }
+      @include breakpoint(max-width 1150px) {
+        width: 100%;
+        margin-right: 0;
+        &:nth-child(3n+3) {
+          margin-right: 0;
+        }
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+      }
+      @include breakpoint(max-width 430px) {
+        padding: 10px;
+      }
+
       &__top {
         clear: both;
         position: relative;
@@ -83,6 +135,16 @@
           float: left;
           font-size: 18px;
           font-weight: 500;
+          @include breakpoint(max-width 430px) {
+            width: 70px;
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+        .margin-top-0 {
+          @include breakpoint(max-width 430px) {
+            margin-top: 0;
+          }
         }
         h3 {
           position: relative;
@@ -90,6 +152,9 @@
           margin: 10px 0;
           font-size: 24px;
           font-weight: 300;
+          @include breakpoint(max-width 430px) {
+            font-size: 20px;
+          }
           span {
             font-size: 14px;
             bottom: 10px;
@@ -117,6 +182,10 @@
               position: relative;
               float: left;
             }
+            @include breakpoint(max-width 430px) {
+              font-size: 12px;
+              font-weight: 300;
+            }
           }
           a {
             position: relative;
@@ -134,6 +203,11 @@
           font-weight: 300;
           transition: .3s;
           line-height: 14px;
+          p {
+            @include breakpoint(max-width 430px) {
+              font-size: 13px;
+            }
+          }
         }
       }
     }

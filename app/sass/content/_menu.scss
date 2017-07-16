@@ -5,6 +5,15 @@
   position: relative;
   float: left;
   z-index: 100;
+  @include breakpoint(max-width 1600px) {
+    height: 3500px;
+  }
+  @include breakpoint(max-width 1150px) {
+    height: 3000px;
+  }
+  @include breakpoint(max-width 940px) {
+    display: none;
+  }
   a,
   p,
   h2 {

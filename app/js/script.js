@@ -80,4 +80,25 @@ $(function () {
         }
     });
 
+    //for mobile tabs
+    $(document).on('click', '.tabs__body__buttons li a', function () {
+        var li = $(document).find('.tabs__body__buttons li');
+
+        if ($(this).hasClass('active')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('active');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+    //for rating section
+    $(document).on('click','.toggles a', function () {
+        event.preventDefault();
+        $('.slide').toggle();
+    });
+
 });
