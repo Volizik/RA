@@ -47,4 +47,13 @@ $(function () {
         $(tabId).fadeIn();
     });
 
+    //hover for content
+    $(document).on('hover', '.content__body__block__bottom', function () {
+        var inHover = $(this).find('.in-hover');//находим элемент в ДОМ
+        var unHover = $(this).find('.un-hover');//находим элемент в ДОМ
+        if((inHover).css('display', 'block')) {
+            console.log(inHover);
+        }
+    });
+
 });
