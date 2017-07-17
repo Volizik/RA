@@ -38,22 +38,15 @@ $(function () {
             $(this).hide(0)
         }
     });
-    $(document).on('click', '.tabs__body__content__inside-tabs li>a', function (e) {
-        e.preventDefault();
+    $(document).on('click', '.tabs__body__content__inside-tabs li>a', function () {
+        event.preventDefault();
         var tabId = $(this).attr('href');
+        console.log(tabId);
         $('.tabs__body__content__inside-tabs li>a').removeClass('active');
         $(this).addClass('active');
         $('.tabs__body__content__inside-content').hide();
         $(tabId).fadeIn();
     });
-
-    //hover for content
-    // $(document).on('hover', '.content__body__block__bottom', function () {
-    //     var inHover = $(this).find('.in-hover');//находим элемент в ДОМ
-    //     var unHover = $(this).find('.un-hover');//находим элемент в ДОМ
-    //     if((inHover).css('display', 'block')) {
-    //     }
-    // });
 
 
     //for show-text in posts
@@ -105,20 +98,20 @@ $(function () {
     });
 
     // for mobile tabs
-    $(document).on('click', '.tabs__body__buttons li a', function () {
-        var li = $(document).find('.tabs__body__buttons li');
-        var submenu = $(this).parent().find('ul');
-        if ($(this).hasClass('active')) {//если у элемента по которому мы кликаем есть класс
-            $(this).removeClass('active');//то удаляем этот класс
-            submenu.hide();//скрываем сабменю
-        }
-        else {
-            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
-            $('.drop ul').hide();//скрываем все сабменю
-            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-            li.show();//показать табменю того элемента покоторому кликаем
-        }
-    });
+    // $(document).on('click', '.tabs__body__buttons li a', function () {
+    //     var li = $(document).find('.tabs__body__buttons li');
+    //     var submenu = $(this).parent().find('ul');
+    //     if ($(this).hasClass('activ')) {//если у элемента по которому мы кликаем есть класс
+    //         $(this).removeClass('activ');//то удаляем этот класс
+    //         submenu.hide();//скрываем сабменю
+    //     }
+    //     else {
+    //         $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+    //         $('.drop ul').hide();//скрываем все сабменю
+    //         $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+    //         li.show();//показать табменю того элемента покоторому кликаем
+    //     }
+    // });
     //for rating section
     $(document).on('click','.toggles a', function () {
         event.preventDefault();
@@ -137,5 +130,17 @@ $(function () {
         submenu.hide();
     });
 
+    // for top tabs in mobile
+    if(document.documentElement.clientWidth < 1450) {
+        var ul = $(document).find('.tabs__body__buttons');
+        $(document).on('click', '.dropdown-tabs>span', function () {
+            ul.addClass('show-tabs');
+            $(document).on('click', '.tabs__body__buttons a', function () {
+                $(document).find('.tabs__body__buttons a').hide();
+                $(document).find('.tabs__body__buttons .active').show();
+            });
+            $(document).find('.tabs__body__buttons a').show();
+        });
 
+    }
 });

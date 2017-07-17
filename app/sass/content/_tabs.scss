@@ -30,7 +30,6 @@
       margin-left: 0;
       @include breakpoint(max-width 650px) {
         float: left;
-        margin-left: 10px;
         width: 30px;
         height: 30px;
         >a{
@@ -74,6 +73,25 @@
     position: relative;
     float: left;
     width: 100%;
+    .dropdown-tabs {
+      position: relative;
+      float: left;
+      span {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        img {
+          width: 100%;
+          object-fit: none;
+        }
+        @include breakpoint(max-width 1450px) {
+          display: block;
+        }
+      }
+    }
     &__buttons {
       position: relative;
       float: left;
@@ -81,9 +99,12 @@
       padding-left: 0;
       margin: 0;
       overflow-x: hidden;
+      transition: .3s;
       @include breakpoint(max-width 1450px) {
         width: 250px;
         background-color: #ffffff;
+        height: 50px;
+        overflow: hidden;
       }
       li {
         position: relative;
@@ -115,7 +136,9 @@
           border-top: 2px solid #547df9;
           background-color: #ffffff;
           img {
-            display: block;
+            @include breakpoint(max-width 1450px) {
+              display: block;
+            }
           }
         }
       }
@@ -266,6 +289,10 @@
           }
         }
       }
+    }
+    .show-tabs {
+      height:auto;
+      transition: .3s;
     }
   }
 }

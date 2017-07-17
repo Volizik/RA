@@ -168,9 +168,11 @@
         float: left;
         overflow: hidden;
         .un-hover {
+          display: block;
           position: relative;
           float: left;
-          display: block;
+          width: 100%;
+          height: 100%;
           p {
             position: relative;
             float: left;
@@ -181,74 +183,31 @@
               position: relative;
               float: left;
             }
-          }
-          &:hover {
-            margin-top: -220px;
-          }
-        }
-        .in-hover {
-          display: block;
-          position: relative;
-          margin-top: 200px;
-          &:hover {
-            margin-top: 0px;
-          }
-          p {
-            font-size: 14px;
-            font-weight: 300;
+            @include breakpoint(max-width 430px) {
+              font-size: 12px;
+              font-weight: 300;
+            }
           }
           a {
             position: relative;
             float: left;
             margin-top: 10px;
-            display: block;
+            display: none;
             color: blue;
-            font-size: 14px;
-            font-weight: 300;
-
-            .un-hover {
-              display: block;
-              position: relative;
-              float: left;
-              width: 100%;
-              height: 100%;
-              p {
-                position: relative;
-                float: left;
-                width: 50%;
-                margin: 2px 0;
-                &:first-child {
-                  width: 100%;
-                  position: relative;
-                  float: left;
-                }
-                @include breakpoint(max-width 430px) {
-                  font-size: 12px;
-                  font-weight: 300;
-                }
-              }
-              a {
-                position: relative;
-                float: left;
-                margin-top: 10px;
-                display: none;
-                color: blue;
-              }
-            }
-            .in-hover {
-              display: block;
-              float: left;
-              position: relative;
-              margin-top: 200px;
-              font-size: 14px;
-              font-weight: 300;
-              transition: .3s;
-              line-height: 14px;
-              p {
-                @include breakpoint(max-width 430px) {
-                  font-size: 13px;
-                }
-              }
+          }
+        }
+        .in-hover {
+          display: block;
+          float: left;
+          position: relative;
+          margin-top: 200px;
+          font-size: 14px;
+          font-weight: 300;
+          transition: .3s;
+          line-height: 14px;
+          p {
+            @include breakpoint(max-width 430px) {
+              font-size: 13px;
             }
           }
         }
