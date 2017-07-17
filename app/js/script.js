@@ -146,4 +146,30 @@ $(function () {
         });
 
     }
+
+    $('.img').circleProgress({
+        value: 1,
+        size: 245,
+        thickness: 38,
+        startAngle: 4.74,
+        emptyFill: "#fff",
+        animation: {
+            duration: 2000
+        },
+        fill: {
+            color: "transparent"
+        }
+    });
+
+    $('.js-counter').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
 });
