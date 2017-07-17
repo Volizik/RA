@@ -56,4 +56,87 @@ $(function () {
         }
     });
 
+
+    //for show-text in posts
+    $(document).on('click', '.show-text-btn', function () {
+        event.preventDefault();
+        var text = $(this).parent().find('p');
+        text.css('display', 'block');
+        $(this).hide();
+    });
+
+    //for show-text in comments
+    $(document).on('click', '.show-text-btn', function () {
+        event.preventDefault();
+        var text = $(this).parent().find('.content');
+        text.css('height', 'auto');
+        $(this).hide();
+    });
+
+    //click on drop-button
+    $(document).on('click', '.drop a', function () {
+        event.preventDefault();
+        var submenu = $(this).parent().find('ul');
+        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('show-sub');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+
+    //for russian-in-antalia
+    $(document).on('click', '.tabs .drop', function () {
+        event.preventDefault();
+        var submenu = $(this).parent().find('ul');
+        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('show-sub');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.tabs .drop').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+
+    //for mobile tabs
+    $(document).on('click', '.tabs__body__buttons li a', function () {
+        var li = $(document).find('.tabs__body__buttons li');
+
+        if ($(this).hasClass('active')) {//если у элемента по которому мы кликаем есть класс
+            $(this).removeClass('active');//то удаляем этот класс
+            submenu.hide();//скрываем сабменю
+        }
+        else {
+            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+            $('.drop ul').hide();//скрываем все сабменю
+            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+            submenu.show();//показать табменю того элемента покоторому кликаем
+        }
+    });
+    //for rating section
+    $(document).on('click','.toggles a', function () {
+        event.preventDefault();
+        $('.slide').toggle();
+    });
+
+    //for-mobile-menu
+    $(document).on('click', '.menu-for-little-screen a', function () {
+        event.preventDefault();
+        var submenu = $(document).find('.menu');
+        submenu.show();
+    });
+    $(document).on('click', '.menu h2', function () {
+        event.preventDefault();
+        var submenu = $(document).find('.menu');
+        submenu.hide();
+    });
+
+
 });

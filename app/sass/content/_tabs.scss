@@ -3,6 +3,12 @@
   position: relative;
   float: left;
   width:calc(100% - 360px);
+  @include breakpoint(max-width 940px) {
+    width: 100%;
+    margin: 0;
+    padding: 0px 15px;
+    box-sizing: border-box;
+  }
   &__head {
     position: relative;
     float: left;
@@ -14,34 +20,79 @@
       float: left;
       font-size: 34px;
       font-weight: 500;
+      @include breakpoint(max-width 650px) {
+        font-size: 24px;
+      }
     }
-    a {
-      display: block;
-      position: relative;
-      float: right;
-      color: #fff;
-      background-color: #547df9;
-      padding: 10px 30px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: 300;
-      margin-top: 25px;
-      margin-right: 20px;
+
+    .drop {
+      margin-top: 20px;
+      margin-left: 0;
+      @include breakpoint(max-width 650px) {
+        float: left;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        >a{
+          display: none;
+        }
+
+      }
+      &:before {
+        content: '';
+        display: none;
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        background: url('../img/icons/down-black.png') center center no-repeat;
+        @include breakpoint(max-width 650px) {
+          display: block;
+        }
+      }
+      a {
+        width: 180px;
+        @include breakpoint(max-width 650px) {
+          width: 100%;
+        }
+      }
+      ul {
+        width: 180px;
+        @include breakpoint(max-width 650px) {
+          position: absolute;
+          width: 320px;
+          right: 0;
+          text-align: center;
+          top: 30px;
+          background-color: rgba(100,100,100, .9);
+        }
+      }
     }
   }
   &__body {
     position: relative;
     float: left;
+    width: 100%;
     &__buttons {
       position: relative;
       float: left;
-      width: 100%;
+      width: 1000px;
       padding-left: 0;
       margin: 0;
+      overflow-x: hidden;
+      @include breakpoint(max-width 1450px) {
+        width: 250px;
+        background-color: #ffffff;
+      }
       li {
         position: relative;
         float: left;
         list-style: none;
+        @include breakpoint(max-width 1450px) {
+          float: none;
+          width: 100%;
+          text-align: center;
+        }
         a {
           box-sizing: border-box;
           display: block;
@@ -52,10 +103,19 @@
           font-size: 16px;
           color: #000;
           border-top: 2px solid transparent;
+          img {
+            display: none;
+            position: relative;
+            float: right;
+            margin-top: 10px;
+          }
         }
         .active {
           border-top: 2px solid #547df9;
           background-color: #ffffff;
+          img {
+            display: block;
+          }
         }
       }
     }
@@ -66,14 +126,28 @@
       width: 100%;
       text-align: center;
       box-shadow: 3px 5px 10px 0 #ccc;
-      &__inside-tabs {
+      .scroll-tabs {
         position: relative;
-        width: 820px;
+        width: 100%;
         text-align: center;
-        padding-left: 0;
-        margin: 40px auto 20px auto;
         z-index: 10;
         box-sizing: border-box;
+        overflow-y: hidden;
+        padding-left: 0;
+        &::-webkit-scrollbar {
+          height: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #526069;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #cbcfd2;
+        }
+      }
+
+      &__inside-tabs {
+        width: 850px;
+        margin: 40px auto 20px auto;
         li {
           position: relative;
           display: inline-block;
@@ -84,6 +158,7 @@
           border: 1px solid #eeeeee;
           border-right: none;
           box-sizing: border-box;
+          margin-bottom: 5px;
           &:last-child {
             border-right: 1px solid #eeeeee;
           }
@@ -116,6 +191,10 @@
           width: 50%;
           position: relative;
           float: left;
+          @include breakpoint(max-width 1450px) {
+            width: 100%;
+            margin-bottom: 20px;
+          }
           h3 {
             text-align: left;
             margin: 0;
@@ -125,6 +204,9 @@
             width: 50%;
             position: relative;
             float: left;
+            @include breakpoint(max-width 630px) {
+              width: 100%;
+            }
             .box{
               position: absolute;
               text-align: center;
@@ -147,7 +229,19 @@
               }
             }
           }
+          h3 {
+            @include breakpoint(max-width 630px) {
+              text-align: left;
+              width: 250px;
+              margin: 10px auto;
+            }
+          }
           ul {
+            @include breakpoint(max-width 630px) {
+              width: 250px;
+              margin: 10px auto;
+              float: none;
+            }
             li {
               span {
                 position: relative;
