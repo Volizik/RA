@@ -54,6 +54,7 @@
         width: 180px;
         @include breakpoint(max-width 650px) {
           width: 100%;
+          background-color: transparent;
         }
       }
       ul {

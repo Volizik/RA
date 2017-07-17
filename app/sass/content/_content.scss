@@ -1,5 +1,5 @@
 .content {
-  width:calc(100% - 360px);
+  width: calc(100% - 360px);
   margin: 30px;
   margin-bottom: 0;
   position: relative;
@@ -36,7 +36,7 @@
       }
     }
     p {
-      width:calc(100% - 450px);
+      width: calc(100% - 450px);
       position: relative;
       float: left;
       font-size: 16px;
@@ -83,18 +83,14 @@
       &:hover {
         background-color: transparent;
         box-shadow: none;
-<<<<<<< HEAD
-        cursor: pointer;
-=======
-        transition: .5s;
-        cursor: pointer;
+        cursor:pointer;
+        transition:.5s;
       }
-      &:hover .in-hover{
+      &:hover .in-hover {
         margin-top: 0;
       }
-      &:hover .un-hover{
+      &:hover .un-hover {
         margin-top: -200px;
->>>>>>> 1f427e41919b9333346065505871d62722f3a70c
       }
       &:nth-child(3n+3) {
         margin-right: 0;
@@ -169,8 +165,8 @@
       }
       &__bottom {
         position: relative;
-<<<<<<< HEAD
         float: left;
+        overflow: hidden;
         .un-hover {
           position: relative;
           float: left;
@@ -186,11 +182,17 @@
               float: left;
             }
           }
+          &:hover {
+            margin-top: -220px;
+          }
         }
         .in-hover {
-          display: none;
-          position: absolute;
-          top: -20px;
+          display: block;
+          position: relative;
+          margin-top: 200px;
+          &:hover {
+            margin-top: 0px;
+          }
           p {
             font-size: 14px;
             font-weight: 300;
@@ -203,50 +205,51 @@
             color: blue;
             font-size: 14px;
             font-weight: 300;
-=======
-        float:left;
 
-        .un-hover {
-          position: relative;
-          float:left;
-          width: 100%;
-          height: 100%;
-          p {
-            position: relative;
-            float: left;
-            width: 50%;
-            margin: 2px 0;
-            &:first-child {
-              width: 100%;
+            .un-hover {
+              display: block;
               position: relative;
               float: left;
+              width: 100%;
+              height: 100%;
+              p {
+                position: relative;
+                float: left;
+                width: 50%;
+                margin: 2px 0;
+                &:first-child {
+                  width: 100%;
+                  position: relative;
+                  float: left;
+                }
+                @include breakpoint(max-width 430px) {
+                  font-size: 12px;
+                  font-weight: 300;
+                }
+              }
+              a {
+                position: relative;
+                float: left;
+                margin-top: 10px;
+                display: none;
+                color: blue;
+              }
             }
-            @include breakpoint(max-width 430px) {
-              font-size: 12px;
+            .in-hover {
+              display: block;
+              float: left;
+              position: relative;
+              margin-top: 200px;
+              font-size: 14px;
               font-weight: 300;
+              transition: .3s;
+              line-height: 14px;
+              p {
+                @include breakpoint(max-width 430px) {
+                  font-size: 13px;
+                }
+              }
             }
-          }
-          a {
-            position: relative;
-            float: left;
-            margin-top: 10px;
-            display: none;
-            color: blue;
-          }
-        }
-        .in-hover {
-          float: left;
-          position: relative;
-          margin-top: 200px;
-          font-size: 14px;
-          font-weight: 300;
-          transition: .3s;
-          line-height: 14px;
-          p {
-            @include breakpoint(max-width 430px) {
-              font-size: 13px;
-            }
->>>>>>> 1f427e41919b9333346065505871d62722f3a70c
           }
         }
       }

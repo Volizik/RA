@@ -48,13 +48,12 @@ $(function () {
     });
 
     //hover for content
-    $(document).on('hover', '.content__body__block__bottom', function () {
-        var inHover = $(this).find('.in-hover');//находим элемент в ДОМ
-        var unHover = $(this).find('.un-hover');//находим элемент в ДОМ
-        if((inHover).css('display', 'block')) {
-            console.log(inHover);
-        }
-    });
+    // $(document).on('hover', '.content__body__block__bottom', function () {
+    //     var inHover = $(this).find('.in-hover');//находим элемент в ДОМ
+    //     var unHover = $(this).find('.un-hover');//находим элемент в ДОМ
+    //     if((inHover).css('display', 'block')) {
+    //     }
+    // });
 
 
     //for show-text in posts
@@ -105,10 +104,10 @@ $(function () {
         }
     });
 
-    //for mobile tabs
+    // for mobile tabs
     $(document).on('click', '.tabs__body__buttons li a', function () {
         var li = $(document).find('.tabs__body__buttons li');
-
+        var submenu = $(this).parent().find('ul');
         if ($(this).hasClass('active')) {//если у элемента по которому мы кликаем есть класс
             $(this).removeClass('active');//то удаляем этот класс
             submenu.hide();//скрываем сабменю
@@ -117,7 +116,7 @@ $(function () {
             $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
             $('.drop ul').hide();//скрываем все сабменю
             $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-            submenu.show();//показать табменю того элемента покоторому кликаем
+            li.show();//показать табменю того элемента покоторому кликаем
         }
     });
     //for rating section
