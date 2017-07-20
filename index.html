@@ -268,12 +268,84 @@
             </div>
             <div class="tabs__body__content__inside-content" id="inside-ratings">
                 <h2>Рейтинги</h2>
-
                 <div class="clearfix"></div>
             </div>
             <div class="tabs__body__content__inside-content" id="inside-users">
-                <h2>Пользователи</h2>
+                <h2>Статистика активности пользователей</h2>
+                <div class="actions">
+                    <div class="actions--left">
+                        <h3>Что посчитать в графике:</h3>
+                        <label class="check">
+                            <input type="checkbox" name="checkbox" />
+                            <span></span>
+                            Посты
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" name="checkbox" />
+                            <span></span>
+                            Коментарии
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider-round"></span>
+                            <span>Учитывать вложенные</span>
+                        </label>
+                        <label class="check">
+                            <input type="checkbox" name="checkbox" />
+                            <span></span>
+                            Реакции
+                        </label>
+                    </div>
+                    <div class="actions--center">
+                        <h3>За период</h3>
+                        <div class="drop">
+                            <a href="#">За 6 месяцев
+                                <img src="img/icons/down.png" alt="">
+                            </a>
+                            <ul>
+                                <li><a href="#">За 1 месяцев</a></li>
+                                <li><a href="#">За 2 месяцев</a></li>
+                                <li><a href="#">За 3 месяцев</a></li>
+                                <li><a href="#">За 6 месяцев</a></li>
+                                <li><a href="#">За 12 месяцев</a></li>
+                            </ul>
+                        </div>
+                        <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
+                        <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
+                    </div>
+                    <div class="actions--right">
 
+                        <h3>Посты</h3>
+                        <h3>Реакции</h3>
+                        <div class="drop">
+                            <a href="#">Все посты
+                                <img src="img/icons/down.png" alt="">
+                            </a>
+                            <ul>
+                                <li><a href="#">За 1 месяцев</a></li>
+                                <li><a href="#">За 2 месяцев</a></li>
+                                <li><a href="#">За 3 месяцев</a></li>
+                                <li><a href="#">За 6 месяцев</a></li>
+                                <li><a href="#">За 12 месяцев</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="drop">
+                            <a href="#">Возмутительно
+                                <img src="img/icons/down.png" alt="">
+                            </a>
+                            <ul>
+                                <li><a href="#">За 1 месяцев</a></li>
+                                <li><a href="#">За 2 месяцев</a></li>
+                                <li><a href="#">За 3 месяцев</a></li>
+                                <li><a href="#">За 6 месяцев</a></li>
+                                <li><a href="#">За 12 месяцев</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="chart_div"></div>
+                <a href="#"><img src="img/icons/download.png" alt=""><p>Скачать график</p></a>
                 <div class="clearfix"></div>
             </div>
             <div class="tabs__body__content__inside-content" id="inside-posts">
@@ -837,6 +909,8 @@
 <script src="js/script.min.js" type="text/javascript"></script>
 
 <script src="js/circle-progress.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </body>
 </html>

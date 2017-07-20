@@ -85,7 +85,7 @@ $(function () {
     });
 
     //for russian-in-antalia
-    $(document).on('click', '.tabs .drop', function () {
+    $(document).on('click', '.tabs__head .drop', function () {
         event.preventDefault();
         var submenu = $(this).parent().find('ul');
         if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
@@ -172,4 +172,57 @@ $(function () {
             }
         });
     });
+
+    //charts
+
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            [' ', 'Посты', 'Реакции'],
+            ['1', 1000, 400],
+            ['2', 1170, 460],
+            ['3', 660, 1120],
+            ['4', 1030, 540],
+            ['5', 1000, 400],
+            ['6', 1170, 460],
+            ['7', 660, 1120],
+            ['8', 1000, 400],
+            ['9', 1170, 460],
+            ['10', 660, 1120],
+            ['11', 1000, 400],
+            ['12', 1170, 460],
+            ['13', 660, 1120],
+            ['14', 1000, 400],
+            ['15', 1170, 460],
+            ['16', 660, 1120],
+            ['17', 1030, 540],
+            ['18', 1000, 400],
+            ['19', 1170, 460],
+            ['20', 660, 1120],
+            ['21', 1000, 400],
+            ['22', 1170, 460],
+            ['23', 660, 1120],
+            ['24', 1000, 400],
+            ['25', 1170, 460],
+            ['26', 660, 1120],
+        ]);
+
+        var options = {
+            legend: { position: 'left'},
+            chart: {
+                title: '',
+                subtitle: '',
+            },
+            bars: 'vertical',
+            vAxis: {format: 'decimal'},
+            height: 350,
+            width: 1300,
+            colors: ['#ff5057', '#2196f3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
 });
