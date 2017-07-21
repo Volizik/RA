@@ -225,39 +225,18 @@
             <div class="tabs__content--inside-content" id="inside-general">
                 <h2>Реакции</h2>
                 <div class="block">
-                    <div class="img">
-                        <div class="box">
-                            <p>Фото</p>
-                            <!--<h2>592</h2>-->
-                            <h2 class="js-counter">520</h2><span>-12</span>
-                        </div>
+                    <div id="donutchart"></div>
+                        <!--<div class="box">-->
+                            <!--<p>Фото</p>-->
+                            <!--<h2 class="js-counter">520</h2><span>-12</span>-->
+                        <!--</div>-->
                     </div>
-                    <h3>Динамика за день</h3>
-                    <ul class="dynamic">
-                        <li><span class="yellow"></span>Статус 485 <span>+4</span></li>
-                        <li><span class="green"></span>Фото 592 <span>-12 за неделю</span></li>
-                        <li><span class="red"></span>Видео 15 <span>+8</span></li>
-                        <li><span class="blue"></span>Ссылка 8 <span>+2</span></li>
-                        <li><span class="purple"></span>Событие 2 <span></span></li>
-                    </ul>
-                </div>
                 <div class="block">
-                    <div class="img">
-                        <div class="box">
-                            <p>Super</p>
-                            <h2 class="js-counter">11592</h2><span>-12</span>
-                            <!--<h2>1 111 592</h2>-->
-
-                        </div>
-                    </div>
-                    <h3>Динамика за день</h3>
-                    <ul class="dynamic">
-                        <li><span class="yellow"></span>like 592<span>+4</span></li>
-                        <li><span class="green"></span>Super 1 111 592<span>-12 за неделю</span></li>
-                        <li><span class="red"></span>Ха-ха 15<span>+8</span></li>
-                        <li><span class="blue"></span>Ух ты 8<span>+2</span></li>
-                        <li><span class="purple"></span>Сочувствую 2<span></span></li>
-                    </ul>
+                    <div id="piechart2"></div>
+                        <!--<div class="box">-->
+                            <!--<p>Super</p>-->
+                            <!--<h2 class="js-counter">11592</h2><span>-12</span>-->
+                        <!--</div>-->
                 </div>
 <!-- start content.html-->
 <div class="content">
@@ -463,7 +442,7 @@
 <!-- start rating.html-->
 <div class="rating">
         <div class="rating__post slide">
-            <div class="head">
+            <div class="rating__head">
                 <h2>
                     Рейтинг постов
                 </h2>
@@ -501,9 +480,9 @@
                 </div>
 
             </div>
-            <div class="body">
-                <div class="block">
-                    <div class="block__top">
+            <div class="rating__body">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -513,13 +492,13 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <img src="img/coment-img.png" alt="">
                         <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки
                         </p>
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Комментов: <span>232</span></p>
                         <p>Репостов: <span>16</span></p>
                         <p>Сочувствую: <span>2</span></p>
@@ -532,8 +511,8 @@
                         <p>Общий рейтинг поста: <span>5689</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -543,13 +522,13 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <img src="img/coment-img.png" alt="">
                         <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки
                         </p>
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Комментов: <span>232</span></p>
                         <p>Репостов: <span>16</span></p>
                         <p>Сочувствую: <span>2</span></p>
@@ -562,8 +541,8 @@
                         <p>Общий рейтинг поста: <span>5689</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -573,13 +552,13 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <img src="img/coment-img.png" alt="">
                         <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки
                         </p>
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Комментов: <span>232</span></p>
                         <p>Репостов: <span>16</span></p>
                         <p>Сочувствую: <span>2</span></p>
@@ -592,8 +571,8 @@
                         <p>Общий рейтинг поста: <span>5689</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -603,13 +582,13 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <img src="img/coment-img.png" alt="">
                         <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки
                         </p>
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Комментов: <span>232</span></p>
                         <p>Репостов: <span>16</span></p>
                         <p>Сочувствую: <span>2</span></p>
@@ -625,7 +604,7 @@
             </div>
         </div>
         <div class="rating__commit slide">
-            <div class="head">
+            <div class="rating__head">
                 <h2>
                     Рейтинг комментариев
                 </h2>
@@ -662,9 +641,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="body">
-                <div class="block">
-                    <div class="block__top">
+            <div class="rating__body">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -674,7 +653,7 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <div class="content">
                             <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки.
                             </p>
@@ -684,15 +663,15 @@
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Вложенных комментов: <span>1516</span></p>
                         <p>Лайков: <span>120</span></p>
                         <p>Лайков вложенным комментам: <span>642</span></p>
                         <p>Общий рейтинг комментария: <span>1636</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -702,7 +681,7 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <div class="content">
                             <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки.
                             </p>
@@ -712,15 +691,15 @@
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Вложенных комментов: <span>1516</span></p>
                         <p>Лайков: <span>120</span></p>
                         <p>Лайков вложенным комментам: <span>642</span></p>
                         <p>Общий рейтинг комментария: <span>1636</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -730,7 +709,7 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <div class="content">
                             <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки.
                             </p>
@@ -740,15 +719,15 @@
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Вложенных комментов: <span>1516</span></p>
                         <p>Лайков: <span>120</span></p>
                         <p>Лайков вложенным комментам: <span>642</span></p>
                         <p>Общий рейтинг комментария: <span>1636</span></p>
                     </div>
                 </div>
-                <div class="block">
-                    <div class="block__top">
+                <div class="rating__block">
+                    <div class="rating__block--top">
                         <img src="img/icons/avatar.png" alt="">
                         <p class="grey">Джамалалат
                             Джамалладиннов</p>
@@ -758,7 +737,7 @@
                             <span>+3</span>
                         </div>
                     </div>
-                    <div class="block__middle">
+                    <div class="rating__block--middle">
                         <div class="content">
                             <p class="grey">Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки. Соседи, проход к метро вечером поплыл. При проведении ремонтных работ, были повреждены трубы, и вода успешно от стоянки.
                             </p>
@@ -768,7 +747,7 @@
                         <a class="show-text-btn" href="#"><img src="img/icons/arrow-down.png" alt=""></a>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="block__bottom">
+                    <div class="rating__block--bottom">
                         <p>Вложенных комментов: <span>1516</span></p>
                         <p>Лайков: <span>120</span></p>
                         <p>Лайков вложенным комментам: <span>642</span></p>
