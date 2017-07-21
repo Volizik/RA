@@ -132,31 +132,7 @@ $(function () {
 
     }
 
-    $('.img').circleProgress({
-        value: 1,
-        size: 245,
-        thickness: 38,
-        startAngle: 4.74,
-        emptyFill: "#fff",
-        animation: {
-            duration: 2000
-        },
-        fill: {
-            color: "transparent"
-        }
-    });
 
-    $('.js-counter').each(function () {
-        $(this).prop('Counter',0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
 
     //charts
 
@@ -249,17 +225,18 @@ $(function () {
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Work',     11],
-            ['Eat',      2],
-            ['Commute',  2],
-            ['Watch TV', 2],
-            ['Sleep',    7]
+            ['Статус', 15],
+            ['Фото', 19],
+            ['Видео', 15],
+            ['Ссылка', 8],
+            ['Событие', 12]
         ]);
 
         var options = {
             title: 'Динамика за день',
             pieHole: 0.7,
             height: 400,
+            pieSliceText: 'none',
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -272,22 +249,53 @@ $(function () {
     function drawChart2() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Work',     11],
-            ['Eat',      2],
-            ['Commute',  2],
-            ['Watch TV', 2],
-            ['Sleep',    7]
+            ['Статус', 15],
+            ['Фото', 19],
+            ['Видео', 15],
+            ['Ссылка', 8],
+            ['Событие', 12]
         ]);
 
         var options = {
             title: 'Динамика за день',
             pieHole: 0.7,
             height: 400,
+            pieSliceText: 'none',
 
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
         chart.draw(data, options);
+
+
+        $('.js-counter').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+
+        // $('.circle-chart').circleProgress({
+        //     value: 1,
+        //     size: 245,
+        //     thickness: 38,
+        //     startAngle: 4.74,
+        //     emptyFill: "#000",
+        //     animation: {
+        //         duration: 2000
+        //     },
+        //     fill: {
+        //         color: "#000"
+        //     }
+        // });
     }
+
+
 });
 
