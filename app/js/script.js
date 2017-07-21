@@ -20,34 +20,34 @@ $(function () {
 
 
     //for tabs
-    $('.tabs__body__content').each(function (i) {
+    $('.tabs__content').each(function (i) {
         if (i != 0) {
             $(this).hide(0)
         }
     });
-    $(document).on('click', '.tabs__body__buttons li>a', function (e) {
+    $(document).on('click', '.tabs__buttons li>a', function (e) {
         e.preventDefault();
         var tabId = $(this).attr('href');
-        $('.tabs__body__buttons li>a').removeClass('active');
+        $('.tabs__buttons li>a').removeClass('active');
         $(this).addClass('active');
-        $('.tabs__body__content').hide();
+        $('.tabs__content').hide();
         $(tabId).fadeIn();
     });
 
-    //for inside-tabs
 
-    $('.tabs__body__content__inside-content').each(function (i) {
+    //for inside-tabs
+    $('.tabs__content--inside-content').each(function (i) {
         if (i != 0) {
             $(this).hide(0)
         }
     });
-    $(document).on('click', '.tabs__body__content__inside-tabs li>a', function () {
+    $(document).on('click', '.tabs__content--inside-tabs li>a', function () {
         event.preventDefault();
         var tabId = $(this).attr('href');
         console.log(tabId);
-        $('.tabs__body__content__inside-tabs li>a').removeClass('active');
+        $('.tabs__content--inside-tabs li>a').removeClass('active');
         $(this).addClass('active');
-        $('.tabs__body__content__inside-content').hide();
+        $('.tabs__content--inside-content').hide();
         $(tabId).fadeIn();
     });
 
@@ -100,21 +100,6 @@ $(function () {
         }
     });
 
-    // for mobile tabs
-    // $(document).on('click', '.tabs__body__buttons li a', function () {
-    //     var li = $(document).find('.tabs__body__buttons li');
-    //     var submenu = $(this).parent().find('ul');
-    //     if ($(this).hasClass('activ')) {//если у элемента по которому мы кликаем есть класс
-    //         $(this).removeClass('activ');//то удаляем этот класс
-    //         submenu.hide();//скрываем сабменю
-    //     }
-    //     else {
-    //         $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
-    //         $('.drop ul').hide();//скрываем все сабменю
-    //         $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-    //         li.show();//показать табменю того элемента покоторому кликаем
-    //     }
-    // });
     //for rating section
     $(document).on('click','.toggles a', function () {
         event.preventDefault();
@@ -135,14 +120,14 @@ $(function () {
 
     // for top tabs in mobile
     if(document.documentElement.clientWidth < 1450) {
-        var ul = $(document).find('.tabs__body__buttons');
+        var ul = $(document).find('.tabs__buttons');
         $(document).on('click', '.dropdown-tabs>span', function () {
             ul.addClass('show-tabs');
-            $(document).on('click', '.tabs__body__buttons a', function () {
-                $(document).find('.tabs__body__buttons a').hide();
-                $(document).find('.tabs__body__buttons .active').show();
+            $(document).on('click', '.tabs__buttons a', function () {
+                $(document).find('.tabs__buttons a').hide();
+                $(document).find('.tabs__buttons .active').show();
             });
-            $(document).find('.tabs__body__buttons a').show();
+            $(document).find('.tabs__buttons a').show();
         });
 
     }

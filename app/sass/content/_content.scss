@@ -1,5 +1,5 @@
 .content {
-  width: calc(100% - 360px);
+  width: 100%;
   margin: 30px;
   margin-bottom: 0;
   position: relative;
@@ -7,7 +7,6 @@
   @include breakpoint(max-width 940px) {
     width: 100%;
     margin: 30px 0 0 0;
-    padding: 0px 15px;
     box-sizing: border-box;
   }
   &__head {
@@ -114,7 +113,7 @@
           margin-right: 0;
         }
       }
-      @include breakpoint(max-width 430px) {
+      @include breakpoint(max-width 500px) {
         padding: 10px;
       }
 
@@ -135,14 +134,14 @@
           float: left;
           font-size: 18px;
           font-weight: 500;
-          @include breakpoint(max-width 430px) {
+          @include breakpoint(max-width 500px) {
             width: 70px;
             font-size: 16px;
             font-weight: 300;
           }
         }
         .margin-top-0 {
-          @include breakpoint(max-width 430px) {
+          @include breakpoint(max-width 500px) {
             margin-top: 0;
           }
         }
@@ -152,7 +151,7 @@
           margin: 10px 0;
           font-size: 24px;
           font-weight: 300;
-          @include breakpoint(max-width 430px) {
+          @include breakpoint(max-width 500px) {
             font-size: 20px;
           }
           span {
@@ -183,7 +182,7 @@
               position: relative;
               float: left;
             }
-            @include breakpoint(max-width 430px) {
+            @include breakpoint(max-width 500px) {
               font-size: 12px;
               font-weight: 300;
             }
@@ -206,7 +205,7 @@
           transition: .3s;
           line-height: 14px;
           p {
-            @include breakpoint(max-width 430px) {
+            @include breakpoint(max-width 500px) {
               font-size: 13px;
             }
           }

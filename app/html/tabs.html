@@ -16,7 +16,7 @@
     </div>
     <div class="tabs__body">
         <div class="dropdown-tabs">
-            <ul class="tabs__body__buttons">
+            <ul class="tabs__buttons">
                 <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
                 <li><a href="#security">Безопасность</a></li>
                 <li><a href="#generation">Лидогенерация</a></li>
@@ -25,9 +25,9 @@
             </ul>
             <span><img src="img/icons/down-black.png" alt=""></span>
         </div>
-        <div class="tabs__body__content" id="alalitics">
+        <div class="tabs__content" id="alalitics">
             <div class="scroll-tabs">
-                <ul class="tabs__body__content__inside-tabs">
+                <ul class="tabs__content--inside-tabs">
                     <li><a class="active" href="#inside-general">Общая информация</a></li>
                     <li><a href="#inside-graphics">График активностей</a></li>
                     <li><a href="#inside-ratings">Рейтинги</a></li>
@@ -36,7 +36,7 @@
                     <li><a href="#inside-commit">Коментарии</a></li>
                 </ul>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-general">
+            <div class="tabs__content--inside-content" id="inside-general">
                 <h2>Реакции</h2>
                 <div class="block">
                     <div class="img">
@@ -73,18 +73,20 @@
                         <li><span class="purple"></span>Сочувствую 2<span></span></li>
                     </ul>
                 </div>
+                <!-- @@include content.html -->
+                <!-- @@include rating.html -->
                 <div class="clearfix"></div>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-graphics">
+            <div class="tabs__content--inside-content" id="inside-graphics">
                 <h2>График активностей</h2>
 
                 <div class="clearfix"></div>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-ratings">
+            <div class="tabs__content--inside-content" id="inside-ratings">
                 <h2>Рейтинги</h2>
                 <div class="clearfix"></div>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-users">
+            <div class="tabs__content--inside-content" id="inside-users">
                 <h2>Статистика активности пользователей</h2>
                 <div class="actions">
                     <div class="actions--left">
@@ -158,6 +160,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
                 <div id="dashboard_div">
                     <div id="chart_div"></div>
                     <div id="filter_div"></div>
@@ -176,29 +179,27 @@
                 </a>
                 <div class="clearfix"></div>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-posts">
+            <div class="tabs__content--inside-content" id="inside-posts">
                 <h2>Посты</h2>
 
                 <div class="clearfix"></div>
             </div>
-            <div class="tabs__body__content__inside-content" id="inside-commit">
+            <div class="tabs__content--inside-content" id="inside-commit">
                 <h2>Коментарии</h2>
 
                 <div class="clearfix"></div>
             </div>
-
-
         </div>
-        <div class="tabs__body__content" id="security">
+        <div class="tabs__content" id="security">
             Security
         </div>
-        <div class="tabs__body__content" id="generation">
+        <div class="tabs__content" id="generation">
             Lidogeneration
         </div>
-        <div class="tabs__body__content" id="with-post">
+        <div class="tabs__content" id="with-post">
             Action with post
         </div>
-        <div class="tabs__body__content" id="interview">
+        <div class="tabs__content" id="interview">
             Interview
         </div>
     </div>
