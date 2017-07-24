@@ -1,7 +1,5 @@
 .rating {
   width: 100%;
-  margin: 30px;
-  margin-top: 0;
   position: relative;
   float: left;
   @include breakpoint(max-width 940px) {
@@ -124,7 +122,7 @@
           margin-right: 5px;
         }
       }
-      p {
+      a {
         position: relative;
         float: left;
         width: 130px;

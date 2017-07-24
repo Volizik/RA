@@ -1,4 +1,90 @@
 $(function () {
+    google.charts.load("current", {packages: ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Статус', 15],
+            ['Фото', 19],
+            ['Видео', 15],
+            ['Ссылка', 8],
+            ['Событие', 12]
+        ]);
+
+        if (window.innerWidth > 500) {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 400,
+                width: 500,
+                pieSliceText: 'none',
+
+            };
+        } else {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 300,
+                width: 400,
+                pieSliceText: 'none',
+                legend: 'none'
+            };
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+
+    }
+
+    //for donatChart2
+    google.charts.load("current", {packages: ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart2);
+    function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Статус', 15],
+            ['Фото', 19],
+            ['Видео', 15],
+            ['Ссылка', 8],
+            ['Событие', 12]
+        ]);
+        if (window.innerWidth > 500) {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 400,
+                width: 500,
+                pieSliceText: 'none',
+
+            };
+        } else {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 300,
+                width: 400,
+                pieSliceText: 'none',
+                legend: 'none'
+            };
+        }
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+        chart.draw(data, options);
+
+        $('.js-counter').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    }
+
 
     $(document).on('click', '.menu__body__list>a', function () {
         var submenu = $(this).parent().find('.submenu');//находим элемент в ДОМ
@@ -35,20 +121,44 @@ $(function () {
     });
 
 
+
+
     //for inside-tabs
-    $('.tabs__content--inside-content').each(function (i) {
-        if (i != 0) {
-            $(this).hide(0)
+
+    var hash = document.location.hash;
+    if (hash !== '') {
+        $('.tabs__content--inside-tabs').find('a').removeClass('active');
+        $('.tabs__content--inside-content').hide();
+
+        $('a[href="' + hash + '"]').addClass('active');
+        $(hash).show();
+        setLocation(hash)
+    } else {
+        $('.tabs__content--inside-content').each(function (i) {
+            if (i != 0) {
+                $(this).hide(0)
+            }
+        });
+    }
+    function setLocation(curLoc) {
+        try {
+            history.pushState(null, null, curLoc);
+            return;
+        } catch (e) {
         }
-    });
+        location.hash = '#' + curLoc;
+    }
+
     $(document).on('click', '.tabs__content--inside-tabs li>a', function () {
-        event.preventDefault();
+        // event.preventDefault();
         var tabId = $(this).attr('href');
         console.log(tabId);
         $('.tabs__content--inside-tabs li>a').removeClass('active');
         $(this).addClass('active');
         $('.tabs__content--inside-content').hide();
         $(tabId).fadeIn();
+        setLocation(tabId);
+        return false;
     });
 
 
@@ -101,7 +211,7 @@ $(function () {
     });
 
     //for rating section
-    $(document).on('click','.toggles a', function () {
+    $(document).on('click', '.toggles a', function () {
         event.preventDefault();
         $('.slide').toggle();
     });
@@ -118,8 +228,9 @@ $(function () {
         submenu.hide();
     });
 
+
     // for top tabs in mobile
-    if(document.documentElement.clientWidth < 1450) {
+    if (document.documentElement.clientWidth < 1450) {
         var ul = $(document).find('.tabs__buttons');
         $(document).on('click', '.dropdown-tabs>span', function () {
             ul.addClass('show-tabs');
@@ -133,11 +244,10 @@ $(function () {
     }
 
 
-
     //charts
 
     // Load the Visualization API and the controls package.
-    google.charts.load('current', {'packages':['corechart', 'controls']});
+    google.charts.load('current', {'packages': ['corechart', 'controls']});
 
     // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawDashboard);
@@ -220,102 +330,9 @@ $(function () {
         dashboard.draw(data);
     }
 
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Статус', 15],
-            ['Фото', 19],
-            ['Видео', 15],
-            ['Ссылка', 8],
-            ['Событие', 12]
-        ]);
 
-        if(window.innerWidth < 500) {
-            var options = {
-                title: 'Динамика за день',
-                pieHole: 0.7,
-                height: 300,
-                pieSliceText: 'none',
-                legend: 'none'
-            };
-        } else {
-            var options = {
-                title: 'Динамика за день',
-                pieHole: 0.7,
-                height: 400,
-                pieSliceText: 'none',
-            };
-        }
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-    }
-
-    //for donatChart2
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart2);
-    function drawChart2() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Статус', 15],
-            ['Фото', 19],
-            ['Видео', 15],
-            ['Ссылка', 8],
-            ['Событие', 12]
-        ]);
-            if(window.innerWidth < 500) {
-                var options = {
-                    title: 'Динамика за день',
-                    pieHole: 0.7,
-                    height: 300,
-                    pieSliceText: 'none',
-                    legend: 'none'
-                };
-            } else {
-                var options = {
-                    title: 'Динамика за день',
-                    pieHole: 0.7,
-                    height: 400,
-                    pieSliceText: 'none',
-                };
-            }
-
-
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-        chart.draw(data, options);
-
-
-        $('.js-counter').each(function () {
-            $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
-
-
-        // $('.circle-chart').circleProgress({
-        //     value: 1,
-        //     size: 245,
-        //     thickness: 38,
-        //     startAngle: 4.74,
-        //     emptyFill: "#000",
-        //     animation: {
-        //         duration: 2000
-        //     },
-        //     fill: {
-        //         color: "#000"
-        //     }
-        // });
-    }
 
 
 });
+
 
