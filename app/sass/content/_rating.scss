@@ -52,6 +52,15 @@
       }
     }
     .drop {
+      &:last-child {
+        margin-left: 0;
+      }
+      &:last-child a{
+        width: 170px;
+      }
+      &:last-child ul{
+        width: 170px;
+      }
       @include breakpoint(max-width 1150px) {
         float: left;
         margin-left: 0;

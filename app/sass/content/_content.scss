@@ -85,12 +85,6 @@
         cursor:pointer;
         transition:.5s;
       }
-      &:hover .in-hover {
-        margin-top: 0;
-      }
-      &:hover .un-hover {
-        margin-top: -200px;
-      }
       &:nth-child(3n+3) {
         margin-right: 0;
       }
@@ -187,19 +181,18 @@
               font-weight: 300;
             }
           }
-          a {
-            position: relative;
-            float: left;
-            margin-top: 10px;
-            display: none;
-            color: blue;
-          }
+          //a {
+          //  position: relative;
+          //  float: left;
+          //  margin-top: 10px;
+          //  display: none;
+          //  color: blue;
+          //}
         }
         .in-hover {
-          display: block;
+          display: none;
           float: left;
-          position: relative;
-          margin-top: 200px;
+          position: absolute;
           font-size: 14px;
           font-weight: 300;
           transition: .3s;
@@ -208,6 +201,17 @@
             @include breakpoint(max-width 500px) {
               font-size: 13px;
             }
+          }
+        }
+        .hint {
+          display: block;
+          position: relative;
+          float: right;
+          height: 40px;
+          width: 40px;
+          margin-top: 10px;
+          img {
+            max-width: 100%;
           }
         }
       }

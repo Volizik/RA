@@ -213,7 +213,7 @@ $(function () {
     //for rating section
     $(document).on('click', '.toggles a', function () {
         event.preventDefault();
-        $('.slide').toggle();
+        $('.slide').slideToggle();
     });
 
     //for-mobile-menu
@@ -330,9 +330,13 @@ $(function () {
         dashboard.draw(data);
     }
 
-
-
-
+    $(document).on('click', '.hint', function () {
+        event.preventDefault();
+        $('.un-hover').show();
+        $('.in-hover').hide();
+        $(this).parent().parent().find('.un-hover').fadeToggle();
+        $(this).parent().parent().find('.in-hover').fadeToggle();
+    });
 });
 
 
