@@ -232,12 +232,22 @@ $(function () {
             ['Событие', 12]
         ]);
 
-        var options = {
-            title: 'Динамика за день',
-            pieHole: 0.7,
-            height: 400,
-            pieSliceText: 'none',
-        };
+        if(window.innerWidth < 500) {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 300,
+                pieSliceText: 'none',
+                legend: 'none'
+            };
+        } else {
+            var options = {
+                title: 'Динамика за день',
+                pieHole: 0.7,
+                height: 400,
+                pieSliceText: 'none',
+            };
+        }
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
@@ -255,14 +265,24 @@ $(function () {
             ['Ссылка', 8],
             ['Событие', 12]
         ]);
+            if(window.innerWidth < 500) {
+                var options = {
+                    title: 'Динамика за день',
+                    pieHole: 0.7,
+                    height: 300,
+                    pieSliceText: 'none',
+                    legend: 'none'
+                };
+            } else {
+                var options = {
+                    title: 'Динамика за день',
+                    pieHole: 0.7,
+                    height: 400,
+                    pieSliceText: 'none',
+                };
+            }
 
-        var options = {
-            title: 'Динамика за день',
-            pieHole: 0.7,
-            height: 400,
-            pieSliceText: 'none',
 
-        };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
         chart.draw(data, options);
