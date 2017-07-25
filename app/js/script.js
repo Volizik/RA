@@ -330,12 +330,27 @@ $(function () {
         dashboard.draw(data);
     }
 
+    //for hint in tabs_content
     $(document).on('click', '.hint', function () {
         event.preventDefault();
-        $('.un-hover').show();
-        $('.in-hover').hide();
-        $(this).parent().parent().find('.un-hover').fadeToggle();
-        $(this).parent().parent().find('.in-hover').fadeToggle();
+        var hint = $(this).parent().find('.in-hover');
+        var text = $(this).parent().find('.un-hover');
+        if ($(this).hasClass('show-hint')) {
+            $(this).removeClass('show-hint');
+            text.show();
+            hint.hide();
+            $(this).css('background', 'url(../img/icons/question-circular-button.png) center center / cover')
+        }
+        else {
+            $('.content__body__block__bottom>a').removeClass('show-hint').css('background', 'url(../img/icons/question-circular-button.png) center center / cover');
+            $('.in-hover').hide();
+            $('.un-hover').show();
+            $(this).addClass('show-hint');
+            hint.show();
+            text.hide();
+            $(this).css('background', 'url(../img/icons/cross.png) center center / cover');
+
+        }
     });
 });
 

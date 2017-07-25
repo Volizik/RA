@@ -64,9 +64,9 @@
       margin-bottom: 30px;
       box-sizing: border-box;
       padding: 20px;
-      height: 240px;
+      height: 280px;
       overflow: hidden;
-      transition: .5s;
+      transition: .3s;
       @include breakpoint(max-width 1150px) {
         display: none;
         &:nth-child(1) {
@@ -82,8 +82,7 @@
       &:hover {
         background-color: transparent;
         box-shadow: none;
-        cursor:pointer;
-        transition:.5s;
+        transition:.3s;
       }
       &:nth-child(3n+3) {
         margin-right: 0;
@@ -165,7 +164,7 @@
           position: relative;
           float: left;
           width: 100%;
-          height: 100%;
+          height: 110px;
           p {
             position: relative;
             float: left;
@@ -192,7 +191,7 @@
         .in-hover {
           display: none;
           float: left;
-          position: absolute;
+          position: relative;
           font-size: 14px;
           font-weight: 300;
           transition: .3s;
@@ -210,9 +209,7 @@
           height: 40px;
           width: 40px;
           margin-top: 10px;
-          img {
-            max-width: 100%;
-          }
+          background: url(../img/icons/question-circular-button.png) center center / cover;
         }
       }
     }
