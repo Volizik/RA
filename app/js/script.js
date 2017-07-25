@@ -222,7 +222,7 @@ $(function () {
         var submenu = $(document).find('.menu');
         submenu.show();
     });
-    $(document).on('click', '.menu h2', function () {
+    $(document).on('click', '.menu .cross', function () {
         event.preventDefault();
         var submenu = $(document).find('.menu');
         submenu.hide();
@@ -339,17 +339,14 @@ $(function () {
             $(this).removeClass('show-hint');
             text.show();
             hint.hide();
-            $(this).css('background', 'url(../img/icons/question-circular-button.png) center center / cover')
         }
         else {
-            $('.content__body__block__bottom>a').removeClass('show-hint').css('background', 'url(../img/icons/question-circular-button.png) center center / cover');
             $('.in-hover').hide();
             $('.un-hover').show();
+            $('.content__body__block__bottom>a').removeClass('show-hint');
             $(this).addClass('show-hint');
             hint.show();
             text.hide();
-            $(this).css('background', 'url(../img/icons/cross.png) center center / cover');
-
         }
     });
 });
