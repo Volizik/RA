@@ -19,9 +19,10 @@
       position: relative;
       float: left;
       font-size: 34px;
-      font-weight: 500;
+      font-weight: 700;
       @include breakpoint(max-width 650px) {
         font-size: 24px;
+        font-weight: 500;
       }
     }
 
@@ -250,16 +251,30 @@
         position: relative;
         float: left;
         overflow: hidden;
-        @include breakpoint(max-width 1150px) {
-          width: 400px;
+        @include breakpoint(max-width 1380px) {
+          width: 500px;
           margin: 0 auto 20px auto;
           clear: both;
           float: none;
         }
         @include breakpoint(max-width 500px) {
           width: 230px;
+          padding-left: 30px;
+        }
+        h3 {
+          position: absolute;
+          font-weight: 600;
+          font-size: 18px;
+          color: #526069;
+          top: 40px;
+          left: 320px;
+          z-index: 20;
+          @include breakpoint(max-width 1380px) {
+            display: none;
+          }
         }
         .circle-chart {
+          width: 500px;
           @include breakpoint(max-width 500px) {
             margin-left: -90px;
           }
@@ -268,35 +283,56 @@
             top: 80px;
             left: 150px;
           }
-          width: 500px;
+          svg {
+            >g{
+              &:nth-child(3) text {
+                font-family:"Open Sans" !important;
+                font-size: 18px!important;
+                font-weight: 400;
+                fill: #000 !important;
+              }
+              &:nth-child(3) {
+                transform: translate(20px,50px);
+              }
+            }
+          }
         }
         .box {
           position: absolute;
           text-align: center;
-          top: 165px;
+          top: 120px;
           left: 140px;
-          width: 100px;
-          height: 100px;
+          width: 110px;
+          height: 80px;
           @include breakpoint(max-width 500px) {
             top: 120px;
-            left: 55px;
+            left: 75px;
             height: 60px;
           }
           h2 {
             margin: 0;
             padding: 0;
             box-shadow: none;
+            display: inline-block;
+            position: relative;
+            //float: left;
+            text-align: center;
           }
           span {
             position: relative;
-            top: -40px;
-            right: -50px;
             font-size: 16px;
             color: red;
             font-weight: 300;
+            top: -15px;
+            left: 5px;
           }
           p {
             margin: 0;
+            margin-left: 25px;
+            float: left;
+            position: relative;
+            text-align: left;
+            width: 80px;
           }
         }
       }

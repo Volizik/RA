@@ -106,13 +106,13 @@
           float: left;
         }
       }
-      p {
+      >p {
         width: 200px;
         position: relative;
         margin: 0 auto;
-      }
-      .money {
-        font-size: 18px;
+        &:last-child {
+          font-size: 18px;
+        }
       }
     }
     &__bottom{

@@ -4,32 +4,32 @@ $(function () {
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Статус', 15],
-            ['Фото', 19],
-            ['Видео', 15],
-            ['Ссылка', 8],
-            ['Событие', 12]
+            ['Статус 485', 15],
+            ['Фото 592', 19],
+            ['Видео 15', 15],
+            ['Ссылка 8', 8],
+            ['Событие 2', 12]
         ]);
 
-        if (window.innerWidth > 500) {
+        // if (window.innerWidth > 550) {
             var options = {
-                title: 'Динамика за день',
-                pieHole: 0.7,
-                height: 400,
-                width: 500,
-                pieSliceText: 'none',
-
-            };
-        } else {
-            var options = {
-                title: 'Динамика за день',
                 pieHole: 0.7,
                 height: 300,
-                width: 400,
+                width: 500,
                 pieSliceText: 'none',
-                legend: 'none'
             };
-        }
+        // } else {
+        //     var options = {
+        //         pieHole: 0.7,
+        //         height: 500,
+        //         width: 300,
+        //         pieSliceText: 'none',
+        //         legend: {
+        //             position: 'bottom',
+        //             alignment: 'start'
+        //         }
+        //     };
+        // }
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
@@ -42,31 +42,29 @@ $(function () {
     function drawChart2() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Статус', 15],
-            ['Фото', 19],
-            ['Видео', 15],
-            ['Ссылка', 8],
-            ['Событие', 12]
+            ['Like 592', 15],
+            ['Super 11 152', 19],
+            ['Ха-ха 15', 15],
+            ['Ух ты 8', 8],
+            ['Сочувствую 2', 12]
         ]);
-        if (window.innerWidth > 500) {
+        // if (window.innerWidth > 550) {
             var options = {
-                title: 'Динамика за день',
                 pieHole: 0.7,
-                height: 400,
+                height: 300,
                 width: 500,
                 pieSliceText: 'none',
 
             };
-        } else {
-            var options = {
-                title: 'Динамика за день',
-                pieHole: 0.7,
-                height: 300,
-                width: 400,
-                pieSliceText: 'none',
-                legend: 'none'
-            };
-        }
+        // } else {
+        //     var options = {
+        //         pieHole: 0.7,
+        //         height: 300,
+        //         width: 400,
+        //         pieSliceText: 'none',
+        //         legend: 'none'
+        //     };
+        // }
 
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));

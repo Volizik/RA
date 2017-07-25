@@ -18,7 +18,7 @@
     box-shadow: 3px 5px 10px 0 #ccc;
     a {
       display: block;
-      color: #000;
+      color: #526069;
       position: relative;
       float: left;
       padding-top: 40px;
@@ -32,6 +32,7 @@
       }
       span {
         font-weight: 300;
+        color: #526069;
       }
     }
     p {
@@ -39,6 +40,7 @@
       position: relative;
       float: left;
       font-size: 16px;
+      color: #526069;
       @include breakpoint(max-width 1450px) {
         width: 100%;
       }
@@ -64,7 +66,7 @@
       margin-bottom: 30px;
       box-sizing: border-box;
       padding: 20px;
-      height: 280px;
+      height: 220px;
       overflow: hidden;
       transition: .3s;
       @include breakpoint(max-width 1150px) {
@@ -126,7 +128,8 @@
           position: relative;
           float: left;
           font-size: 18px;
-          font-weight: 500;
+          font-weight: 600;
+          color: #526069;
           @include breakpoint(max-width 500px) {
             width: 70px;
             font-size: 16px;
@@ -170,6 +173,7 @@
             float: left;
             width: 50%;
             margin: 2px 0;
+            font-weight: 300;
             &:first-child {
               width: 100%;
               position: relative;
@@ -180,13 +184,7 @@
               font-weight: 300;
             }
           }
-          //a {
-          //  position: relative;
-          //  float: left;
-          //  margin-top: 10px;
-          //  display: none;
-          //  color: blue;
-          //}
+
         }
         .in-hover {
           display: none;
@@ -197,6 +195,7 @@
           transition: .3s;
           line-height: 14px;
           p {
+            margin-top: 0;
             @include breakpoint(max-width 500px) {
               font-size: 13px;
             }
@@ -206,9 +205,9 @@
           display: block;
           position: relative;
           float: right;
-          height: 40px;
-          width: 40px;
-          margin-top: 10px;
+          height: 22px;
+          width: 22px;
+          margin-top: -15px;
           background: url(../img/icons/question-circular-button.png) center center / cover;
         }
         .show-hint {
