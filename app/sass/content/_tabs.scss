@@ -351,9 +351,9 @@
         box-shadow: 3px 5px 10px 0 #ccc;
         background-color: #fff;
         box-sizing: border-box;
-        overflow: hidden;
+        //overflow: hidden;
         @include breakpoint(max-width 440px) {
-          padding-left: 0;
+          padding-left: 5px;
         }
         h3 {
           font-size: 18px;
@@ -367,36 +367,24 @@
           position: relative;
           float: left;
           text-align: left;
-          width: 380px;
-          @include breakpoint(max-width 1750px) {
-            width: 250px;
+          width: 50%;
+          @include breakpoint(max-width 1455px) {
+            width: 100%;
           }
-          @include breakpoint(max-width 1300px) {
-            width: 400px;
-          }
-          label {
+
+          >div {
             position: relative;
             float: left;
             width: 100%;
+          }
+
+          label {
+            position: relative;
+            float: left;
             margin: 10px 0;
             font-size: 14px;
             font-weight: 300;
-            &:nth-child(3) {
-              width: 150px;
-            }
-            &:nth-child(4) {
-              width: 220px;
-            }
-            @include breakpoint(max-width 1750px) {
-              &:nth-child(3) {
-                width: 100%;
-              }
-            }
-            @include breakpoint(max-width 1300px) {
-              &:nth-child(3) {
-                width: 120px;
-              }
-            }
+            text-align: left;
           }
 
           //checkbox
@@ -404,6 +392,7 @@
             position: relative;
             display: block;
             height: 34px;
+            clear: left;
             input {
               display: none;
             }
@@ -432,6 +421,10 @@
             height: 34px;
             width: 300px;
             box-sizing: border-box;
+            margin-left: 20px;
+            @include breakpoint(max-width 400px) {
+              width: 100px;
+            }
             .slider-round {
               position: absolute;
               cursor: pointer;
@@ -485,20 +478,41 @@
           }
           //end switch
 
+          .drop {
+            display: none;
+            margin-top: 0;
+            float: left;
+            clear: right;
+            margin-left: 20px;
+            a {
+              background-color: #fff;
+              border: 1px solid #ccc;
+              color: #526069;
+              padding: 10px;
+            }
+            img {
+              float: right;
+              margin-top: 10px;
+            }
+          }
         }
-        &--center {
+        &--right {
           position: relative;
-          float: left;
-          width: 600px;
-          padding-left: 30px;
+          float: right;
+          width: 50%;
           height: 200px;
           margin: 0 auto;
           @include breakpoint(max-width 1750px) {
-            height: 100px;
+            height: 120px;
           }
-          @include breakpoint(max-width 1300px) {
+          @include breakpoint(max-width 1455px) {
+            float: left;
+            width: 100%;
+          }
+          @include breakpoint(max-width 640px) {
             padding-left: 0;
             height: 170px;
+            padding-bottom: 10px;
           }
 
           h3 {
@@ -543,44 +557,6 @@
             }
           }
         }
-        &--right {
-          position: relative;
-          float: right;
-          width: 320px;
-          @include breakpoint(max-width 1750px) {
-            float: left;
-            padding-left: 30px;
-          }
-          @include breakpoint(max-width 1300px) {
-            padding-left: 0;
-          }
-          h3 {
-            text-align: left;
-            width: 50%;
-            position: relative;
-            float: left;
-          }
-          .drop {
-            position: relative;
-            float: left;
-            margin: 10px 20px 0px 0;
-            text-align: center;
-            @include breakpoint(max-width 380px) {
-              margin-right: 5px;
-              font-size: 12px;
-            }
-            a {
-              padding: 10px;
-              @include breakpoint(max-width 380px) {
-                font-size: 12px;
-              }
-            }
-            ul {
-              position: absolute;
-              width: 100%;
-            }
-          }
-        }
 
       }
       #dashboard_div {
@@ -588,7 +564,8 @@
         width: 100%;
         background-color: #ffffff;
         box-shadow: 3px 5px 10px 0 #ccc;
-        @include breakpoint(max-width 1500px) {
+        overflow: hidden;
+        @include breakpoint(max-width 1150px) {
           display: none;
         }
         #chart_div {
@@ -612,6 +589,9 @@
             width: 800px;
             background-color: #dcdfe1;
             border: none;
+            @include breakpoint(max-width 1500px) {
+              width: 500px;
+            }
             .google-visualization-controls-slider-handle {
               background-color: #526069;
             }
@@ -687,7 +667,10 @@
         background-color: #fff;
         box-shadow: 3px 5px 10px 0 #ccc;
         width: 100%;
-        @include breakpoint(max-width 1300px) {
+        @include breakpoint(max-width 1150px) {
+          display: block;
+        }
+        @include breakpoint(max-width 640px) {
           padding-top: 20px;
         }
         a {
@@ -714,10 +697,6 @@
           float: left;
           margin-left: 20px;
           clear: both;
-        }
-
-        @include breakpoint(max-width 1500px) {
-          display: block;
         }
       }
     }

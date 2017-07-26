@@ -11,25 +11,12 @@ $(function () {
             ['Событие 2', 12]
         ]);
 
-        // if (window.innerWidth > 550) {
             var options = {
                 pieHole: 0.7,
                 height: 300,
                 width: 500,
                 pieSliceText: 'none',
             };
-        // } else {
-        //     var options = {
-        //         pieHole: 0.7,
-        //         height: 500,
-        //         width: 300,
-        //         pieSliceText: 'none',
-        //         legend: {
-        //             position: 'bottom',
-        //             alignment: 'start'
-        //         }
-        //     };
-        // }
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
@@ -48,7 +35,6 @@ $(function () {
             ['Ух ты 8', 8],
             ['Сочувствую 2', 12]
         ]);
-        // if (window.innerWidth > 550) {
             var options = {
                 pieHole: 0.7,
                 height: 300,
@@ -56,17 +42,6 @@ $(function () {
                 pieSliceText: 'none',
 
             };
-        // } else {
-        //     var options = {
-        //         pieHole: 0.7,
-        //         height: 300,
-        //         width: 400,
-        //         pieSliceText: 'none',
-        //         legend: 'none'
-        //     };
-        // }
-
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
         chart.draw(data, options);
 
@@ -290,33 +265,64 @@ $(function () {
         var dashboard = new google.visualization.Dashboard(
             document.getElementById('dashboard_div'));
 
-        // Create a range slider, passing some options
-        var donutRangeSlider = new google.visualization.ControlWrapper({
-            'controlType': 'NumberRangeFilter',
-            'containerId': 'filter_div',
-            'options': {
-                'filterColumnLabel': ' ',
-                'minValue': 1,
-                'maxValue': 26,
-                'width': 500
-            },
-            // Explicitly positions the thumbs at position 3 and 8,
-            // out of the possible range of 1 to 10.
-            'state': {'lowValue': 1, 'highValue': 26}
-        });
 
-        // Create a pie chart, passing some options
-        var columnChart = new google.visualization.ChartWrapper({
-            'chartType': 'ColumnChart',
-            'containerId': 'chart_div',
-            'options': {
-                'width': 1100,
-                'height': 500,
-            },
-            // The pie chart will use the columns 'Name' and 'Donuts eaten'
-            // out of all the available ones.
-            'view': {'columns': [1, 2, 3]}
-        });
+        if(window.innerWidth>1500) {
+            // Create a range slider, passing some options
+            var donutRangeSlider = new google.visualization.ControlWrapper({
+                'controlType': 'NumberRangeFilter',
+                'containerId': 'filter_div',
+                'options': {
+                    'filterColumnLabel': ' ',
+                    'minValue': 1,
+                    'maxValue': 26,
+                    'width': 500
+                },
+                // Explicitly positions the thumbs at position 3 and 8,
+                // out of the possible range of 1 to 10.
+                'state': {'lowValue': 1, 'highValue': 26}
+            });
+
+            // Create a pie chart, passing some options
+            var columnChart = new google.visualization.ChartWrapper({
+                'chartType': 'ColumnChart',
+                'containerId': 'chart_div',
+                'options': {
+                    'width': 1100,
+                    'height': 500,
+                },
+                // The pie chart will use the columns 'Name' and 'Donuts eaten'
+                // out of all the available ones.
+                'view': {'columns': [1, 2, 3]}
+            });
+        } else {
+            // Create a range slider, passing some options
+            var donutRangeSlider = new google.visualization.ControlWrapper({
+                'controlType': 'NumberRangeFilter',
+                'containerId': 'filter_div',
+                'options': {
+                    'filterColumnLabel': ' ',
+                    'minValue': 1,
+                    'maxValue': 26,
+                    'width': 200
+                },
+                // Explicitly positions the thumbs at position 3 and 8,
+                // out of the possible range of 1 to 10.
+                'state': {'lowValue': 1, 'highValue': 26}
+            });
+
+            // Create a pie chart, passing some options
+            var columnChart = new google.visualization.ChartWrapper({
+                'chartType': 'ColumnChart',
+                'containerId': 'chart_div',
+                'options': {
+                    'width': 750,
+                    'height': 300,
+                },
+                // The pie chart will use the columns 'Name' and 'Donuts eaten'
+                // out of all the available ones.
+                'view': {'columns': [1, 2, 3]}
+            });
+        }
 
 
         // Establish dependencies, declaring that 'filter' drives 'pieChart',
@@ -347,6 +353,16 @@ $(function () {
             text.hide();
         }
     });
+
+    //for inside-users check
+    $(document).on('click', '.actions--left>div label', function () {
+        if($(this).find('input').is(':checked')) {
+            $(this).parent().find('.drop').show()
+        } else {
+            $(this).parent().find('.drop').hide()
+        }
+    });
+
 });
 
 

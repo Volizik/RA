@@ -1,4 +1,6 @@
 <div class="tabs">
+
+
     <div class="tabs__head">
         <h1>Русские в Анталии РА</h1>
         <div class="drop">
@@ -14,7 +16,10 @@
             </ul>
         </div>
     </div>
+
+
     <div class="tabs__body">
+
         <div class="dropdown-tabs">
             <ul class="tabs__buttons">
                 <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
@@ -25,6 +30,7 @@
             </ul>
             <span><img src="img/icons/down-black.png" alt=""></span>
         </div>
+
         <div class="tabs__content" id="alalitics">
             <div class="scroll-tabs">
                 <ul class="tabs__content--inside-tabs">
@@ -74,11 +80,25 @@
                 <div class="actions">
                     <div class="actions--left">
                         <h3>Что посчитать в графике:</h3>
-                        <label class="check">
-                            <input type="checkbox" name="checkbox" />
-                            <span></span>
-                            Посты
-                        </label>
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="checkbox" />
+                                <span></span>
+                                Посты
+                            </label>
+                            <div class="drop">
+                                <a href="#">Все посты <img src="img/icons/down-black.png" alt=""></a>
+                                <ul>
+                                    <li><a href="#">За день</a></li>
+                                    <li><a href="#">За неделю</a></li>
+                                    <li><a href="#">За месяц</a></li>
+                                    <li><a href="#">За квартал</a></li>
+                                    <li><a href="#">За полугодие</a></li>
+                                    <li><a href="#">За год</a></li>
+                                    <li><a href="#">За все время</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <label class="check">
                             <input type="checkbox" name="checkbox" />
                             <span></span>
@@ -89,13 +109,27 @@
                             <span class="slider-round"></span>
                             <span>Учитывать вложенные</span>
                         </label>
-                        <label class="check">
-                            <input type="checkbox" name="checkbox" />
-                            <span></span>
-                            Реакции
-                        </label>
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="checkbox" />
+                                <span></span>
+                                Реакции
+                            </label>
+                            <div class="drop">
+                                <a href="#">Возмутительно <img src="img/icons/down-black.png" alt=""></a>
+                                <ul>
+                                    <li><a href="#">За день</a></li>
+                                    <li><a href="#">За неделю</a></li>
+                                    <li><a href="#">За месяц</a></li>
+                                    <li><a href="#">За квартал</a></li>
+                                    <li><a href="#">За полугодие</a></li>
+                                    <li><a href="#">За год</a></li>
+                                    <li><a href="#">За все время</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="actions--center">
+                    <div class="actions--right">
                         <h3>За период</h3>
                         <div class="drop">
                             <a href="#">За 6 месяцев
@@ -111,36 +145,6 @@
                         </div>
                         <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
                         <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
-                    </div>
-                    <div class="actions--right">
-
-                        <h3>Посты</h3>
-                        <h3>Реакции</h3>
-                        <div class="drop">
-                            <a href="#">Все посты
-                                <img src="img/icons/down.png" alt="">
-                            </a>
-                            <ul>
-                                <li><a href="#">За 1 месяцев</a></li>
-                                <li><a href="#">За 2 месяцев</a></li>
-                                <li><a href="#">За 3 месяцев</a></li>
-                                <li><a href="#">За 6 месяцев</a></li>
-                                <li><a href="#">За 12 месяцев</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="drop">
-                            <a href="#">Возмутительно
-                                <img src="img/icons/down.png" alt="">
-                            </a>
-                            <ul>
-                                <li><a href="#">За 1 месяцев</a></li>
-                                <li><a href="#">За 2 месяцев</a></li>
-                                <li><a href="#">За 3 месяцев</a></li>
-                                <li><a href="#">За 6 месяцев</a></li>
-                                <li><a href="#">За 12 месяцев</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
