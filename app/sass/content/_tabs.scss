@@ -231,7 +231,7 @@
       }
       >h2 {
         margin: 0;
-        padding: 30px 0;
+        padding: 30px 0 0 0;
         box-shadow: 3px 5px 10px 0 #ccc;
       }
     }
@@ -245,6 +245,9 @@
         float: left;
         width: 100%;
         overflow: hidden;
+        @include breakpoint(max-width 600px) {
+          padding-bottom: 40px;
+        }
       }
       .block {
         width: 50%;
@@ -257,9 +260,9 @@
           clear: both;
           float: none;
         }
-        @include breakpoint(max-width 500px) {
-          width: 230px;
-          padding-left: 30px;
+        @include breakpoint(max-width 600px) {
+          width: 250px;
+          height: 400px;
         }
         h3 {
           position: absolute;
@@ -269,13 +272,14 @@
           top: 40px;
           left: 320px;
           z-index: 20;
-          @include breakpoint(max-width 1380px) {
-            display: none;
+          @include breakpoint(max-width 600px) {
+            left: 40px;
+            top: 250px;
           }
         }
         .circle-chart {
           width: 500px;
-          @include breakpoint(max-width 500px) {
+          @include breakpoint(max-width 600px) {
             margin-left: -90px;
           }
           >canvas {
@@ -284,6 +288,9 @@
             left: 150px;
           }
           svg {
+            @include breakpoint(max-width 600px) {
+              overflow: visible!important;
+            }
             >g{
               &:nth-child(3) text {
                 font-family:"Open Sans" !important;
@@ -293,6 +300,15 @@
               }
               &:nth-child(3) {
                 transform: translate(20px,50px);
+              }
+              @include breakpoint(max-width 600px) {
+                transform: translate(30px, 0px);
+                &:nth-child(3) {
+                  transform: translate(-180px, 250px);
+                }
+              }
+              >g {
+                height:40px;
               }
             }
           }
@@ -304,7 +320,7 @@
           left: 140px;
           width: 110px;
           height: 80px;
-          @include breakpoint(max-width 500px) {
+          @include breakpoint(max-width 600px) {
             top: 120px;
             left: 75px;
             height: 60px;
