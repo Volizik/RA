@@ -206,13 +206,22 @@ $(function () {
     if (document.documentElement.clientWidth < 1450) {
         var ul = $(document).find('.tabs__buttons');
         $(document).on('click', '.dropdown-tabs>span', function () {
-            ul.addClass('show-tabs');
-            $(document).on('click', '.tabs__buttons a', function () {
+            if(ul.hasClass('show-tabs')) {
                 $(document).find('.tabs__buttons a').hide();
                 $(document).find('.tabs__buttons .active').show();
-            });
-            $(document).find('.tabs__buttons a').show();
+                ul.removeClass('show-tabs');
+                $(document).on('click', '.tabs__buttons a', function () {
+                    $(document).find('.tabs__buttons a').hide();
+                    $(document).find('.tabs__buttons .active').show();
+                });
+            } else {
+                ul.addClass('show-tabs');
+                $(document).find('.tabs__buttons .active').show();
+                $(document).find('.tabs__buttons a').show();
+
+            }
         });
+        ul.removeClass('show-tabs');
 
     }
 
