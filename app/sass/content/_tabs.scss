@@ -124,7 +124,7 @@
       }
       a {
         box-sizing: border-box;
-        display: none;
+        display: block;
         width: 100%;
         position: relative;
         float: left;
@@ -132,6 +132,9 @@
         font-size: 16px;
         color: #000;
         border-top: 2px solid transparent;
+        @include breakpoint(max-width 1450px) {
+          display: none;
+        }
         img {
           display: none;
           position: relative;
@@ -139,10 +142,12 @@
           margin-top: 10px;
         }
       }
+
       .active {
         display: block;
         border-top: 2px solid #547df9;
         background-color: #ffffff;
+        transition: transform .4s;
         &:after {
           content: '';
           display: none;
@@ -152,11 +157,29 @@
           height: 40px;
           width: 40px;
           background: url(../img/icons/down-black.png) no-repeat center center;
+          transition: transform .4s;
           @include breakpoint(max-width 1450px) {
             display: block;
           }
         }
         img {
+          @include breakpoint(max-width 1450px) {
+            display: block;
+          }
+        }
+      }
+      .show-list {
+        &:after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 10px;
+          right: 0;
+          height: 40px;
+          width: 40px;
+          background: url(../img/icons/down-black.png) no-repeat center center;
+          transform: rotate(180deg);
+          transition: transform .4s;
           @include breakpoint(max-width 1450px) {
             display: block;
           }
@@ -242,7 +265,7 @@
           font-size: 24px;
         }
       }
-      >h2 {
+      > h2 {
         margin: 0;
         padding: 30px 0 0 0;
         box-shadow: 3px 5px 10px 0 #ccc;
@@ -253,11 +276,15 @@
     #inside-general {
       .blocks {
         background-color: #ffffff;
-        box-shadow: 3px 5px 10px 0 #ccc;
+        box-shadow: 3px 9px 10px 0 #ccc;
         position: relative;
         float: left;
         width: 100%;
         overflow: hidden;
+        > h2 {
+          margin: 0;
+          padding: 30px 0 0 0;
+        }
         @include breakpoint(max-width 600px) {
           padding-bottom: 40px;
         }
@@ -295,24 +322,24 @@
           @include breakpoint(max-width 600px) {
             margin-left: -90px;
           }
-          >canvas {
+          > canvas {
             position: absolute;
             top: 80px;
             left: 150px;
           }
           svg {
             @include breakpoint(max-width 600px) {
-              overflow: visible!important;
+              overflow: visible !important;
             }
-            >g{
+            > g {
               &:nth-child(3) text {
-                font-family:"Open Sans" !important;
-                font-size: 18px!important;
+                font-family: "Open Sans" !important;
+                font-size: 18px !important;
                 font-weight: 400;
                 fill: #000 !important;
               }
               &:nth-child(3) {
-                transform: translate(20px,50px);
+                transform: translate(20px, 50px);
               }
               @include breakpoint(max-width 600px) {
                 transform: translate(30px, 0px);
@@ -320,8 +347,8 @@
                   transform: translate(-180px, 250px);
                 }
               }
-              >g {
-                height:40px;
+              > g {
+                height: 40px;
               }
             }
           }
@@ -370,14 +397,17 @@
 
     //users
     #inside-users {
+      box-shadow: 3px 9px 10px 0 #ccc;
+      h2 {
+        box-shadow: none;
+      }
       .actions {
         position: relative;
         float: left;
         width: 100%;
-        border-top: 1px solid #ddd;
+        //border-top: 1px solid #ddd;
         padding-top: 30px;
         padding-left: 15px;
-        box-shadow: 3px 5px 10px 0 #ccc;
         background-color: #fff;
         box-sizing: border-box;
         //overflow: hidden;
@@ -401,7 +431,7 @@
             width: 100%;
           }
 
-          >div {
+          > div {
             position: relative;
             float: left;
             width: 100%;
@@ -592,7 +622,8 @@
         position: relative;
         width: 100%;
         background-color: #ffffff;
-        box-shadow: 3px 5px 10px 0 #ccc;
+        padding-bottom: 20px;
+        //box-shadow: 3px 5px 10px 0 #ccc;
         overflow: hidden;
         @include breakpoint(max-width 1150px) {
           display: none;
@@ -662,7 +693,7 @@
         float: left;
         width: 100%;
         background-color: #fff;
-        box-shadow: 3px 5px 10px 0 #ccc;
+        //box-shadow: 3px 5px 10px 0 #ccc;
         a {
           background-color: #526069;
           display: inline-block;
@@ -694,7 +725,7 @@
         position: relative;
         float: left;
         background-color: #fff;
-        box-shadow: 3px 5px 10px 0 #ccc;
+        //box-shadow: 3px 5px 10px 0 #ccc;
         width: 100%;
         @include breakpoint(max-width 1150px) {
           display: block;
@@ -731,5 +762,11 @@
     }
     //end users
 
+  }
+  #security,
+  #generation,
+  #with-post,
+  #interview {
+    background-color: #fff;
   }
 }

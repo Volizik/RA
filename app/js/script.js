@@ -373,7 +373,7 @@ $(function () {
         else {
             $('.in-hover').hide();
             $('.un-hover').show();
-            $('.content__body__block__bottom>a').removeClass('show-hint');
+            $('.content__body__block>a').removeClass('show-hint');
             $(this).addClass('show-hint');
             hint.show();
             text.hide();

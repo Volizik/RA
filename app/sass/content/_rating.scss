@@ -177,7 +177,8 @@
       //float:left;
       width: 520px;
       margin: 0 auto;
-      border-bottom: 1px solid #ccc;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
       @include breakpoint(max-width 1750px) {
         width: 100%;
         text-align: center;
@@ -284,11 +285,13 @@
           .content {
             position: relative;
             float: left;
-            height: 40px;
+            height: 60px;
             margin: 0;
             width: 100%;
             overflow: hidden;
-            padding-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            padding-top: 0;
             p {
               width: 100%;
               clear: both;
