@@ -103,12 +103,11 @@
   &__buttons {
     position: relative;
     float: left;
-    width: 1000px;
     padding-left: 0;
     margin: 0;
     overflow-x: hidden;
     transition: .3s;
-    @include breakpoint(max-width 1450px) {
+    @include breakpoint(max-width 1170px) {
       width: 250px;
       background-color: #ffffff;
       overflow: hidden;
@@ -117,7 +116,7 @@
       position: relative;
       float: left;
       list-style: none;
-      @include breakpoint(max-width 1450px) {
+      @include breakpoint(max-width 1170px) {
         float: none;
         width: 100%;
         text-align: center;
@@ -133,7 +132,11 @@
         color: #000;
         border-top: 2px solid transparent;
         @include breakpoint(max-width 1450px) {
+          padding: 20px 5px;
+        }
+        @include breakpoint(max-width 1170px) {
           display: none;
+          padding: 20px;
         }
         img {
           display: none;
@@ -158,12 +161,12 @@
           width: 40px;
           background: url(../img/icons/down-black.png) no-repeat center center;
           transition: transform .4s;
-          @include breakpoint(max-width 1450px) {
+          @include breakpoint(max-width 1170px) {
             display: block;
           }
         }
         img {
-          @include breakpoint(max-width 1450px) {
+          @include breakpoint(max-width 1170px) {
             display: block;
           }
         }
@@ -180,7 +183,7 @@
           background: url(../img/icons/down-black.png) no-repeat center center;
           transform: rotate(180deg);
           transition: transform .4s;
-          @include breakpoint(max-width 1450px) {
+          @include breakpoint(max-width 1170px) {
             display: block;
           }
         }

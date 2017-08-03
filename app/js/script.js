@@ -94,7 +94,7 @@ $(function () {
         $(tabId).fadeIn();
 
         // for top tabs in mobile
-        if (document.documentElement.clientWidth < 1450) {
+        if (document.documentElement.clientWidth < 1170) {
             if($(this).hasClass('show-list')) {
                 $(this).removeClass('show-list');
                 $('.tabs__buttons a').not(this).slideUp();
