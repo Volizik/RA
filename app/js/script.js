@@ -86,11 +86,29 @@ $(function () {
     });
     $(document).on('click', '.tabs__buttons li>a', function (e) {
         e.preventDefault();
+
         var tabId = $(this).attr('href');
         $('.tabs__buttons li>a').removeClass('active');
         $(this).addClass('active');
         $('.tabs__content').hide();
         $(tabId).fadeIn();
+
+        // for top tabs in mobile
+        if (document.documentElement.clientWidth < 1450) {
+            if($(this).hasClass('show-list')) {
+                $(this).removeClass('show-list');
+                $('.tabs__buttons a').not(this).slideUp();
+            } else {
+                if ($('.tabs__buttons > li  > a.show-list').length > 0) {
+                    $('.tabs__buttons a').removeClass('show-list');
+                    $('.tabs__buttons a').not(this).slideUp();
+                } else {
+                    $('.tabs__buttons a').removeClass('show-list');
+                    $(this).addClass('show-list');
+                    $('.tabs__buttons a').slideDown();
+                }
+            }
+        }
     });
 
 
@@ -203,27 +221,26 @@ $(function () {
 
 
     // for top tabs in mobile
-    if (document.documentElement.clientWidth < 1450) {
-        var ul = $(document).find('.tabs__buttons');
-        $(document).on('click', '.dropdown-tabs>span', function () {
-            if(ul.hasClass('show-tabs')) {
-                $(document).find('.tabs__buttons a').hide();
-                $(document).find('.tabs__buttons .active').show();
-                ul.removeClass('show-tabs');
-                $(document).on('click', '.tabs__buttons a', function () {
-                    $(document).find('.tabs__buttons a').hide();
-                    $(document).find('.tabs__buttons .active').show();
-                });
-            } else {
-                ul.addClass('show-tabs');
-                $(document).find('.tabs__buttons .active').show();
-                $(document).find('.tabs__buttons a').show();
-
-            }
-        });
-        ul.removeClass('show-tabs');
-
-    }
+    // if (document.documentElement.clientWidth < 1450) {
+    //     $(document).on('click', '.tabs__buttons a', function () {
+    //         if($(this).hasClass('show-list')) {
+    //             $(this).removeClass('show-list');
+    //             $('.tabs__buttons a').not(this).slideUp();
+    //         } else {
+    //
+    //             if ($(this).hasClass('active')){
+    //                 console.log('has active');
+    //                 $('.tabs__buttons a').removeClass('show-list');
+    //                 $(this).addClass('show-list');
+    //                 $('.tabs__buttons a').slideDown();
+    //             } else {
+    //                 console.log('hasnt active');
+    //                 $('.tabs__buttons a').not(this).slideUp();
+    //             }
+    //         }
+    //     })
+    //
+    // }
 
 
     //charts

@@ -111,7 +111,6 @@
     @include breakpoint(max-width 1450px) {
       width: 250px;
       background-color: #ffffff;
-      height: 50px;
       overflow: hidden;
     }
     li {
@@ -125,7 +124,7 @@
       }
       a {
         box-sizing: border-box;
-        display: block;
+        display: none;
         width: 100%;
         position: relative;
         float: left;
@@ -141,8 +140,22 @@
         }
       }
       .active {
+        display: block;
         border-top: 2px solid #547df9;
         background-color: #ffffff;
+        &:after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 10px;
+          right: 0;
+          height: 40px;
+          width: 40px;
+          background: url(../img/icons/down-black.png) no-repeat center center;
+          @include breakpoint(max-width 1450px) {
+            display: block;
+          }
+        }
         img {
           @include breakpoint(max-width 1450px) {
             display: block;
