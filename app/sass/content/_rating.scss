@@ -133,7 +133,7 @@
       color:#7a7f84;
     }
     &--top {
-      width: 600px;
+      width: 100%;
       position: relative;
       float:left;
       >img {
@@ -175,23 +175,21 @@
     &--middle {
       position: relative;
       //float:left;
-      width: 520px;
-      margin-right: -20px;
+      width: calc(100% - 80px);
+      //margin-right: -20px;
       float: right;
       border: 1px solid #ccc;
       box-sizing: border-box;
-      @include breakpoint(max-width 1750px) {
-        //width: 100%;
-        text-align: center;
+      text-align: center;
+      @include breakpoint(max-width 630px) {
+        width: 100%;
       }
-      @include breakpoint(max-width 700px) {
-        //width: 100%;
+      @include breakpoint(max-width 1060px) {
+        margin-top: 20px;
+        width: 100%;
       }
       img {
         max-width: 100%;
-        @include breakpoint(max-width 785px) {
-          margin-top: 10px;
-        }
       }
       p {
         overflow: hidden;
@@ -208,15 +206,19 @@
     }
     &--bottom {
       position: relative;
-      width: 520px;
+      width: calc(100% - 80px);
       float: right;
-      margin: 10px -20px 10px 0;
+      margin: 10px 0;
       padding-bottom: 10px;
       border-bottom: 1px solid #ccc;
       font-weight: 700;
+      @include breakpoint(max-width 1060px) {
+        width: 100%;
+      }
       @include breakpoint(max-width 630px) {
         width: 100%;
       }
+
       div {
         position: relative;
         float: left;
@@ -253,6 +255,12 @@
               display: block;
             }
           }
+          @include breakpoint(max-width 1600px) {
+            font-size: 10px;
+          }
+          @include breakpoint(max-width 1470px) {
+            font-size: 12px;
+          }
         }
       }
       >p {
@@ -262,6 +270,12 @@
         margin: 0;
         color: #526069;
         width: 25%;
+        @include breakpoint(max-width 1600px) {
+          font-size: 10px;
+        }
+        @include breakpoint(max-width 1470px) {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -272,6 +286,17 @@
     @include breakpoint(max-width 1470px) {
       width: 100%;
       margin-right: 0;
+    }
+    .rating__block--bottom {
+      @include breakpoint(max-width 1760px) {
+        width: 100%;
+      }
+      @include breakpoint(max-width 1470px) {
+        width: calc(100% - 80px);
+      }
+      @include breakpoint(max-width 1060px) {
+        width: 100%;
+      }
     }
   }
   &__commit {
