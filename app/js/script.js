@@ -13,8 +13,8 @@ $(function () {
 
             var options = {
                 pieHole: 0.7,
-                height: 300,
-                width: 500,
+                height: 400,
+                width: 600,
                 pieSliceText: 'none',
             };
 
@@ -37,8 +37,8 @@ $(function () {
         ]);
             var options = {
                 pieHole: 0.7,
-                height: 300,
-                width: 500,
+                height: 400,
+                width: 600,
                 pieSliceText: 'none',
 
             };
@@ -94,7 +94,7 @@ $(function () {
         $(tabId).fadeIn();
 
         // for top tabs in mobile
-        if (document.documentElement.clientWidth < 1170) {
+        if (document.documentElement.clientWidth < 1225) {
             if($(this).hasClass('show-list')) {
                 $(this).removeClass('show-list');
                 $('.tabs__buttons a').not(this).slideUp();

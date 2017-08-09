@@ -14,12 +14,13 @@
     float: left;
     clear: both;
     width: 100%;
-    height: 80px;
+    height: 70px;
     h1 {
       position: relative;
       float: left;
       font-size: 34px;
       font-weight: 700;
+      margin-top: 10px;
       @include breakpoint(max-width 650px) {
         font-size: 24px;
         font-weight: 500;
@@ -75,7 +76,7 @@
   &__body {
     position: relative;
     float: left;
-    width: 100%;
+    width: 100%;;
     .dropdown-tabs {
       position: relative;
       float: left;
@@ -107,7 +108,7 @@
     margin: 0;
     overflow-x: hidden;
     transition: .3s;
-    @include breakpoint(max-width 1170px) {
+    @include breakpoint(max-width 1225px) {
       width: 250px;
       background-color: #ffffff;
       overflow: hidden;
@@ -116,7 +117,7 @@
       position: relative;
       float: left;
       list-style: none;
-      @include breakpoint(max-width 1170px) {
+      @include breakpoint(max-width 1225px) {
         float: none;
         width: 100%;
         text-align: center;
@@ -132,9 +133,9 @@
         color: #000;
         border-top: 2px solid transparent;
         @include breakpoint(max-width 1450px) {
-          padding: 20px 5px;
+          padding: 20px 10px;
         }
-        @include breakpoint(max-width 1170px) {
+        @include breakpoint(max-width 1225px) {
           display: none;
           padding: 20px;
         }
@@ -161,12 +162,12 @@
           width: 40px;
           background: url(../img/icons/down-black.png) no-repeat center center;
           transition: transform .4s;
-          @include breakpoint(max-width 1170px) {
+          @include breakpoint(max-width 1225px) {
             display: block;
           }
         }
         img {
-          @include breakpoint(max-width 1170px) {
+          @include breakpoint(max-width 1225px) {
             display: block;
           }
         }
@@ -183,7 +184,7 @@
           background: url(../img/icons/down-black.png) no-repeat center center;
           transform: rotate(180deg);
           transition: transform .4s;
-          @include breakpoint(max-width 1170px) {
+          @include breakpoint(max-width 1225px) {
             display: block;
           }
         }
@@ -222,14 +223,14 @@
 
     &--inside-tabs {
       width: 850px;
-      margin: 40px auto 20px auto;
+      margin: 0px auto 20px auto;
       li {
         position: relative;
         display: inline-block;
         float: left;
         list-style: none;
         width: auto;
-        padding: 15px 0;
+        padding: 10px 0;
         border: 1px solid #eeeeee;
         border-right: none;
         box-sizing: border-box;
@@ -240,7 +241,7 @@
         a {
           color: #000;
           width: 100%;
-          padding: 15px 20px;
+          padding: 10px 20px;
           font-size: 14px;
           box-sizing: border-box;
           border: none;
@@ -280,48 +281,78 @@
       .blocks {
         background-color: #ffffff;
         box-shadow: 3px 9px 10px 0 #ccc;
+        margin-top: -2px;
         position: relative;
         float: left;
         width: 100%;
         overflow: hidden;
+        padding-bottom: 30px;
         > h2 {
           margin: 0;
-          padding: 30px 0 0 0;
+          //padding: 30px 0 0 0;
         }
         @include breakpoint(max-width 600px) {
           padding-bottom: 40px;
         }
       }
       .block {
-        width: 50%;
+        width: 640px;
+        height: 335px;
+        margin-left: -26px;
         position: relative;
         float: left;
         overflow: hidden;
+        box-sizing: border-box;
+        margin-top: -30px;
+        &:last-of-type {
+          margin-left: 70px;
+        }
+        @include breakpoint(max-width 1700px) {
+          &:last-of-type {
+            margin-left: 0;
+          }
+          margin-left: -140px;
+        }
+        @include breakpoint(max-width 1700px) {
+          &:last-of-type {
+            margin-left: -130px;
+          }
+        }
         @include breakpoint(max-width 1380px) {
-          width: 500px;
-          margin: 0 auto 20px auto;
+          width: 700px;
           clear: both;
           float: none;
         }
         @include breakpoint(max-width 600px) {
-          width: 250px;
-          height: 400px;
+          width: 290px;
+          height: 500px;
+          margin-left: 20px;
+          &:last-of-type {
+            margin-left: 20px;
+          }
+        }
+        @include breakpoint(max-width 360px) {
+          margin-left: -15px;
+          &:last-of-type {
+            margin-left: -15px;
+          }
         }
         h3 {
           position: absolute;
           font-weight: 600;
           font-size: 18px;
           color: #526069;
-          top: 40px;
-          left: 320px;
+          top: 75px;
+          left: 460px;
           z-index: 20;
           @include breakpoint(max-width 600px) {
             left: 40px;
-            top: 250px;
+            top: 320px;
           }
         }
         .circle-chart {
           width: 500px;
+          margin-left: 80px;
           @include breakpoint(max-width 600px) {
             margin-left: -90px;
           }
@@ -333,6 +364,9 @@
           svg {
             @include breakpoint(max-width 600px) {
               overflow: visible !important;
+            }
+            >rect {
+              fill: transparent;
             }
             > g {
               &:nth-child(3) text {
@@ -347,7 +381,7 @@
               @include breakpoint(max-width 600px) {
                 transform: translate(30px, 0px);
                 &:nth-child(3) {
-                  transform: translate(-180px, 250px);
+                  transform: translate(-230px, 315px);
                 }
               }
               > g {
@@ -359,13 +393,13 @@
         .box {
           position: absolute;
           text-align: center;
-          top: 120px;
-          left: 140px;
+          top: 170px;
+          left: 260px;
           width: 110px;
           height: 80px;
           @include breakpoint(max-width 600px) {
-            top: 120px;
-            left: 75px;
+            top: 170px;
+            left: 120px;
             height: 60px;
           }
           h2 {

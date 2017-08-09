@@ -15,7 +15,7 @@
     margin-top: 25px;
     margin-left: 30px;
     @include breakpoint(max-width 600px) {
-      margin-top: 40px;
+      //margin-top: 40px;
       margin-left: 0;
     }
     &__prev {
@@ -26,7 +26,7 @@
       position: relative;
       float: left;
     }
-    @include breakpoint(max-width 1470px) {
+    @include breakpoint(max-width 1250px) {
       display: block;
     }
   }
@@ -46,43 +46,78 @@
       float: left;
       text-align: left;
       margin-top: 20px;
-      @include breakpoint(max-width 1750px) {
-        margin-top: 40px;
+      @include breakpoint(max-width 1670px) {
+        font-size: 24px;
       }
-      @include breakpoint(max-width 1470px) {
-        margin-top: 20px;
+
+      @include breakpoint(max-width 1500px) {
+        width: 180px;
+        margin: 8px 0;
       }
-      @include breakpoint(max-width 600px) {
+      @include breakpoint(max-width 1250px) {
+        width: auto;
+        margin: 20px;
+      }
+      @include breakpoint(max-width 1025px) {
+        width: 180px;
+        margin: 8px 0;
+      }
+      @include breakpoint(max-width 940px) {
+        width: auto;
+        margin: 20px;
+      }
+      @include breakpoint(max-width 700px) {
         font-size: 22px;
         width: 180px;
-
+        margin: 10px 0px 0px 20px;
+      }
+      @include breakpoint(max-width 550px) {
+        margin: 10px 0;
       }
     }
     .drop {
+      ul {
+        width: 108px;
+        top: 15px;
+      }
+      &:last-child ul{
+        width: 149px;
+      }
       &:last-child {
         margin-left: 0;
       }
-      &:last-child a{
-        width: 170px;
+      a {
+        padding: 10px;
+        width:auto;
+        @include breakpoint(max-width 1600px) {
+          font-size: 10px;
+        }
       }
-      &:last-child ul{
-        width: 170px;
+      @include breakpoint(max-width 1600px) {
+        ul {
+          width: 87px;
+          top: 15px;
+        }
+        &:last-child ul{
+          width: 115px;
+        }
       }
+      //&:last-child a{
+      //  width: 170px;
+      //}
 
-      @include breakpoint(max-width 1750px) {
-        clear: right;
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
-      @include breakpoint(max-width 1470px) {
-        clear: none;
-        margin-top: 25px;
-      }
-      @include breakpoint(max-width 1150px) {
+
+      //@include breakpoint(max-width 1750px) {
+      //  //clear: right;
+      //  margin-bottom: 10px;
+      //  margin-top: 10px;
+      //}
+
+      @include breakpoint(max-width 550px) {
         float: left;
         margin-left: 0;
         margin-top: 0;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         clear: both;
       }
       img {
@@ -153,6 +188,7 @@
         float: left;
         width: 130px;
         margin-bottom: 0;
+        margin-top: 10px;
       }
       .star {
         position: relative;
@@ -181,18 +217,21 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
       text-align: center;
+      margin-top: 20px;
       @include breakpoint(max-width 630px) {
         width: 100%;
       }
-      @include breakpoint(max-width 1060px) {
-        margin-top: 20px;
-        width: 100%;
-      }
-      img {
+      //@include breakpoint(max-width 1060px) {
+      //  margin-top: 20px;
+      //  width: 100%;
+      //}
+      >img {
         max-width: 100%;
+        width: 100%;
       }
       p {
         overflow: hidden;
+        text-align: left;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -209,12 +248,11 @@
       width: calc(100% - 80px);
       float: right;
       margin: 10px 0;
-      padding-bottom: 10px;
+      padding-bottom: 20px;
       border-bottom: 1px solid #ccc;
-      font-weight: 700;
-      @include breakpoint(max-width 1060px) {
-        width: 100%;
-      }
+      //@include breakpoint(max-width 1060px) {
+      //  width: 100%;
+      //}
       @include breakpoint(max-width 630px) {
         width: 100%;
       }
@@ -229,7 +267,7 @@
         &:nth-of-type(2) {
           width: 22%;
         }
-        @include breakpoint(max-width 550px) {
+        @include breakpoint(max-width 1760px) {
           width: 55%;
           &:first-of-type {
             width: 100%;
@@ -245,7 +283,7 @@
           position: relative;
           float: left;
           margin: 0;
-          color: #526069;
+          color: #000;
           cursor: pointer;
           &:hover {
             svg {
@@ -268,7 +306,7 @@
         position: relative;
         float: left;
         margin: 0;
-        color: #526069;
+        color: #000;
         width: 25%;
         @include breakpoint(max-width 1600px) {
           font-size: 10px;
@@ -283,21 +321,23 @@
     position: relative;
     float: right;
     width:calc(50% - 15px);
-    @include breakpoint(max-width 1470px) {
+    @include breakpoint(max-width 1250px) {
       width: 100%;
       margin-right: 0;
     }
-    .rating__block--bottom {
-      @include breakpoint(max-width 1760px) {
-        width: 100%;
-      }
-      @include breakpoint(max-width 1470px) {
-        width: calc(100% - 80px);
-      }
-      @include breakpoint(max-width 1060px) {
-        width: 100%;
+    //h2 {
+    //  width: 190px;
+    //}
+    .rating__block--middle {
+      p {
+        padding: 0px 20px;
       }
     }
+    //.rating__block--bottom {
+    //  @include breakpoint(max-width 1060px) {
+    //    width: 100%;
+    //  }
+    //}
   }
   &__commit {
     position: relative;
@@ -305,10 +345,11 @@
     right: 0;
     margin-right: 30px;
     width:calc(50% - 15px);
-    @include breakpoint(max-width 1470px) {
+    @include breakpoint(max-width 1250px) {
       width: 100%;
       display: none;
     }
+
     .rating__body {
       .rating__block {
         &--middle {
@@ -339,7 +380,7 @@
         &--bottom {
           p {
             width: 50%;
-            @include breakpoint(max-width 600px) {
+            @include breakpoint(max-width 1500px) {
               width: 100%;
               text-align: center;
             }
