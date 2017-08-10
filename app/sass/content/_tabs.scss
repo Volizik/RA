@@ -30,45 +30,40 @@
     .drop {
       margin-top: 20px;
       margin-left: 0;
+      width: 180px;
+      position: relative;
       @include breakpoint(max-width 650px) {
-        float: left;
-        width: 30px;
-        height: 30px;
-        > a {
-          display: none;
-        }
-
-      }
-      &:before {
-        content: '';
-        display: none;
         position: absolute;
-        width: 300px;
-        height: 60px;
-        left: -280px;
-        top: -20px;
-        background: url('../img/icons/down-black.png') no-repeat;
-        background-position: right, 40%;
-        @include breakpoint(max-width 650px) {
-          display: block;
+        margin-top: 0;
+        left: 0px;
+        top: 0;
+        min-height: 60px;
+        width: 290px;
+        background: url(../img/icons/down-black.png) no-repeat 260px 25px;
+
+        >a:first-child {
+          display: none;
+          height: 60px;
+          background-color: transparent;
+          color: transparent;
+          &:after {
+            display: none;
+          }
+        }
+        .drop-active {
+          background-color: transparent;
+          color: transparent;
+        }
+        .drop-show {
+          background-color: #547df9;
+          color: #fff;
         }
       }
+
       a {
-        width: 180px;
         @include breakpoint(max-width 650px) {
           width: 100%;
-          background-color: transparent;
-        }
-      }
-      ul {
-        width: 180px;
-        @include breakpoint(max-width 650px) {
-          position: absolute;
-          width: 320px;
-          right: 0;
-          text-align: center;
-          top: 30px;
-          background-color: rgba(100, 100, 100, .9);
+          background-color: #547df9;
         }
       }
     }
@@ -80,6 +75,7 @@
     .dropdown-tabs {
       position: relative;
       float: left;
+      //width: 100%;
       span {
         display: none;
         position: absolute;
@@ -102,13 +98,18 @@
     }
   }
   &__buttons {
+    //display: flex;
+    //flex-flow: row nowrap;
+    //justify-content: space-between;
+    //align-items: center;
+    width: 100%;
     position: relative;
     float: left;
     padding-left: 0;
     margin: 0;
     overflow-x: hidden;
     transition: .3s;
-    @include breakpoint(max-width 1225px) {
+    @include breakpoint(max-width 1200px) {
       width: 250px;
       background-color: #ffffff;
       overflow: hidden;
@@ -117,7 +118,9 @@
       position: relative;
       float: left;
       list-style: none;
-      @include breakpoint(max-width 1225px) {
+      //width: 20%;
+      text-align: center;
+      @include breakpoint(max-width 1200px) {
         float: none;
         width: 100%;
         text-align: center;
@@ -125,19 +128,23 @@
       a {
         box-sizing: border-box;
         display: block;
-        width: 100%;
+        width:auto;
         position: relative;
-        float: left;
-        padding: 20px 30px;
+        //float: left;
+        padding: 20px ;
         font-size: 16px;
         color: #000;
         border-top: 2px solid transparent;
+        transition: padding 2s;
         @include breakpoint(max-width 1450px) {
           padding: 20px 10px;
         }
         @include breakpoint(max-width 1225px) {
+          padding: 20px 8px;
+        }
+        @include breakpoint(max-width 1200px) {
           display: none;
-          padding: 20px;
+          padding: 20px ;
         }
         img {
           display: none;
@@ -148,7 +155,7 @@
       }
 
       .active {
-        display: block;
+        display: block!important;
         border-top: 2px solid #547df9;
         background-color: #ffffff;
         transition: transform .4s;
@@ -162,12 +169,12 @@
           width: 40px;
           background: url(../img/icons/down-black.png) no-repeat center center;
           transition: transform .4s;
-          @include breakpoint(max-width 1225px) {
+          @include breakpoint(max-width 1200px) {
             display: block;
           }
         }
         img {
-          @include breakpoint(max-width 1225px) {
+          @include breakpoint(max-width 1200px) {
             display: block;
           }
         }
@@ -184,7 +191,7 @@
           background: url(../img/icons/down-black.png) no-repeat center center;
           transform: rotate(180deg);
           transition: transform .4s;
-          @include breakpoint(max-width 1225px) {
+          @include breakpoint(max-width 1200px) {
             display: block;
           }
         }

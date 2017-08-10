@@ -45,17 +45,17 @@ $(function () {
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
         chart.draw(data, options);
 
-        $('.js-counter').each(function () {
-            $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
+        // $('.js-counter').each(function () {
+        //     $(this).prop('Counter', 0).animate({
+        //         Counter: $(this).text()
+        //     }, {
+        //         duration: 2000,
+        //         easing: 'swing',
+        //         step: function (now) {
+        //             $(this).text(Math.ceil(now));
+        //         }
+        //     });
+        // });
     }
 
 
@@ -94,7 +94,7 @@ $(function () {
         $(tabId).fadeIn();
 
         // for top tabs in mobile
-        if (document.documentElement.clientWidth < 1225) {
+        if (document.documentElement.clientWidth < 1200) {
             if($(this).hasClass('show-list')) {
                 $(this).removeClass('show-list');
                 $('.tabs__buttons a').not(this).slideUp();
@@ -170,36 +170,23 @@ $(function () {
     });
 
     //click on drop-button
-    $(document).on('click', '.drop a', function () {
-        event.preventDefault();
-        var submenu = $(this).parent().find('ul');
-        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
-            $(this).removeClass('show-sub');//то удаляем этот класс
-            submenu.hide();//скрываем сабменю
-        }
-        else {
-            $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
-            $('.drop ul').hide();//скрываем все сабменю
-            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-            submenu.show();//показать табменю того элемента покоторому кликаем
-        }
-    });
+    // $(document).on('click', '.drop a', function () {
+    //     event.preventDefault();
+    //     var submenu = $(this).parent().find('ul');
+    //     if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
+    //         $(this).removeClass('show-sub');//то удаляем этот класс
+    //         submenu.hide();//скрываем сабменю
+    //     }
+    //     else {
+    //         $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
+    //         $('.drop ul').hide();//скрываем все сабменю
+    //         $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
+    //         submenu.show();//показать табменю того элемента покоторому кликаем
+    //     }
+    // });
 
-    //for russian-in-antalia
-    $(document).on('click', '.tabs__head .drop', function () {
-        event.preventDefault();
-        var submenu = $(this).parent().find('ul');
-        if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
-            $(this).removeClass('show-sub');//то удаляем этот класс
-            submenu.hide();//скрываем сабменю
-        }
-        else {
-            $('.tabs .drop').removeClass('show-sub');//удаляем класс у всех элементов
-            $('.drop ul').hide();//скрываем все сабменю
-            $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-            submenu.show();//показать табменю того элемента покоторому кликаем
-        }
-    });
+    // for russian-in-antalia
+
 
     //for rating section
     $(document).on('click', '.toggles a', function () {
@@ -386,6 +373,29 @@ $(function () {
             $(this).parent().find('.drop').show()
         } else {
             $(this).parent().find('.drop').hide()
+        }
+    });
+
+    //for drop -----------------------
+    $(document).on('click', '.drop a', function (e) {
+        e.preventDefault();
+        var parent = $(this).parent(),
+            target = parent.find('a'),
+            target_show = parent.find('.drop-show');
+        target.removeClass('drop-active');
+        $(this).addClass('drop-active');
+        if ($(this).hasClass('drop-show')) {
+            $(this).removeClass('drop-show');
+            target.not(this).slideUp();
+        } else {
+            if (target_show.length > 0) {
+                target.removeClass('drop-show');
+                target.not(this).slideUp();
+            } else {
+                target.removeClass('drop-show');
+                $(this).addClass('drop-show');
+                target.slideDown();
+            }
         }
     });
 

@@ -1,19 +1,26 @@
 .drop {
-  position: relative;
+  position: absolute;
   float: right;
   margin-top: 25px;
   margin-left: 20px;
+  background-color: #547df9;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 20;
   >a {
-    display: block;
-    background-color: #547df9;
+    display: none;
+    //background-color: #547df9;
     color: #fff;
-    border-radius: 5px;
+    //border-radius: 5px;
     font-size: 14px;
     font-weight: 300;
     padding: 10px 20px;
-    width: 140px;
+    width: 100%;
     box-sizing: border-box;
-    z-index: 20;
+    z-index: 21;
+    &:hover {
+      background-color: #4569d6;
+    }
     img {
       height: 5px;
       width: 5px;
@@ -21,31 +28,20 @@
       margin-bottom: 2px;
     }
   }
-  ul {
-    display: none;
-    position: absolute;
-    padding: 0;
-    top:20px;
-    background-color: #547df9;
-    width: 140px;
-    z-index: 21;
-    li {
-      position: relative;
-      list-style: none;
-      width: 100%;
-    }
-    a {
+  .drop-active {
+    display: block!important;
+    transition: transform .4s;
+    &:after {
+      content: '';
       display: block;
-      position: relative;
-      padding: 10px 20px;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 300;
-      width: 100%;
-      box-sizing: border-box;
-      &:hover {
-        background-color: #4569d6;
-      }
+      position: absolute;
+      top: 10px;
+      right: 0;
+      height: 17px;
+      width: 10px;
+      padding-left: 10px;
+      background: url(../img/icons/down.png) no-repeat center center;
+      transition: transform .4s;
     }
   }
 }
