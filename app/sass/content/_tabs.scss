@@ -479,6 +479,11 @@
             position: relative;
             float: left;
             width: 100%;
+            &:nth-child(2) {
+              .drop {
+                z-index: 25;
+              }
+            }
           }
 
           label {
@@ -582,14 +587,23 @@
           //end switch
 
           .drop {
+            position: absolute;
             display: none;
             margin-top: 0;
             float: left;
             clear: right;
-            margin-left: 20px;
+            margin-left: 100px;
+            overflow: hidden;
+            width: 130px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            z-index: 10;
+            .drop-active {
+              z-index: 4;
+            }
             a {
               background-color: #fff;
-              border: 1px solid #ccc;
+              z-index: 5;
               color: #526069;
               padding: 10px;
             }
@@ -622,22 +636,22 @@
             text-align: left;
           }
           .drop {
-            position: relative;
-            float: left;
+            position: absolute;
             margin: 0;
             text-align: center;
+            width: 130px;
+            z-index: 2;
             a {
               padding: 10px;
-            }
-            ul {
-              position: absolute;
-              width: 100%;
             }
           }
           p {
             position: relative;
             float: left;
-            margin: 10px;
+            margin: 10px 10px 10px 150px;
+            &:nth-child(5) {
+              margin-left: 10px;
+            }
             @include breakpoint(max-width 640px) {
               &:nth-child(3) {
                 clear: left;
