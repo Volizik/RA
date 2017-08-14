@@ -206,9 +206,20 @@
           width: 100%;
           margin-left: 20px;
         }
+        >span {
+          position: relative;
+          float: left;
+          width: 100%;
+        }
         >a {
+          position: relative;
           text-decoration: underline;
           color: blue;
+          width: auto;
+          //clear: both;
+          float: left;
+          margin-right: 20px;
+
         }
       }
       .star {
@@ -283,37 +294,42 @@
         width: 100%;
       }
 
-      div {
-        position: relative;
-        float: left;
-        width: 28%;
-        &:first-of-type {
-           width: 46%;
-        }
-        &:nth-of-type(2) {
-          width: 22%;
-        }
-        @include breakpoint(max-width 1760px) {
-          width: 55%;
-          &:first-of-type {
-            width: 100%;
-            margin-bottom: 20px;
-          }
-          &:nth-of-type(2) {
-            width: 45%;
-          }
-        }
+      //div {
+      //  position: relative;
+      //  float: left;
+      //  margin-right: 5px;
+        //width: 28%;
+        //&:first-of-type {
+        //   width: 46%;
+        //}
+        //&:nth-of-type(2) {
+        //  width: 22%;
+        //}
+        //@include breakpoint(max-width 1760px) {
+        //  width: 55%;
+        //  &:first-of-type {
+        //    width: 100%;
+        //    margin-bottom: 20px;
+        //  }
+        //  &:nth-of-type(2) {
+        //    width: 45%;
+        //  }
+        //}
         p {
-          width: 100%;
+          //width: 100%;
           font-size: 12px;
           position: relative;
           float: left;
           margin: 0;
+          margin-right: 15px;
           color: #000;
           cursor: pointer;
+          svg {
+            fill: #377efd;
+          }
           &:hover {
             svg {
-              fill: #377efd;
+              fill: #ffcc00;
             }
             .tooltip {
               display: block;
@@ -326,14 +342,22 @@
             font-size: 12px;
           }
         }
-      }
-      >p {
+      //}
+      p {
         font-size: 12px;
         position: relative;
         float: left;
-        margin: 0;
         color: #000;
-        width: 25%;
+        width: auto;
+        margin-right: 10px;
+        &:hover {
+          svg {
+            fill: #ffcc00;
+          }
+          .tooltip {
+            display: block;
+          }
+        }
         @include breakpoint(max-width 1600px) {
           font-size: 10px;
         }
@@ -373,7 +397,7 @@
     .rating__body {
       .rating__block {
         &--middle {
-          margin-top: 0;
+          //margin-top: 0;
           .content {
             position: relative;
             float: left;
@@ -404,12 +428,12 @@
           p {
             width: auto;
             margin-right: 20px;
-            &:hover {
-              cursor: pointer;
-              svg {
-                fill: #377efd;
-              }
-            }
+            //&:hover {
+            //  cursor: pointer;
+            //  svg {
+            //    fill: #377efd;
+            //  }
+            //}
             &:last-child {
               margin-right: 0;
             }

@@ -1,5 +1,5 @@
 {
-  "name": "fast-start",
+  "name": "ra",
   "version": "1.0.0",
   "description": "Набор включенных технологий: HTML, CSS, JS, Gulp, SCSS, PostCSS, JQuery, Bower",
   "main": "gulpfile.js",
