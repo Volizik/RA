@@ -50,21 +50,15 @@
         font-size: 10px;
         padding:0 5px;
       }
-      .cross {
-        display: none;
+      .nav__menu-btn_active {
         position: absolute;
-        float: right;
-        height: 20px;
-        width: 20px;
-        margin-top: 10px;
-        background: url(../img/icons/close.png)center 60% no-repeat / cover;
-        top: 17px;
-        right: 15px;
-        @include breakpoint(max-width 940px) {
-          display: block;
-        }
+        right: 10px;
+        top: 30px;
+        height: 30px;
+        width: 30px;
       }
     }
+
     &__middle {
       position: relative;
       float: left;
@@ -282,33 +276,66 @@
   @include breakpoint(max-width 940px) {
     display: block;
   }
-  img {
+  &__wrap {
     position: relative;
-    float: left;
-    margin: 5px 0;
-  }
-  h1 {
-    font-size: 16px;
-    text-transform: uppercase;
-    position: relative;
-    float: left;
-    color: #fff;
-    letter-spacing: 3px;
-    margin: 30px 0px 0px 15px;
-  }
-  a {
-    position: relative;
-    float: right;
-    width: 40px;
-    display: block;
-    margin: 20px 20px 0px 0px;
-    span {
+    width: 300px;
+    margin: 0 auto;
+    img {
       position: relative;
       float: left;
-      width: 100%;
-      height: 2px;
-      margin-top: 10px;
-      background-color: #ffffff;
+      margin: 5px 0;
+    }
+    h1 {
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
+      float: left;
+      color: #fff;
+      letter-spacing: 3px;
+      margin: 30px 0px 0px 15px;
+    }
+  }
+}
+.nav__menu-btn {
+  display: none;
+  width: 50px;
+  height: 90px;
+  position: relative;
+  float: right;
+  z-index: 15;
+  @include breakpoint(max-width 940px) {
+    display: block;
+  }
+  span, span:before, span:after {
+    display: block;
+    height: 2px;
+    width: 18px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 50%;
+    margin-top: -1px;
+  }
+  span:before {
+    transition: all 0.2s;
+    margin-top: -6px;
+    content: '';
+  }
+  span:after {
+    transition: all 0.2s;
+    margin-top: 4px;
+    content: '';
+  }
+  &_active span {
+    background-color: transparent;
+    &:before {
+      transform: rotate(135deg);
+      margin-top: 0;
+    }
+    &:after {
+      transform: rotate(-134deg);
+      margin-top: 0;
     }
   }
 }

@@ -24,9 +24,9 @@
       @include breakpoint(max-width 650px) {
         font-size: 24px;
         font-weight: 500;
+        text-align: center;
       }
     }
-
     .drop {
       margin-top: 20px;
       margin-left: 0;
@@ -40,30 +40,11 @@
         min-height: 60px;
         width: 290px;
         background: url(../img/icons/down-black.png) no-repeat 260px 25px;
-
-        >a:first-child {
+        span {
           display: none;
-          height: 60px;
-          background-color: transparent;
-          color: transparent;
-          &:after {
-            display: none;
-          }
         }
-        .drop-active {
-          background-color: transparent;
-          color: transparent;
-        }
-        .drop-show {
-          background-color: #547df9;
-          color: #fff;
-        }
-      }
-
-      a {
-        @include breakpoint(max-width 650px) {
-          width: 100%;
-          background-color: #547df9;
+        ul {
+          top: 50px;
         }
       }
     }
@@ -72,36 +53,39 @@
     position: relative;
     float: left;
     width: 100%;;
-    .dropdown-tabs {
-      position: relative;
-      float: left;
-      //width: 100%;
-      span {
-        display: none;
-        position: absolute;
-        top: 20px;
-        right: 0;
-        height: 40px;
-        width: 40px;
-        img {
-          width: 100%;
-          object-fit: none;
-        }
-        @include breakpoint(max-width 1450px) {
-          display: block;
-        }
-      }
-    }
     .show-tabs {
       height: auto;
       transition: .3s;
     }
   }
+  &__active-btn {
+    position: relative;
+    display: none;
+    padding: 20px;
+    width: 220px;
+    background-color: #ffffff;
+    border-top: 2px solid #547df9;
+    cursor: pointer;
+    text-align: center;
+    &:after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 25px;
+      right: 10px;
+      height: 10px;
+      width: 10px;
+      background: url(../img/icons/down-black.png) no-repeat center center;
+      transition: transform .4s;
+      @include breakpoint(max-width 1200px) {
+        display: block;
+      }
+    }
+    @include breakpoint(max-width 1200px) {
+      display: block;
+    }
+  }
   &__buttons {
-    //display: flex;
-    //flex-flow: row nowrap;
-    //justify-content: space-between;
-    //align-items: center;
     width: 100%;
     position: relative;
     float: left;
@@ -110,27 +94,24 @@
     overflow-x: hidden;
     transition: .3s;
     @include breakpoint(max-width 1200px) {
-      width: 250px;
-      background-color: #ffffff;
-      overflow: hidden;
+      display: none;
+      width: 260px;
+      text-align: center;
+      background-color: #fff;
     }
     li {
       position: relative;
       float: left;
       list-style: none;
-      //width: 20%;
       text-align: center;
       @include breakpoint(max-width 1200px) {
-        float: none;
         width: 100%;
-        text-align: center;
       }
       a {
         box-sizing: border-box;
         display: block;
         width:auto;
         position: relative;
-        //float: left;
         padding: 20px ;
         font-size: 16px;
         color: #000;
@@ -143,7 +124,6 @@
           padding: 20px 8px;
         }
         @include breakpoint(max-width 1200px) {
-          display: none;
           padding: 20px ;
         }
         img {
@@ -153,47 +133,11 @@
           margin-top: 10px;
         }
       }
-
       .active {
-        display: block!important;
+        background-color: #fff;
         border-top: 2px solid #547df9;
-        background-color: #ffffff;
-        transition: transform .4s;
-        &:after {
-          content: '';
-          display: none;
-          position: absolute;
-          top: 10px;
-          right: 0;
-          height: 40px;
-          width: 40px;
-          background: url(../img/icons/down-black.png) no-repeat center center;
-          transition: transform .4s;
-          @include breakpoint(max-width 1200px) {
-            display: block;
-          }
-        }
-        img {
-          @include breakpoint(max-width 1200px) {
-            display: block;
-          }
-        }
-      }
-      .show-list {
-        &:after {
-          content: '';
-          display: none;
-          position: absolute;
-          top: 10px;
-          right: 0;
-          height: 40px;
-          width: 40px;
-          background: url(../img/icons/down-black.png) no-repeat center center;
-          transform: rotate(180deg);
-          transition: transform .4s;
-          @include breakpoint(max-width 1200px) {
-            display: block;
-          }
+        @include breakpoint(max-width 1200px) {
+          border-top: 2px solid transparent;
         }
       }
     }
@@ -211,7 +155,6 @@
     .scroll-tabs {
       position: relative;
       text-align: center;
-      //z-index: 10;
       box-sizing: border-box;
       overflow-y: hidden;
       padding: 30px 0;
@@ -308,7 +251,6 @@
         margin-left: -26px;
         position: relative;
         float: left;
-        overflow: hidden;
         box-sizing: border-box;
         margin-top: -30px;
         &:last-of-type {
@@ -449,12 +391,10 @@
         position: relative;
         float: left;
         width: 100%;
-        //border-top: 1px solid #ddd;
         padding-top: 30px;
         padding-left: 15px;
         background-color: #fff;
         box-sizing: border-box;
-        //overflow: hidden;
         @include breakpoint(max-width 440px) {
           padding-left: 5px;
         }
@@ -593,23 +533,27 @@
             float: left;
             clear: right;
             margin-left: 100px;
-            overflow: hidden;
-            width: 130px;
+            width: auto;
+            min-width: 145px;
+            padding-right: 20px;
             background-color: #ffffff;
             border: 1px solid #ccc;
             z-index: 10;
-            .drop-active {
-              z-index: 4;
+            span {
+              color: #526069;
             }
-            a {
+            ul {
               background-color: #fff;
               z-index: 5;
               color: #526069;
-              padding: 10px;
-            }
-            img {
-              float: right;
-              margin-top: 10px;
+              padding: 0;
+              box-sizing: border-box;
+              border: 1px solid #ccc;
+              top: 42px;
+              width: 100%;
+              li {
+                color: #526069;
+              }
             }
           }
         }
@@ -638,8 +582,7 @@
           .drop {
             position: absolute;
             margin: 0;
-            text-align: center;
-            width: 130px;
+            width: 145px;
             z-index: 2;
             a {
               padding: 10px;

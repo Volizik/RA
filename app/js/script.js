@@ -92,23 +92,6 @@ $(function () {
         $(this).addClass('active');
         $('.tabs__content').hide();
         $(tabId).fadeIn();
-
-        // for top tabs in mobile
-        if (document.documentElement.clientWidth < 1200) {
-            if($(this).hasClass('show-list')) {
-                $(this).removeClass('show-list');
-                $('.tabs__buttons a').not(this).slideUp();
-            } else {
-                if ($('.tabs__buttons > li  > a.show-list').length > 0) {
-                    $('.tabs__buttons a').removeClass('show-list');
-                    $('.tabs__buttons a').not(this).slideUp();
-                } else {
-                    $('.tabs__buttons a').removeClass('show-list');
-                    $(this).addClass('show-list');
-                    $('.tabs__buttons a').slideDown();
-                }
-            }
-        }
     });
 
 
@@ -169,23 +152,6 @@ $(function () {
         $(this).hide();
     });
 
-    //click on drop-button
-    // $(document).on('click', '.drop a', function () {
-    //     event.preventDefault();
-    //     var submenu = $(this).parent().find('ul');
-    //     if ($(this).hasClass('show-sub')) {//если у элемента по которому мы кликаем есть класс
-    //         $(this).removeClass('show-sub');//то удаляем этот класс
-    //         submenu.hide();//скрываем сабменю
-    //     }
-    //     else {
-    //         $('.drop a').removeClass('show-sub');//удаляем класс у всех элементов
-    //         $('.drop ul').hide();//скрываем все сабменю
-    //         $(this).addClass('show-sub');//добавляем класс тому элементу по которому кликаем
-    //         submenu.show();//показать табменю того элемента покоторому кликаем
-    //     }
-    // });
-
-    // for russian-in-antalia
 
 
     //for rating section
@@ -194,40 +160,6 @@ $(function () {
         $('.slide').slideToggle();
     });
 
-    //for-mobile-menu
-    $(document).on('click', '.menu-for-little-screen a', function () {
-        event.preventDefault();
-        var submenu = $(document).find('.menu');
-        submenu.show();
-    });
-    $(document).on('click', '.menu .cross', function () {
-        event.preventDefault();
-        var submenu = $(document).find('.menu');
-        submenu.hide();
-    });
-
-
-    // for top tabs in mobile
-    // if (document.documentElement.clientWidth < 1450) {
-    //     $(document).on('click', '.tabs__buttons a', function () {
-    //         if($(this).hasClass('show-list')) {
-    //             $(this).removeClass('show-list');
-    //             $('.tabs__buttons a').not(this).slideUp();
-    //         } else {
-    //
-    //             if ($(this).hasClass('active')){
-    //                 console.log('has active');
-    //                 $('.tabs__buttons a').removeClass('show-list');
-    //                 $(this).addClass('show-list');
-    //                 $('.tabs__buttons a').slideDown();
-    //             } else {
-    //                 console.log('hasnt active');
-    //                 $('.tabs__buttons a').not(this).slideUp();
-    //             }
-    //         }
-    //     })
-    //
-    // }
 
 
     //charts
@@ -376,28 +308,39 @@ $(function () {
         }
     });
 
-    //for drop -----------------------
-    $(document).on('click', '.drop a', function (e) {
-        e.preventDefault();
-        var parent = $(this).parent(),
-            target = parent.find('a'),
-            target_show = parent.find('.drop-show');
-        target.removeClass('drop-active');
-        $(this).addClass('drop-active');
-        if ($(this).hasClass('drop-show')) {
-            $(this).removeClass('drop-show');
-            target.not(this).slideUp();
+    //for main tabs
+    if (window.innerWidth < 1200) {
+        $('.tabs__active-btn').text($('.tabs__buttons .active').text());
+        $(document).on('click', '.tabs__active-btn', function () {
+            $(this).parent().find('.tabs__buttons a').show();
+            $(this).parent().find('.active').hide();
+            $('.tabs__buttons').slideToggle();
+        });
+        $(document).on('click', '.tabs__buttons a', function () {
+            $('.tabs__active-btn').text($(this).text());
+            $('.tabs__buttons').slideToggle();
+        });
+    }
+
+    //for dropdown
+    $(document).on('click', '.drop', function() {
+        $(this).find('ul').slideToggle();
+    });
+    $(document).on('click', '.drop li', function () {
+        $(this).parent().parent().find('span:first-of-type').text($(this).text());
+    });
+
+    //mobile menu button--------------------------------------------------
+    $(document).on('click', '.nav__menu-btn', function () {
+        var list = $('.menu');
+        if (list.is(':visible')) {
+            list.slideUp();
         } else {
-            if (target_show.length > 0) {
-                target.removeClass('drop-show');
-                target.not(this).slideUp();
-            } else {
-                target.removeClass('drop-show');
-                $(this).addClass('drop-show');
-                target.slideDown();
-            }
+            list.slideDown();
         }
     });
+    //!mobile menu button--------------------------------------------------
+
 
 });
 

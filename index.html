@@ -9,7 +9,7 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/libs.min.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- open .header -->
@@ -34,7 +34,9 @@
             <a href="#">services</a>
             <a href="#">News</a>
             <a href="#">Coaching</a>
-            <a href="#" class="cross"></a>
+            <div class="nav__menu-btn nav__menu-btn_active">
+                <span></span>
+            </div>
         </div>
         <div class="menu__head__middle">
             <div class="block">
@@ -174,13 +176,13 @@
     </ul>
 </div>
 <div class="menu-for-little-screen">
-    <img src="img/icons/icon-profile.png" alt="">
-    <h1>ADMINIZATOR</h1>
-    <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
+    <div class="menu-for-little-screen__wrap">
+        <img src="img/icons/icon-profile.png" alt="">
+        <h1>ADMINIZATOR</h1>
+        <div class="nav__menu-btn">
+            <span></span>
+        </div>
+    </div>
 </div>
 
 <!-- end menu.html-->
@@ -192,30 +194,30 @@
     <div class="tabs__head">
         <h1>Русские в Анталии РА</h1>
         <div class="drop">
-            <a href="#" class="drop-active">Русские в Анталии</a>
-            <a href="#">За день</a>
-            <a href="#">За неделю</a>
-            <a href="#">За месяц</a>
-            <a href="#">За квартал</a>
-            <a href="#">За полугодие</a>
-            <a href="#">За год</a>
-            <a href="#">За все время</a>
+            <span>Русские в Анталии</span>
+            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+            <ul>
+                <li>За день</li>
+                <li>За неделю</li>
+                <li>За месяц</li>
+                <li>За квартал</li>
+                <li>За полугодие</li>
+                <li>За год</li>
+                <li>За все время</li>
+            </ul>
         </div>
     </div>
 
 
     <div class="tabs__body">
-
-        <div class="dropdown-tabs">
-            <ul class="tabs__buttons">
-                <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
-                <li><a href="#security">Безопасность</a></li>
-                <li><a href="#generation">Лидогенерация</a></li>
-                <li><a href="#with-post">Действия с постами</a></li>
-                <li><a href="#interview">Гоолосования и опросы</a></li>
-            </ul>
-            <!--<span><img src="img/icons/down-black.png" alt=""></span>-->
-        </div>
+        <span class="tabs__active-btn"></span>
+        <ul class="tabs__buttons">
+            <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
+            <li><a href="#security">Безопасность</a></li>
+            <li><a href="#generation">Лидогенерация</a></li>
+            <li><a href="#with-post">Действия с постами</a></li>
+            <li><a href="#interview">Гоолосования и опросы</a></li>
+        </ul>
 
         <div class="tabs__content" id="alalitics">
             <div class="scroll-tabs">
@@ -484,24 +486,30 @@
                 </div>
             </div>
             <div class="drop">
-                <a href="#" class="drop-active">Показано за</a>
-                <a href="#">За день</a>
-                <a href="#">За неделю</a>
-                <a href="#">За месяц</a>
-                <a href="#">За квартал</a>
-                <a href="#">За полугодие</a>
-                <a href="#">За год</a>
-                <a href="#">За все время</a>
+                <span>Показано за</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
+                </ul>
             </div>
             <div class="drop">
-                <a href="#" class="drop-active">Отсортировано по</a>
-                <a href="#">За день</a>
-                <a href="#">За неделю</a>
-                <a href="#">За месяц</a>
-                <a href="#">За квартал</a>
-                <a href="#">За полугодие</a>
-                <a href="#">За год</a>
-                <a href="#">За все время</a>
+                <span>Отсортировано по</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
+                </ul>
             </div>
         </div>
         <div class="rating__body">
@@ -706,24 +714,30 @@
                 </div>
             </div>
             <div class="drop">
-                <a href="#" class="drop-active">Показано за</a>
-                <a href="#">За день</a>
-                <a href="#">За неделю</a>
-                <a href="#">За месяц</a>
-                <a href="#">За квартал</a>
-                <a href="#">За полугодие</a>
-                <a href="#">За год</a>
-                <a href="#">За все время</a>
+                <span>Показано за</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
+                </ul>
             </div>
             <div class="drop">
-                <a href="#" class="drop-active">Отсортировано по</a>
-                <a href="#">За день</a>
-                <a href="#">За неделю</a>
-                <a href="#">За месяц</a>
-                <a href="#">За квартал</a>
-                <a href="#">За полугодие</a>
-                <a href="#">За год</a>
-                <a href="#">За все время</a>
+                <span>Отсортировано по</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
+                </ul>
             </div>
 
         </div>
@@ -1043,14 +1057,17 @@
                                 Посты
                             </label>
                             <div class="drop">
-                                <a href="#" class="drop-active">Все посты</a>
-                                <a href="#">За день</a>
-                                <a href="#">За неделю</a>
-                                <a href="#">За месяц</a>
-                                <a href="#">За квартал</a>
-                                <a href="#">За полугодие</a>
-                                <a href="#">За год</a>
-                                <a href="#">За все время</a>
+                                <span>Все посты</span>
+                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
+                                <ul>
+                                    <li>За день</li>
+                                    <li>За неделю</li>
+                                    <li>За месяц</li>
+                                    <li>За квартал</li>
+                                    <li>За полугодие</li>
+                                    <li>За год</li>
+                                    <li>За все время</li>
+                                </ul>
                             </div>
                         </div>
                         <label class="check">
@@ -1070,25 +1087,32 @@
                                 Реакции
                             </label>
                             <div class="drop">
-                                <a href="#" class="drop-active">Возмутительно</a>
-                                <a href="#">За день</a>
-                                <a href="#">За неделю</a>
-                                <a href="#">За месяц</a>
-                                <a href="#">За квартал</a>
-                                <a href="#">За полугодие</a>
-                                <a href="#">За год</a>
-                                <a href="#">За все время</a>
+                                <span>Возмутительно</span>
+                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
+                                <ul>
+                                    <li>За день</li>
+                                    <li>За неделю</li>
+                                    <li>За месяц</li>
+                                    <li>За квартал</li>
+                                    <li>За полугодие</li>
+                                    <li>За год</li>
+                                    <li>За все время</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="actions--right">
                         <h3>За период</h3>
                         <div class="drop">
-                            <a href="#" class="drop-active">За 1 месяцев</a>
-                            <a href="#">За 2 месяцев</a>
-                            <a href="#">За 3 месяцев</a>
-                            <a href="#">За 6 месяцев</a>
-                            <a href="#">За 12 месяцев</a>
+                            <span>За 1 месяц</span>
+                            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                            <ul>
+                                <li>За 1 месяц</li>
+                                <li>За 2 месяца</li>
+                                <li>За 3 месяца</li>
+                                <li>За 6 месяцев</li>
+                                <li>За 12 месяцев</li>
+                            </ul>
                         </div>
                         <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
                         <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">

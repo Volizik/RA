@@ -116,13 +116,30 @@
           left: -10px;
         }
       }
-      a {
+      span:first-of-type {
         padding: 10px 20px 10px 10px;
         width:100%;
+        font-size: 13px;
         @include breakpoint(max-width 1600px) {
           font-size: 10px;
         }
       }
+      span:last-of-type {
+        @include breakpoint(max-width 1600px) {
+          top: 5px;
+          right: 3px;
+        }
+      }
+      ul {
+        top: 30px;
+        li {
+          font-size: 13px;
+          @include breakpoint(max-width 1600px) {
+            font-size: 10px;
+          }
+        }
+      }
+
     }
   }
   &__body {
