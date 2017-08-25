@@ -157,26 +157,21 @@
         position: relative;
         float: left;
         overflow: hidden;
+        width: 100%;
         .un-hover {
           display: flex;
+          flex-direction: column;
           position: relative;
           float: left;
           width: 100%;
           height: 110px;
-          div:first-of-type {
-            flex: 2;
-          }
-          div:last-of-type {
-            flex:2;
-            margin-top: 25px;
-            @include breakpoint(max-width 500px) {
-              margin-top: 21px;
-            }
+          div {
+            width: 100%;
           }
           p {
             position: relative;
             float: left;
-            width: 100%;
+            width: 50%;
             margin: 2px 0;
             font-weight: 300;
             color: #526069;
@@ -185,7 +180,6 @@
               font-weight: 300;
             }
           }
-
         }
         .in-hover {
           display: none;

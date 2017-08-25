@@ -20,13 +20,13 @@ $(function () {
     if (window.innerWidth < 1200) {
         $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
         $(document).on('click', '.tabs__active-btn', function () {
-            $(this).parent().find('.tabs__buttons a').show();
-            $(this).parent().find('.active_tab').hide();
-            $('.tabs__buttons').slideToggle();
+            $('.tabs__buttons a').show();
+            $('.active_tab').hide();
+            $('.tabs__buttons').toggle();
         });
         $(document).on('click', '.tabs__buttons a', function () {
             $('.tabs__active-btn').text($(this).text());
-            $('.tabs__buttons').slideToggle();
+            $('.tabs__buttons').hide();
         });
     }
 
