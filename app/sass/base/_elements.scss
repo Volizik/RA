@@ -7,6 +7,9 @@
   border-radius: 5px;
   z-index: 20;
   cursor: pointer;
+  span {
+    box-sizing: border-box;
+  }
   span:first-of-type {
     display: block;
     color: #fff;
@@ -56,4 +59,17 @@
 
 .down {
     color: red;
+}
+
+.active--li  {
+  box-shadow: 0 0 1px 0 #051010;
+  background-color: #2a3845;
+  margin-left: 10px;
+  @include breakpoint(max-width 940px) {
+    margin-left: 0;
+    width: 100%;
+  }
+  span {
+    background-color: #496fdf!important;
+  }
 }

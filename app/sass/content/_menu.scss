@@ -1,42 +1,35 @@
 .menu {
   display: block;
   width: 300px;
-  height: 2350px;
   background-color: #212a32;
   position: relative;
   float: left;
   z-index: 100;
-  @include breakpoint(max-width 1600px) {
-    height: 3500px;
-  }
-  @include breakpoint(max-width 1150px) {
-    height: 3000px;
-  }
+  min-height:100vh;
   @include breakpoint(max-width 940px) {
     display: none;
     width: 100%;
     position: absolute;
     height:auto;
+    min-height:auto;
   }
-  a,
-  p,
-  h2 {
+  a, p, h2 {
     color: #fff;
   }
   &__head {
     position: relative;
     float: left;
     @include breakpoint(max-width 940px) {
-      width: 300px;
+      width: 100%;
       margin: 0 auto;
       float:none;
     }
     &__top {
-      width: 100%;
+      width: 300px;
+      margin: 0 auto 20px;
       padding: 10px 0;
       box-sizing: border-box;
       text-align: center;
-      margin-bottom: 20px;
       h2 {
         letter-spacing: 6px;
         font-weight: 400;
@@ -51,18 +44,46 @@
         padding:0 5px;
       }
       .nav__menu-btn_active {
+        display: none;
         position: absolute;
         right: 10px;
         top: 30px;
         height: 30px;
         width: 30px;
+        span, span:before, span:after {
+          display: block;
+          height: 2px;
+          width: 18px;
+          background-color: #fff;
+          position: absolute;
+          left: 50%;
+          margin-left: -9px;
+          top: 50%;
+          margin-top: -1px;
+        }
+        span {
+          background-color: transparent;
+          &:before {
+            content: '';
+            transform: rotate(135deg);
+            margin-top: 0;
+          }
+          &:after {
+            content: '';
+            transform: rotate(-134deg);
+            margin-top: 0;
+          }
+        }
+        @include breakpoint(max-width 940px) {
+          display: block;
+        }
       }
     }
 
     &__middle {
       position: relative;
-      float: left;
-      width: 100%;
+      width: 300px;
+      margin: 0 auto;
       text-align: center;
       .block {
         width: 100%;
@@ -117,8 +138,8 @@
     }
     &__bottom{
       position: relative;
-      float: left;
-      width: 100%;
+      margin: 0 auto;
+      width: 300px;
       text-align: center;
       padding-top: 30px;
       a {
@@ -274,12 +295,12 @@
   background-color: #212a32;
   color: #fff;
   @include breakpoint(max-width 940px) {
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
   &__wrap {
     position: relative;
     width: 300px;
-    margin: 0 auto;
     img {
       position: relative;
       float: left;
@@ -295,47 +316,48 @@
       margin: 30px 0px 0px 15px;
     }
   }
-}
-.nav__menu-btn {
-  display: none;
-  width: 50px;
-  height: 90px;
-  position: relative;
-  float: right;
-  z-index: 15;
-  @include breakpoint(max-width 940px) {
-    display: block;
-  }
-  span, span:before, span:after {
-    display: block;
-    height: 2px;
-    width: 18px;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    margin-left: -9px;
-    top: 50%;
-    margin-top: -1px;
-  }
-  span:before {
-    transition: all 0.2s;
-    margin-top: -6px;
-    content: '';
-  }
-  span:after {
-    transition: all 0.2s;
-    margin-top: 4px;
-    content: '';
-  }
-  &_active span {
-    background-color: transparent;
-    &:before {
-      transform: rotate(135deg);
-      margin-top: 0;
+  .nav__menu-btn {
+    display: none;
+    width: 50px;
+    height: 90px;
+    position: relative;
+    float: right;
+    z-index: 15;
+    @include breakpoint(max-width 940px) {
+      display: block;
     }
-    &:after {
-      transform: rotate(-134deg);
-      margin-top: 0;
+    span, span:before, span:after {
+      display: block;
+      height: 2px;
+      width: 18px;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      margin-left: -9px;
+      top: 50%;
+      margin-top: -1px;
+    }
+    span:before {
+      transition: all 0.2s;
+      margin-top: -6px;
+      content: '';
+    }
+    span:after {
+      transition: all 0.2s;
+      margin-top: 4px;
+      content: '';
+    }
+    &_active span {
+      background-color: transparent;
+      &:before {
+        transform: rotate(135deg);
+        margin-top: 0;
+      }
+      &:after {
+        transform: rotate(-134deg);
+        margin-top: 0;
+      }
     }
   }
 }
+

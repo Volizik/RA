@@ -5,24 +5,14 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
+    width: calc(100% - 330px);
+}
+@media (max-width: 940px) {
+    .container {
+        width: 96%;
+    }
 }
 
 .container {
     @extend %clearfix;
-}
-@media (min-width: 768px) {
-    .container {
-        width: 766px;
-    }
-}
-@media (min-width: 992px) {
-    .container {
-        width: 990px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
 }

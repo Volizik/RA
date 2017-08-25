@@ -54,3 +54,13 @@ textarea{
         clear: both;
     }
 }
+
+//wrap for menu height;
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    @include breakpoint(max-width 940px) {
+        flex-direction:column;
+    }
+}

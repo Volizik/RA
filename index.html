@@ -4,28 +4,16 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <!--для масштабируемых моделей-->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/libs.min.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- open .header -->
 <!-- end html_open.html-->
 
-<!-- start header.html-->
-<!-- open .header-->
-<header>
-
-</header>
-<!-- close .header -->
-
-<!-- end header.html-->
-
-<!-- main container-->
-
+<div class="wrapper">
 <!-- start menu.html-->
 <div class="menu">
     <div class="menu__head">
@@ -34,7 +22,7 @@
             <a href="#">services</a>
             <a href="#">News</a>
             <a href="#">Coaching</a>
-            <div class="nav__menu-btn nav__menu-btn_active">
+            <div class="nav__menu-btn_active nav__menu-btn">
                 <span></span>
             </div>
         </div>
@@ -179,98 +167,111 @@
     <div class="menu-for-little-screen__wrap">
         <img src="img/icons/icon-profile.png" alt="">
         <h1>ADMINIZATOR</h1>
-        <div class="nav__menu-btn">
-            <span></span>
-        </div>
+    </div>
+    <div class="nav__menu-btn">
+        <span></span>
     </div>
 </div>
 
 <!-- end menu.html-->
 
 <!-- start tabs.html-->
-<div class="tabs">
+<div class="container">
+    <div class="tabs">
 
+        <div class="tabs__head">
 
-    <div class="tabs__head">
-        <h1>Русские в Анталии РА</h1>
-        <div class="drop">
-            <span>Русские в Анталии</span>
-            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-            <ul>
-                <li>За день</li>
-                <li>За неделю</li>
-                <li>За месяц</li>
-                <li>За квартал</li>
-                <li>За полугодие</li>
-                <li>За год</li>
-                <li>За все время</li>
+            <h1>Русские в Анталии РА</h1>
+
+            <div class="drop">
+                <span>Русские в Анталии</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="tabs__body">
+
+            <!--for mobile menu-->
+            <span class="tabs__active-btn"></span>
+            <!--end for mobile menu-->
+
+            <ul class="tabs__buttons">
+                <li><a class="active_tab" href="#analitics">Аналитика и статистика</a></li>
+                <li><a href="#security">Безопасность</a></li>
+                <li><a href="#generation">Лидогенерация</a></li>
+                <li><a href="#with-post">Действия с постами</a></li>
+                <li><a href="#interview">Гоолосования и опросы</a></li>
+            </ul>
+
+            <div class="tabs__content" id="analitics">
+<!-- start analitics.html-->
+<div class="analitics">
+
+    <div class="scroll-tabs">
+        <div>
+            <ul class="analitics__tabs">
+                <li><a class="active" href="#analitics-general">Общая информация</a></li>
+                <li><a href="#analitics-graphics">График активностей</a></li>
+                <li><a href="#analitics-ratings">Рейтинги</a></li>
+                <li><a href="#analitics-users">Пользователи</a></li>
+                <li><a href="#analitics-posts">Посты</a></li>
+                <li><a href="#analitics-commit">Коментарии</a></li>
             </ul>
         </div>
     </div>
 
+    <div class="analitics__content" id="analitics-general">
 
-    <div class="tabs__body">
-        <span class="tabs__active-btn"></span>
-        <ul class="tabs__buttons">
-            <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
-            <li><a href="#security">Безопасность</a></li>
-            <li><a href="#generation">Лидогенерация</a></li>
-            <li><a href="#with-post">Действия с постами</a></li>
-            <li><a href="#interview">Гоолосования и опросы</a></li>
-        </ul>
-
-        <div class="tabs__content" id="alalitics">
-            <div class="scroll-tabs">
-                <ul class="tabs__content--inside-tabs">
-                    <li><a class="active" href="#inside-general">Общая информация</a></li>
-                    <li><a href="#inside-graphics">График активностей</a></li>
-                    <li><a href="#inside-ratings">Рейтинги</a></li>
-                    <li><a href="#inside-users">Пользователи</a></li>
-                    <li><a href="#inside-posts">Посты</a></li>
-                    <li><a href="#inside-commit">Коментарии</a></li>
-                </ul>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-general">
-                <div class="blocks">
-                    <h2>Реакции</h2>
-                    <div class="block">
-                        <h3>Динамика за день</h3>
-                        <div class="circle-chart" id="donutchart"></div>
-                        <div class="box">
-                            <p>Фото</p>
-                            <h2 class="js-counter">520</h2><span>-12</span>
-                        </div>
-                    </div>
-                    <div class="block">
-                        <h3>Динамика за день</h3>
-                        <div class="circle-chart" id="piechart2"></div>
-                        <div class="box">
-                            <p>Super</p>
-                            <h2 class="js-counter">11592</h2><span>-12</span>
-                        </div>
-                    </div>
+        <div class="analitics__charts">
+            <h2>Реакции</h2>
+            <div class="block">
+                <h3>Динамика за день</h3>
+                <div class="circle-chart" id="donutchart"></div>
+                <div class="box">
+                    <p>Фото</p>
+                    <h2 class="js-counter">520</h2><span>-12</span>
                 </div>
-<!-- start content.html-->
-<div class="content">
-    <div class="content__head">
-        <a href="#">Мужчины<span> 12 110</span></a>
-        <a href="#">Женщины<span> 20 125</span></a>
-        <a href="#">Н/Д<span> 2652</span></a>
+            </div>
+            <div class="block">
+                <h3>Динамика за день</h3>
+                <div class="circle-chart" id="piechart2"></div>
+                <div class="box">
+                    <p>Super</p>
+                    <h2 class="js-counter">11592</h2><span>-12</span>
+                </div>
+            </div>
+        </div>
+<!-- start statistics.html-->
+<div class="statistics">
+    <div class="statistics__head">
+        <a>Мужчины<span> 12 110</span></a>
+        <a>Женщины<span> 20 125</span></a>
+        <a>Н/Д<span> 2652</span></a>
         <p><span>Обратите внимание:</span> некоторые динамики начинают формироваться с начала вашего пользования AMINIZATOR'ом и некоторые из них станут доступны только по прошествии конкретного периода. Например данные о реакциях за неделю появится только спустя одну неделю с момента вашей подписки.</p>
     </div>
-    <div class="content__body">
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+    <div class="statistics__body">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-commit.png" alt="">
                 <p>Комментарии</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -282,18 +283,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-posts.png" alt="">
                 <p>Посты</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -305,18 +306,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-reaction.png" alt="">
                 <p>Реакции</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -328,18 +329,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-users.png" alt="">
                 <p>Участники</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -351,18 +352,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-involvement.png" alt="">
                 <p>Индекс вовлеченности</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -374,18 +375,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-actions.png" alt="">
                 <p>Индекс активности</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -397,18 +398,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-action-users.png" alt="">
                 <p>Активных участников</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -420,18 +421,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-not-action.png" alt="">
                 <p>Неактивных участников</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -443,18 +444,18 @@
             </div>
             <a href="#" class="hint"></a>
         </div>
-        <div class="content__body__block">
-            <div class="content__body__block__top">
+        <div class="statistics__body__block">
+            <div class="statistics__body__block__top">
                 <img src="img/icons/content-former.png" alt="">
                 <p>Бывших участников</p>
                 <h3>32625<span>+64</span></h3>
             </div>
-            <div class="content__body__block__bottom">
+            <div class="statistics__body__block__bottom">
                 <div class="un-hover ">
                     <p>За день 64<span class="up"> +10</span></p>
                     <p>За неделю 181 111<span class="up"> +2</span></p>
-                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
+                    <p>За месяц 1 582 000<span class="up"> +2</span></p>
                     <p>Среднее в день 26<span class="down"> -2</span></p>
 
                 </div>
@@ -468,7 +469,7 @@
         </div>
     </div>
 </div>
-<!-- end content.html-->
+<!-- end statistics.html-->
 <!-- start rating.html-->
 <div class="rating">
 
@@ -1034,146 +1035,154 @@
     </div>
 </div>
 <!-- end rating.html-->
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-graphics">
-                <h2>График активностей</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="analitics__content" id="analitics-graphics">
+        <h2>График активностей</h2>
 
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-ratings">
-                <h2>Рейтинги</h2>
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-users">
-                <h2>Статистика активности пользователей</h2>
-                <div class="actions">
-                    <div class="actions--left">
-                        <h3>Что посчитать в графике:</h3>
-                        <div>
-                            <label class="check">
-                                <input type="checkbox" name="checkbox" />
-                                <span></span>
-                                Посты
-                            </label>
-                            <div class="drop">
-                                <span>Все посты</span>
-                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                                <ul>
-                                    <li>За день</li>
-                                    <li>За неделю</li>
-                                    <li>За месяц</li>
-                                    <li>За квартал</li>
-                                    <li>За полугодие</li>
-                                    <li>За год</li>
-                                    <li>За все время</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <label class="check">
-                            <input type="checkbox" name="checkbox" />
-                            <span></span>
-                            Коментарии
-                        </label>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider-round"></span>
-                            <span>Учитывать вложенные</span>
-                        </label>
-                        <div>
-                            <label class="check">
-                                <input type="checkbox" name="checkbox" />
-                                <span></span>
-                                Реакции
-                            </label>
-                            <div class="drop">
-                                <span>Возмутительно</span>
-                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                                <ul>
-                                    <li>За день</li>
-                                    <li>За неделю</li>
-                                    <li>За месяц</li>
-                                    <li>За квартал</li>
-                                    <li>За полугодие</li>
-                                    <li>За год</li>
-                                    <li>За все время</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="actions--right">
-                        <h3>За период</h3>
-                        <div class="drop">
-                            <span>За 1 месяц</span>
-                            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-                            <ul>
-                                <li>За 1 месяц</li>
-                                <li>За 2 месяца</li>
-                                <li>За 3 месяца</li>
-                                <li>За 6 месяцев</li>
-                                <li>За 12 месяцев</li>
-                            </ul>
-                        </div>
-                        <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
-                        <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
+        <div class="clearfix"></div>
+    </div>
+    <div class="analitics__content" id="analitics-ratings">
+        <h2>Рейтинги</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="analitics__content" id="analitics-users">
+        <h2>Статистика активности пользователей</h2>
+        <div class="actions">
+            <div class="actions--left">
+                <h3>Что посчитать в графике:</h3>
+                <div>
+                    <label class="check">
+                        <input type="checkbox" name="checkbox" />
+                        <span></span>
+                        Посты
+                    </label>
+                    <div class="drop">
+                        <span>Все посты</span>
+                        <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
+                        <ul>
+                            <li>За день</li>
+                            <li>За неделю</li>
+                            <li>За месяц</li>
+                            <li>За квартал</li>
+                            <li>За полугодие</li>
+                            <li>За год</li>
+                            <li>За все время</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-                <div id="dashboard_div">
-                    <div id="chart_div"></div>
-                    <div id="filter_div"></div>
-                    <a href="#">
-                        <img src="img/icons/download.png" alt="">
-                        <p>Скачать график</p>
-                    </a>
+                <label class="check">
+                    <input type="checkbox" name="checkbox" />
+                    <span></span>
+                    Коментарии
+                </label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider-round"></span>
+                    <span>Учитывать вложенные</span>
+                </label>
+                <div>
+                    <label class="check">
+                        <input type="checkbox" name="checkbox" />
+                        <span></span>
+                        Реакции
+                    </label>
+                    <div class="drop">
+                        <span>Возмутительно</span>
+                        <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
+                        <ul>
+                            <li>За день</li>
+                            <li>За неделю</li>
+                            <li>За месяц</li>
+                            <li>За квартал</li>
+                            <li>За полугодие</li>
+                            <li>За год</li>
+                            <li>За все время</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="m-screen">
-                    <a href="#">Сгенерировать график</a>
-                    <p>График сгенерируется в формате pdf</p>
+            </div>
+            <div class="actions--right">
+                <h3>За период</h3>
+                <div class="drop">
+                    <span>За 1 месяц</span>
+                    <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                    <ul>
+                        <li>За 1 месяц</li>
+                        <li>За 2 месяца</li>
+                        <li>За 3 месяца</li>
+                        <li>За 6 месяцев</li>
+                        <li>За 12 месяцев</li>
+                    </ul>
                 </div>
-                <div class="add-chart"><a href="#">
-                    <img src="img/icons/plus.png" alt="">
-                    <p>Добавить график</p>
-                </a></div>
-                <div class="clearfix"></div>
+                <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
+                <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
             </div>
-            <div class="tabs__content--inside-content" id="inside-posts">
-                <h2>Посты</h2>
+        </div>
+        <div class="clearfix"></div>
+        <div id="dashboard_div">
+            <div id="chart_div"></div>
+            <div id="filter_div"></div>
+            <a href="#">
+                <img src="img/icons/download.png" alt="">
+                <p>Скачать график</p>
+            </a>
+        </div>
+        <div class="m-screen">
+            <a href="#">Сгенерировать график</a>
+            <p>График сгенерируется в формате pdf</p>
+        </div>
+        <div class="add-chart"><a href="#">
+            <img src="img/icons/plus.png" alt="">
+            <p>Добавить график</p>
+        </a></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="analitics__content" id="analitics-posts">
+        <h2>Посты</h2>
 
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-commit">
-                <h2>Коментарии</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="analitics__content" id="analitics-commit">
+        <h2>Коментарии</h2>
 
-                <div class="clearfix"></div>
+        <div class="clearfix"></div>
+    </div>
+
+
+</div>
+
+
+<!-- end analitics.html-->
             </div>
+            <div class="tabs__content" id="security">
+                Security
+            </div>
+            <div class="tabs__content" id="generation">
+                Lidogeneration
+            </div>
+            <div class="tabs__content" id="with-post">
+                Action with post
+            </div>
+            <div class="tabs__content" id="interview">
+                Interview
+            </div>
+
         </div>
-        <div class="tabs__content" id="security">
-            Security
-        </div>
-        <div class="tabs__content" id="generation">
-            Lidogeneration
-        </div>
-        <div class="tabs__content" id="with-post">
-            Action with post
-        </div>
-        <div class="tabs__content" id="interview">
-            Interview
-        </div>
+
     </div>
 </div>
 <!-- end tabs.html-->
-
-<!-- close container-->
+</div>
 
 <!-- start html_close.html-->
 <script src='js/jquery-2.1.3.min.js' type="text/javascript"></script>
 
-<script src="js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/google-charts.js" type="text/javascript"></script>
+
+<script src="js/menu.js" type="text/javascript"></script>
 
 <script src="js/script.min.js" type="text/javascript"></script>
-
-<script src="js/circle-progress.min.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 

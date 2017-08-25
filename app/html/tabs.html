@@ -1,192 +1,57 @@
-<div class="tabs">
+<div class="container">
+    <div class="tabs">
 
+        <div class="tabs__head">
 
-    <div class="tabs__head">
-        <h1>Русские в Анталии РА</h1>
-        <div class="drop">
-            <span>Русские в Анталии</span>
-            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-            <ul>
-                <li>За день</li>
-                <li>За неделю</li>
-                <li>За месяц</li>
-                <li>За квартал</li>
-                <li>За полугодие</li>
-                <li>За год</li>
-                <li>За все время</li>
-            </ul>
-        </div>
-    </div>
+            <h1>Русские в Анталии РА</h1>
 
-
-    <div class="tabs__body">
-        <span class="tabs__active-btn"></span>
-        <ul class="tabs__buttons">
-            <li><a class="active" href="#alalitics">Аналитика и статистика</a></li>
-            <li><a href="#security">Безопасность</a></li>
-            <li><a href="#generation">Лидогенерация</a></li>
-            <li><a href="#with-post">Действия с постами</a></li>
-            <li><a href="#interview">Гоолосования и опросы</a></li>
-        </ul>
-
-        <div class="tabs__content" id="alalitics">
-            <div class="scroll-tabs">
-                <ul class="tabs__content--inside-tabs">
-                    <li><a class="active" href="#inside-general">Общая информация</a></li>
-                    <li><a href="#inside-graphics">График активностей</a></li>
-                    <li><a href="#inside-ratings">Рейтинги</a></li>
-                    <li><a href="#inside-users">Пользователи</a></li>
-                    <li><a href="#inside-posts">Посты</a></li>
-                    <li><a href="#inside-commit">Коментарии</a></li>
+            <div class="drop">
+                <span>Русские в Анталии</span>
+                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
+                <ul>
+                    <li>За день</li>
+                    <li>За неделю</li>
+                    <li>За месяц</li>
+                    <li>За квартал</li>
+                    <li>За полугодие</li>
+                    <li>За год</li>
+                    <li>За все время</li>
                 </ul>
             </div>
-            <div class="tabs__content--inside-content" id="inside-general">
-                <div class="blocks">
-                    <h2>Реакции</h2>
-                    <div class="block">
-                        <h3>Динамика за день</h3>
-                        <div class="circle-chart" id="donutchart"></div>
-                        <div class="box">
-                            <p>Фото</p>
-                            <h2 class="js-counter">520</h2><span>-12</span>
-                        </div>
-                    </div>
-                    <div class="block">
-                        <h3>Динамика за день</h3>
-                        <div class="circle-chart" id="piechart2"></div>
-                        <div class="box">
-                            <p>Super</p>
-                            <h2 class="js-counter">11592</h2><span>-12</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- @@include content.html -->
-                <!-- @@include rating.html -->
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-graphics">
-                <h2>График активностей</h2>
 
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-ratings">
-                <h2>Рейтинги</h2>
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-users">
-                <h2>Статистика активности пользователей</h2>
-                <div class="actions">
-                    <div class="actions--left">
-                        <h3>Что посчитать в графике:</h3>
-                        <div>
-                            <label class="check">
-                                <input type="checkbox" name="checkbox" />
-                                <span></span>
-                                Посты
-                            </label>
-                            <div class="drop">
-                                <span>Все посты</span>
-                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                                <ul>
-                                    <li>За день</li>
-                                    <li>За неделю</li>
-                                    <li>За месяц</li>
-                                    <li>За квартал</li>
-                                    <li>За полугодие</li>
-                                    <li>За год</li>
-                                    <li>За все время</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <label class="check">
-                            <input type="checkbox" name="checkbox" />
-                            <span></span>
-                            Коментарии
-                        </label>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider-round"></span>
-                            <span>Учитывать вложенные</span>
-                        </label>
-                        <div>
-                            <label class="check">
-                                <input type="checkbox" name="checkbox" />
-                                <span></span>
-                                Реакции
-                            </label>
-                            <div class="drop">
-                                <span>Возмутительно</span>
-                                <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                                <ul>
-                                    <li>За день</li>
-                                    <li>За неделю</li>
-                                    <li>За месяц</li>
-                                    <li>За квартал</li>
-                                    <li>За полугодие</li>
-                                    <li>За год</li>
-                                    <li>За все время</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="actions--right">
-                        <h3>За период</h3>
-                        <div class="drop">
-                            <span>За 1 месяц</span>
-                            <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-                            <ul>
-                                <li>За 1 месяц</li>
-                                <li>За 2 месяца</li>
-                                <li>За 3 месяца</li>
-                                <li>За 6 месяцев</li>
-                                <li>За 12 месяцев</li>
-                            </ul>
-                        </div>
-                        <p>или в период с</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
-                        <p>по</p><input type="date" value="2017-06-01"                                      max="2030-06-04" min="2017-05-29">
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div id="dashboard_div">
-                    <div id="chart_div"></div>
-                    <div id="filter_div"></div>
-                    <a href="#">
-                        <img src="img/icons/download.png" alt="">
-                        <p>Скачать график</p>
-                    </a>
-                </div>
-                <div class="m-screen">
-                    <a href="#">Сгенерировать график</a>
-                    <p>График сгенерируется в формате pdf</p>
-                </div>
-                <div class="add-chart"><a href="#">
-                    <img src="img/icons/plus.png" alt="">
-                    <p>Добавить график</p>
-                </a></div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-posts">
-                <h2>Посты</h2>
+        </div>
 
-                <div class="clearfix"></div>
-            </div>
-            <div class="tabs__content--inside-content" id="inside-commit">
-                <h2>Коментарии</h2>
+        <div class="tabs__body">
 
-                <div class="clearfix"></div>
+            <!--for mobile menu-->
+            <span class="tabs__active-btn"></span>
+            <!--end for mobile menu-->
+
+            <ul class="tabs__buttons">
+                <li><a class="active_tab" href="#analitics">Аналитика и статистика</a></li>
+                <li><a href="#security">Безопасность</a></li>
+                <li><a href="#generation">Лидогенерация</a></li>
+                <li><a href="#with-post">Действия с постами</a></li>
+                <li><a href="#interview">Гоолосования и опросы</a></li>
+            </ul>
+
+            <div class="tabs__content" id="analitics">
+                <!-- @@include analitics.html -->
             </div>
+            <div class="tabs__content" id="security">
+                Security
+            </div>
+            <div class="tabs__content" id="generation">
+                Lidogeneration
+            </div>
+            <div class="tabs__content" id="with-post">
+                Action with post
+            </div>
+            <div class="tabs__content" id="interview">
+                Interview
+            </div>
+
         </div>
-        <div class="tabs__content" id="security">
-            Security
-        </div>
-        <div class="tabs__content" id="generation">
-            Lidogeneration
-        </div>
-        <div class="tabs__content" id="with-post">
-            Action with post
-        </div>
-        <div class="tabs__content" id="interview">
-            Interview
-        </div>
+
     </div>
 </div>

@@ -1,84 +1,6 @@
 $(function () {
-    google.charts.load("current", {packages: ["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Статус 485', 15],
-            ['Фото 592', 19],
-            ['Видео 15', 15],
-            ['Ссылка 8', 8],
-            ['Событие 2', 12]
-        ]);
 
-            var options = {
-                pieHole: 0.7,
-                height: 400,
-                width: 600,
-                pieSliceText: 'none',
-            };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-
-    }
-
-    //for donatChart2
-    google.charts.load("current", {packages: ["corechart"]});
-    google.charts.setOnLoadCallback(drawChart2);
-    function drawChart2() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Like 592', 15],
-            ['Super 11 152', 19],
-            ['Ха-ха 15', 15],
-            ['Ух ты 8', 8],
-            ['Сочувствую 2', 12]
-        ]);
-            var options = {
-                pieHole: 0.7,
-                height: 400,
-                width: 600,
-                pieSliceText: 'none',
-
-            };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-        chart.draw(data, options);
-
-        // $('.js-counter').each(function () {
-        //     $(this).prop('Counter', 0).animate({
-        //         Counter: $(this).text()
-        //     }, {
-        //         duration: 2000,
-        //         easing: 'swing',
-        //         step: function (now) {
-        //             $(this).text(Math.ceil(now));
-        //         }
-        //     });
-        // });
-    }
-
-
-    $(document).on('click', '.menu__body__list>a', function () {
-        var submenu = $(this).parent().find('.submenu');//находим элемент в ДОМ
-        var p = $(this).find('p');
-        $('.menu__body__list a').find('.list-sign').html('+');
-        if ($(this).hasClass('show-submenu')) {//если у элемента по которому мы кликаем есть класс
-            $(this).removeClass('show-submenu');//то удаляем этот класс
-            submenu.hide();//скрываем сабменю
-            $('.menu__body__list a').find('.list-sign').html('+');
-        }
-        else {
-            $('.menu__body__list a').removeClass('show-submenu');//удаляем класс у всех элементов
-            $('.submenu').hide();//скрываем все сабменю
-            $(this).addClass('show-submenu');//добавляем класс тому элементу по которому кликаем
-            submenu.show();//показать табменю того элемента покоторому кликаем
-            $(this).find('.list-sign').html('-');
-        }
-    });
-
-
-    //for tabs
+    //for main tabs
     $('.tabs__content').each(function (i) {
         if (i != 0) {
             $(this).hide(0)
@@ -88,27 +10,24 @@ $(function () {
         e.preventDefault();
 
         var tabId = $(this).attr('href');
-        $('.tabs__buttons li>a').removeClass('active');
-        $(this).addClass('active');
+        $('.tabs__buttons li>a').removeClass('active_tab');
+        $(this).addClass('active_tab');
         $('.tabs__content').hide();
         $(tabId).fadeIn();
     });
 
-
-
-
-    //for inside-tabs
+    //for analitics-tabs
 
     var hash = document.location.hash;
     if (hash !== '') {
-        $('.tabs__content--inside-tabs').find('a').removeClass('active');
-        $('.tabs__content--inside-content').hide();
+        $('.analitics__tabs').find('a').removeClass('active');
+        $('.analitics__content').hide();
 
         $('a[href="' + hash + '"]').addClass('active');
         $(hash).show();
         setLocation(hash)
     } else {
-        $('.tabs__content--inside-content').each(function (i) {
+        $('.analitics__content').each(function (i) {
             if (i != 0) {
                 $(this).hide(0)
             }
@@ -123,20 +42,18 @@ $(function () {
         location.hash = '#' + curLoc;
     }
 
-    $(document).on('click', '.tabs__content--inside-tabs li>a', function () {
-        // event.preventDefault();
+    $(document).on('click', '.analitics__tabs li>a', function () {
         var tabId = $(this).attr('href');
-        console.log(tabId);
-        $('.tabs__content--inside-tabs li>a').removeClass('active');
+        $('.analitics__tabs li>a').removeClass('active');
         $(this).addClass('active');
-        $('.tabs__content--inside-content').hide();
-        $(tabId).fadeIn();
+        $('.analitics__content').hide();
+        $(tabId).show();
         setLocation(tabId);
         return false;
     });
 
 
-    //for show-text in posts
+    //for rating section --> show-text in posts
     $(document).on('click', '.show-text-btn', function () {
         event.preventDefault();
         var text = $(this).parent().find('p');
@@ -144,7 +61,7 @@ $(function () {
         $(this).hide();
     });
 
-    //for show-text in comments
+    //for rating section --> show-text in comments
     $(document).on('click', '.show-text-btn', function () {
         event.preventDefault();
         var text = $(this).parent().find('.content');
@@ -152,134 +69,14 @@ $(function () {
         $(this).hide();
     });
 
-
-
-    //for rating section
+    //for rating section slider
     $(document).on('click', '.toggles a', function () {
         event.preventDefault();
         $('.slide').slideToggle();
     });
 
 
-
-    //charts
-
-    // Load the Visualization API and the controls package.
-    google.charts.load('current', {'packages': ['corechart', 'controls']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawDashboard);
-
-    // Callback that creates and populates a data table,
-    // instantiates a dashboard, a range slider and a pie chart,
-    // passes in the data and draws it.
-    function drawDashboard() {
-
-        // Create our data table.
-        var data = google.visualization.arrayToDataTable([
-            ['Name', ' ', 'Посты', 'Реакции'],
-            [' ', 1, 1000, 400],
-            [' ', 2, 1170, 460],
-            [' ', 3, 660, 1120],
-            [' ', 4, 1030, 540],
-            [' ', 5, 1000, 400],
-            [' ', 6, 1170, 460],
-            [' ', 7, 660, 1120],
-            [' ', 8, 1000, 400],
-            [' ', 9, 1170, 460],
-            [' ', 10, 660, 1120],
-            [' ', 11, 1000, 400],
-            [' ', 12, 1170, 460],
-            [' ', 13, 660, 1120],
-            [' ', 14, 1000, 400],
-            [' ', 15, 1170, 460],
-            [' ', 16, 660, 1120],
-            [' ', 17, 1030, 540],
-            [' ', 18, 1000, 400],
-            [' ', 19, 1170, 460],
-            [' ', 20, 660, 1120],
-            [' ', 21, 1000, 400],
-            [' ', 22, 1170, 460],
-            [' ', 23, 660, 1120],
-            [' ', 24, 1000, 400],
-            [' ', 25, 1170, 460],
-            [' ', 26, 660, 1120],
-        ]);
-
-        // Create a dashboard.
-        var dashboard = new google.visualization.Dashboard(
-            document.getElementById('dashboard_div'));
-
-
-        if(window.innerWidth>1500) {
-            // Create a range slider, passing some options
-            var donutRangeSlider = new google.visualization.ControlWrapper({
-                'controlType': 'NumberRangeFilter',
-                'containerId': 'filter_div',
-                'options': {
-                    'filterColumnLabel': ' ',
-                    'minValue': 1,
-                    'maxValue': 26,
-                    'width': 500
-                },
-                // Explicitly positions the thumbs at position 3 and 8,
-                // out of the possible range of 1 to 10.
-                'state': {'lowValue': 1, 'highValue': 26}
-            });
-
-            // Create a pie chart, passing some options
-            var columnChart = new google.visualization.ChartWrapper({
-                'chartType': 'ColumnChart',
-                'containerId': 'chart_div',
-                'options': {
-                    'width': 1100,
-                    'height': 500,
-                },
-                // The pie chart will use the columns 'Name' and 'Donuts eaten'
-                // out of all the available ones.
-                'view': {'columns': [1, 2, 3]}
-            });
-        } else {
-            // Create a range slider, passing some options
-            var donutRangeSlider = new google.visualization.ControlWrapper({
-                'controlType': 'NumberRangeFilter',
-                'containerId': 'filter_div',
-                'options': {
-                    'filterColumnLabel': ' ',
-                    'minValue': 1,
-                    'maxValue': 26,
-                    'width': 200
-                },
-                // Explicitly positions the thumbs at position 3 and 8,
-                // out of the possible range of 1 to 10.
-                'state': {'lowValue': 1, 'highValue': 26}
-            });
-
-            // Create a pie chart, passing some options
-            var columnChart = new google.visualization.ChartWrapper({
-                'chartType': 'ColumnChart',
-                'containerId': 'chart_div',
-                'options': {
-                    'width': 750,
-                    'height': 300,
-                },
-                // The pie chart will use the columns 'Name' and 'Donuts eaten'
-                // out of all the available ones.
-                'view': {'columns': [1, 2, 3]}
-            });
-        }
-
-
-        // Establish dependencies, declaring that 'filter' drives 'pieChart',
-        // so that the pie chart will only display entries that are let through
-        // given the chosen slider range.
-        dashboard.bind(donutRangeSlider, columnChart);
-
-        // Draw the dashboard.
-        dashboard.draw(data);
-    }
-
-    //for hint in tabs_content
+    //for hint in statistics
     $(document).on('click', '.hint', function () {
         event.preventDefault();
         var hint = $(this).parent().find('.in-hover');
@@ -292,14 +89,14 @@ $(function () {
         else {
             $('.in-hover').hide();
             $('.un-hover').show();
-            $('.content__body__block>a').removeClass('show-hint');
+            $('.statistics__body__block>a').removeClass('show-hint');
             $(this).addClass('show-hint');
             hint.show();
             text.hide();
         }
     });
 
-    //for inside-users check
+    //for analitics-tab --> #users check
     $(document).on('click', '.actions--left>div label', function () {
         if($(this).find('input').is(':checked')) {
             $(this).parent().find('.drop').show()
@@ -308,12 +105,12 @@ $(function () {
         }
     });
 
-    //for main tabs
+    //for main tabs if window size lower then 1200px
     if (window.innerWidth < 1200) {
-        $('.tabs__active-btn').text($('.tabs__buttons .active').text());
+        $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
         $(document).on('click', '.tabs__active-btn', function () {
             $(this).parent().find('.tabs__buttons a').show();
-            $(this).parent().find('.active').hide();
+            $(this).parent().find('.active_tab').hide();
             $('.tabs__buttons').slideToggle();
         });
         $(document).on('click', '.tabs__buttons a', function () {
@@ -329,8 +126,14 @@ $(function () {
     $(document).on('click', '.drop li', function () {
         $(this).parent().parent().find('span:first-of-type').text($(this).text());
     });
+    $(document).on('click', function (e) {
+        if ($(e.target).closest('.drop').length != 1) {
+            $('.drop ul').slideUp('fast');
+        }
+    });
 
-    //mobile menu button--------------------------------------------------
+
+    //mobile menu show/close button--------------------------------------------------
     $(document).on('click', '.nav__menu-btn', function () {
         var list = $('.menu');
         if (list.is(':visible')) {
@@ -339,7 +142,8 @@ $(function () {
             list.slideDown();
         }
     });
-    //!mobile menu button--------------------------------------------------
+    //!mobile menu button-------------------------------------------------------------
+
 
 
 });

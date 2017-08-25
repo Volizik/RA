@@ -1,4 +1,4 @@
-.content {
+.statistics {
   width: 100%;
   margin-bottom: 0;
   margin-top: 30px;
@@ -72,18 +72,6 @@
       height: 220px;
       overflow: hidden;
       transition: .3s;
-      @include breakpoint(max-width 1150px) {
-        display: none;
-        &:nth-child(1) {
-          display: block;
-        }
-        &:nth-child(2) {
-          display: block;
-        }
-        &:nth-child(5) {
-          display: block;
-        }
-      }
       &:hover {
         background-color: transparent;
         box-shadow: none;
@@ -92,7 +80,7 @@
       &:nth-child(3n+3) {
         margin-right: 0;
       }
-      @include breakpoint(max-width 1600px) {
+      @include breakpoint(max-width 1660px) {
         width: 49%;
         &:nth-child(3n+3) {
           margin-right: 2%;
@@ -101,7 +89,7 @@
           margin-right: 0;
         }
       }
-      @include breakpoint(max-width 1150px) {
+      @include breakpoint(max-width 1190px) {
         width: 100%;
         margin-right: 0;
         &:nth-child(3n+3) {
@@ -117,12 +105,16 @@
 
       &__top {
         clear: both;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        align-items: center;
+        flex-direction: row;
         position: relative;
-        float: left;
         width: 100%;
         padding-bottom: 10px;
         img {
-          vertical-align: middle;
+          object-fit: none;
           position: relative;
           float: left;
           padding-right: 10px;
@@ -133,8 +125,9 @@
           font-size: 18px;
           font-weight: 600;
           color: #526069;
+          width:calc(100% - 155px);
           @include breakpoint(max-width 500px) {
-            width: 70px;
+            //width: 70px;
             font-size: 16px;
             font-weight: 300;
           }
@@ -146,7 +139,7 @@
         }
         h3 {
           position: relative;
-          float: right;
+          right:0;
           margin: 10px 0;
           font-size: 24px;
           font-weight: 300;
