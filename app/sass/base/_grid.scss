@@ -5,6 +5,7 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
+    overflow: hidden;
     width: calc(100% - 330px);
 }
 @media (max-width: 940px) {
