@@ -17,32 +17,40 @@ $(function () {
     });
 
     //for main tabs if window size lower then 1200px
-    $(window).resize(function() {
-        if (window.innerWidth < 1200) {
-            $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
-            $(document).on('click', '.tabs__active-btn', function () {
-                $('.tabs__buttons a').show();
-                $('.active_tab').hide();
-                $('.tabs__buttons').toggle();
-            });
-            $(document).on('click', '.tabs__buttons a', function () {
-                $('.tabs__active-btn').text($(this).text());
-                $('.tabs__buttons').hide();
-            });
+    $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
+    $(window).resize(function () {
+        $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
+        if (window.innerWidth > 1200) {
+            $('.tabs__buttons').show();
+            $('.active_tab').show();
+            $('.tabs__buttons a').show();
+        }
+        else {
+            $('.tabs__buttons').hide();
+            $('.active_tab').hide();
         }
     });
-    if (window.innerWidth < 1200) {
-        $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
-        $(document).on('click', '.tabs__active-btn', function () {
+    $(document).on('click', '.tabs__active-btn', function () {
+        if (window.innerWidth < 1200) {
             $('.tabs__buttons a').show();
             $('.active_tab').hide();
             $('.tabs__buttons').toggle();
-        });
-        $(document).on('click', '.tabs__buttons a', function () {
+        } else {
+            $('.active_tab').show();
+            $('.tabs__buttons').show();
+            return
+        }
+    });
+    $(document).on('click', '.tabs__buttons a', function () {
+        if (window.innerWidth < 1200) {
             $('.tabs__active-btn').text($(this).text());
             $('.tabs__buttons').hide();
-        });
-    }
+        } else {
+            $('.tabs__buttons').show();
+            return
+        }
+    });
+
 
     //for dropdown
     $(document).on('click', '.drop', function() {
