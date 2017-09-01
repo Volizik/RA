@@ -17,18 +17,20 @@ $(function () {
     });
 
     //for main tabs if window size lower then 1200px
-    if (window.innerWidth < 1200) {
-        $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
-        $(document).on('click', '.tabs__active-btn', function () {
-            $('.tabs__buttons a').show();
-            $('.active_tab').hide();
-            $('.tabs__buttons').toggle();
-        });
-        $(document).on('click', '.tabs__buttons a', function () {
-            $('.tabs__active-btn').text($(this).text());
-            $('.tabs__buttons').hide();
-        });
-    }
+    $(window).resize(function() {
+        if (window.innerWidth < 1200) {
+            $('.tabs__active-btn').text($('.tabs__buttons .active_tab').text());
+            $(document).on('click', '.tabs__active-btn', function () {
+                $('.tabs__buttons a').show();
+                $('.active_tab').hide();
+                $('.tabs__buttons').toggle();
+            });
+            $(document).on('click', '.tabs__buttons a', function () {
+                $('.tabs__active-btn').text($(this).text());
+                $('.tabs__buttons').hide();
+            });
+        }
+    });
 
     //for dropdown
     $(document).on('click', '.drop', function() {
