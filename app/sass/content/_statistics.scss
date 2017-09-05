@@ -16,7 +16,7 @@
     position: relative;
     float: left;
     box-shadow: 3px 5px 10px 0 #ccc;
-    a {
+    p {
       display: block;
       color: #526069;
       position: relative;
@@ -26,32 +26,36 @@
       padding-left: 20px;
       font-weight: 600;
       font-size: 18px;
-      @include breakpoint(max-width 510px) {
+      margin: 0;
+      @include breakpoint(max-width 630px) {
         width: 100%;
         padding: 10px 0;
         font-size: 16px;
       }
+      &:last-of-type {
+        width: calc(100% - 550px);
+        position: relative;
+        float: left;
+        font-size: 16px;
+        color: #526069;
+        font-weight: 400;
+        padding-left: 20px;
+        padding-top: 0;
+        margin: 15px 0;
+        @include breakpoint(max-width 1450px) {
+          width: 100%;
+          padding-left: 0;
+        }
+        @include breakpoint(max-width 630px) {
+          font-size: 13px;
+        }
+        span {
+          color: red;
+        }
+      }
       span {
         font-weight: 300;
         color: #526069;
-      }
-    }
-    p {
-      width: calc(100% - 550px);
-      position: relative;
-      float: left;
-      font-size: 16px;
-      color: #526069;
-      padding-left: 20px;
-      @include breakpoint(max-width 1450px) {
-        width: 100%;
-        padding-left: 0;
-      }
-      @include breakpoint(max-width 510px) {
-        font-size: 13px;
-      }
-      span {
-        color: red;
       }
     }
   }
@@ -125,7 +129,7 @@
           font-size: 18px;
           font-weight: 600;
           color: #526069;
-          width:calc(100% - 155px);
+          max-width: 225px;
           @include breakpoint(max-width 500px) {
             font-size: 16px;
             font-weight: 300;
@@ -139,7 +143,7 @@
         h3 {
           position: relative;
           right:0;
-          margin: 10px 0;
+          margin: 10px 0 10px auto;
           font-size: 24px;
           font-weight: 300;
           @include breakpoint(max-width 500px) {

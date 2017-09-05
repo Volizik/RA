@@ -246,8 +246,9 @@
         margin-top: 10px;
         p {
           position: absolute;
-          top: 0;
-          left: 19px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -125%);
         }
         span {
           position: absolute;
