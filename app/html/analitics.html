@@ -3,17 +3,17 @@
     <div class="scroll-tabs">
         <div>
             <ul class="analitics__tabs">
-                <li><a class="active" href="#analitics-general">Общая информация</a></li>
-                <li><a href="#analitics-graphics">График активностей</a></li>
-                <li><a href="#analitics-ratings">Рейтинги</a></li>
-                <li><a href="#analitics-users">Пользователи</a></li>
-                <li><a href="#analitics-posts">Посты</a></li>
-                <li><a href="#analitics-commit">Коментарии</a></li>
+                <li class="active" data-id="analitics-general">Общая информация</li>
+                <li data-id="analitics-graphics">График активностей</li>
+                <li data-id="analitics-ratings">Рейтинги</li>
+                <li data-id="analitics-users">Пользователи</li>
+                <li data-id="analitics-posts">Посты</li>
+                <li data-id="analitics-commit">Коментарии</li>
             </ul>
         </div>
     </div>
 
-    <div class="analitics__content" id="analitics-general">
+    <div class="analitics__content" data-id="analitics-general">
 
         <div class="analitics__charts">
             <h2>Реакции</h2>
@@ -38,16 +38,16 @@
         <!-- @@include rating.html -->
         <div class="clearfix"></div>
     </div>
-    <div class="analitics__content" id="analitics-graphics">
+    <div class="analitics__content" data-id="analitics-graphics">
         <h2>График активностей</h2>
 
         <div class="clearfix"></div>
     </div>
-    <div class="analitics__content" id="analitics-ratings">
+    <div class="analitics__content" data-id="analitics-ratings">
         <h2>Рейтинги</h2>
         <div class="clearfix"></div>
     </div>
-    <div class="analitics__content" id="analitics-users">
+    <div class="analitics__content" data-id="analitics-users">
         <h2>Статистика активности пользователей</h2>
         <div class="actions">
             <div class="actions--left">
@@ -139,12 +139,12 @@
         </a></div>
         <div class="clearfix"></div>
     </div>
-    <div class="analitics__content" id="analitics-posts">
+    <div class="analitics__content" data-id="analitics-posts">
         <h2>Посты</h2>
 
         <div class="clearfix"></div>
     </div>
-    <div class="analitics__content" id="analitics-commit">
+    <div class="analitics__content" data-id="analitics-commit">
         <h2>Коментарии</h2>
 
         <div class="clearfix"></div>

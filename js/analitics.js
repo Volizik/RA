@@ -1,38 +1,19 @@
 $(function () {
-    //for analitics-tabs
-    var hash = document.location.hash;
-    if (hash !== '') {
-        $('.analitics__tabs').find('a').removeClass('active');
-        $('.analitics__content').hide();
 
-        $('a[href="' + hash + '"]').addClass('active');
-        $(hash).show();
-        setLocation(hash)
-    } else {
-        $('.analitics__content').each(function (i) {
-            if (i != 0) {
-                $(this).hide(0)
-            }
-        });
-    }
-    function setLocation(curLoc) {
-        try {
-            history.pushState(null, null, curLoc);
-            return;
-        } catch (e) {
+    $('.analitics__content').each(function (i) {
+        if (i != 0) {
+            $(this).hide(0)
         }
-        location.hash = '#' + curLoc;
-    }
-
-    $(document).on('click', '.analitics__tabs li>a', function () {
-        var tabId = $(this).attr('href');
-        $('.analitics__tabs li>a').removeClass('active');
-        $(this).addClass('active');
-        $('.analitics__content').hide();
-        $(tabId).show();
-        setLocation(tabId);
-        return false;
     });
+    $(document).on('click', '.analitics__tabs li', function () {
+        var itemId = $(this).attr('data-id');
+        var activeTab = $('.analitics__content').parent().find('.analitics__content[data-id='+itemId+']');
+        $('.analitics__content').hide();
+        activeTab.show();
+        $('.analitics__tabs li').removeClass('active');
+        $(this).addClass('active');
+    });
+
 
 
     //for rating section --> show-text in posts

@@ -109,41 +109,37 @@ h1 {
       float: left;
       list-style: none;
       text-align: center;
+      box-sizing: border-box;
+      display: block;
+      width:auto;
+      padding: 20px ;
+      font-size: 16px;
+      color: #000;
+      border-top: 2px solid transparent;
+      transition: padding 2s;
+      cursor: pointer;
+      @include breakpoint(max-width 1450px) {
+        padding: 20px 10px;
+      }
+      @include breakpoint(max-width 1225px) {
+        padding: 20px 8px;
+      }
       @include breakpoint(max-width 1200px) {
+        padding: 20px;
         width: 100%;
       }
-      a {
-        box-sizing: border-box;
-        display: block;
-        width:auto;
+      img {
+        display: none;
         position: relative;
-        padding: 20px ;
-        font-size: 16px;
-        color: #000;
-        border-top: 2px solid transparent;
-        transition: padding 2s;
-        @include breakpoint(max-width 1450px) {
-          padding: 20px 10px;
-        }
-        @include breakpoint(max-width 1225px) {
-          padding: 20px 8px;
-        }
-        @include breakpoint(max-width 1200px) {
-          padding: 20px;
-        }
-        img {
-          display: none;
-          position: relative;
-          float: right;
-          margin-top: 10px;
-        }
+        float: right;
+        margin-top: 10px;
       }
-      .active_tab {
-        background-color: #fff;
-        border-top: 2px solid #547df9;
-        @include breakpoint(max-width 1200px) {
-          border-top: 2px solid transparent;
-        }
+    }
+    .active_tab {
+      background-color: #fff;
+      border-top: 2px solid #547df9;
+      @include breakpoint(max-width 1200px) {
+        border-top: 2px solid transparent;
       }
     }
   }
