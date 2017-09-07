@@ -45,6 +45,9 @@
       list-style: none;
       color: #fff;
       padding: 5px 10px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
