@@ -61,13 +61,14 @@ $(function () {
     });
     $(document).on('click', '.drop li', function () {
         $(this).parent().parent().find('span:first-of-type').text($(this).text());
+        $('.drop li').removeClass('activeDropLi');
+        $(this).addClass('activeDropLi');
     });
     $(document).on('click', function (e) {
         if ($(e.target).closest('.drop').length != 1) {
             $('.drop ul').slideUp('fast');
         }
     });
-
 });
 
 
