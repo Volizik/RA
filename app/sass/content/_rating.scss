@@ -15,7 +15,6 @@
     margin-top: 25px;
     margin-left: 30px;
     @include breakpoint(max-width 600px) {
-      //margin-top: 40px;
       margin-left: 0;
     }
     &__prev {
@@ -203,7 +202,6 @@
         float: left;
         width: 130px;
         margin-bottom: 0;
-        //margin-top: 10px;
       }
       >p {
         position: relative;
@@ -232,10 +230,8 @@
           text-decoration: underline;
           color: blue;
           width: auto;
-          //clear: both;
           float: left;
           margin-right: 20px;
-
         }
       }
       .star {
@@ -347,101 +343,101 @@
     .rating__block--bottom p {
       &:nth-of-type(1) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon1.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon1.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon1.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon1.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(2) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon2.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon2.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon2.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon2.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(3) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon3.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon3.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon3.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon3.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(4) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon4.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon4.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon4.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon4.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(5) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon5.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon5.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon5.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon5.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(6) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon6.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon6.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon6.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon6.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(7) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon7.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon7.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon7.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon7.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(8) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon8.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon8.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon8.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon8.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(9) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon9.png) center center no-repeat/contain;
+          background: url(img/icons/blue-rating-icon9.png) center center no-repeat/contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon9.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon9.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(10) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon5.png) center center no-repeat/contain;
+          background: url(img/icons/blue-rating-icon5.png) center center no-repeat/contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon5.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon5.png) center center no-repeat/ contain;
           }
         }
       }
@@ -456,41 +452,41 @@
     .rating__block--bottom p {
       &:nth-of-type(1) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon1.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon1.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon1.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon1.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(2) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon2.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon2.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon2.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon2.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(3) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon3.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon3.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon3.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon3.png) center center no-repeat/ contain;
           }
         }
       }
       &:nth-of-type(4) {
         .rating__icon {
-          background: url(../img/icons/blue-rating-icon4.png) center center no-repeat/ contain;
+          background: url(img/icons/blue-rating-icon4.png) center center no-repeat/ contain;
         }
         &:hover {
           .rating__icon {
-            background: url(../img/icons/yellow-rating-icon4.png) center center no-repeat/ contain;
+            background: url(img/icons/yellow-rating-icon4.png) center center no-repeat/ contain;
           }
         }
       }
