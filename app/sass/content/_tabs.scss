@@ -29,23 +29,31 @@ h1 {
     width: 100%;
     height: 70px;
     .drop {
-      margin-top: 20px;
+      margin-top: 10px;
       margin-left: 0;
       width: 180px;
       position: relative;
       @include breakpoint(max-width 650px) {
         position: absolute;
-        margin-top: 0;
-        left: 0px;
-        top: 0;
-        min-height: 60px;
-        width: 290px;
-        background: url(img/icons/down-black.png) no-repeat 260px 25px;
-        span {
-          display: none;
-        }
-        ul {
-          top: 50px;
+        top: 5px;
+        left: 25px;
+        margin-top: 20px;
+      }
+      .select-styled {
+        @include breakpoint(max-width 650px) {
+          position: absolute;
+          left: -25px;
+          top: -25px;
+          min-height: 60px;
+          width: 290px;
+          color: transparent;
+          background: url(img/icons/down-black.png) no-repeat 260px 25px;
+          &:after {
+            display: none;
+          }
+          ul {
+            top: 50px;
+          }
         }
       }
     }
@@ -155,5 +163,7 @@ h1 {
       background-color: #ffffff;
     }
   }
+
+
 
 }

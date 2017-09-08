@@ -1,30 +1,52 @@
 $(function () {
 
-    $(document).on('click', '.drop', function() {
-        if ($(this).find('ul').is(':visible')) {
-            $(this).find('ul').slideUp();
-        } else {
-            $('.drop ul').slideUp();
-            $(this).find('ul').slideDown();
+    $('.drop select').each(function(){
+        var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+        $this.addClass('select-hidden');
+        $this.wrap('<div class="select"></div>');
+        $this.after('<div class="select-styled"></div>');
+
+        var $styledSelect = $this.next('div.select-styled');
+        $styledSelect.text($this.children('option').eq(0).text());
+
+        var $list = $('<ul />', {
+            'class': 'select-options'
+        }).insertAfter($styledSelect);
+
+        for (var i = 0; i < numberOfOptions; i++) {
+            $('<li />', {
+                text: $this.children('option').eq(i).text(),
+                rel: $this.children('option').eq(i).val()
+            }).appendTo($list);
         }
-    });
-    $(document).on('click', '.drop li', function () {
-        $(this).parent().parent().find('span:first-of-type').text($(this).text());
-        $('.drop li').removeClass('activeDropLi');
-        $(this).addClass('activeDropLi');
-    });
-    $(document).on('click', function (e) {
-        if ($(e.target).closest('.drop').length != 1) {
-            $('.drop ul').slideUp('fast');
-        }
+
+        var $listItems = $list.children('li');
+
+        $styledSelect.click(function(e) {
+            e.stopPropagation();
+            $('div.select-styled.active').not(this).each(function(){
+                $(this).removeClass('active').next('ul.select-options').hide();
+            });
+            $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+
+        $listItems.click(function(e) {
+            e.stopPropagation();
+            $styledSelect.text($(this).text()).removeClass('active');
+            $this.val($(this).attr('rel'));
+            $list.hide();
+        });
+
+        $(document).click(function() {
+            $styledSelect.removeClass('active');
+            $list.hide();
+        });
     });
 
-//for analytics-tab --> #users check dropdown
-    $(document).on('click', '.actions--left>div label', function () {
-        if($(this).find('input').is(':checked')) {
-            $(this).parent().find('.drop').show()
-        } else {
-            $(this).parent().find('.drop').hide()
-        }
-    });
+    $(document).on('click', '.select-options li', function () {
+        $('.select-options li').remove
+    })
+
+
 });
