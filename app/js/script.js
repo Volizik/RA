@@ -49,7 +49,13 @@ $(function () {
         }
     });
 
-
+    $(document).on('click', '.check input', function () {
+        if ($(this).is(':checked')) {
+            $(this).parent().parent().find('.drop').show();
+        } else {
+            $(this).parent().parent().find('.drop').hide();
+        }
+    });
 });
 
 

@@ -35,6 +35,8 @@ $(function () {
             e.stopPropagation();
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel'));
+            $(this).parent().find('li').removeClass('activeDropLi');
+            $(this).addClass('activeDropLi');
             $list.hide();
         });
 
@@ -43,10 +45,6 @@ $(function () {
             $list.hide();
         });
     });
-
-    $(document).on('click', '.select-options li', function () {
-        $('.select-options li').remove
-    })
 
 
 });

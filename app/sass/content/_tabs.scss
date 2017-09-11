@@ -47,13 +47,18 @@ h1 {
           min-height: 60px;
           width: 290px;
           color: transparent;
-          background: url(img/icons/down-black.png) no-repeat 260px 25px;
+          background: url(/img/icons/down-black.png) no-repeat 260px 25px;
           &:after {
             display: none;
           }
           ul {
             top: 50px;
           }
+        }
+      }
+      .select-options {
+        @include breakpoint(max-width 650px) {
+          width: 200px;
         }
       }
     }
@@ -87,7 +92,7 @@ h1 {
       right: 10px;
       height: 10px;
       width: 10px;
-      background: url(img/icons/down-black.png) no-repeat center center;
+      background: url(/img/icons/down-black.png) no-repeat center center;
       transition: transform .5s;
       @include breakpoint(max-width 1200px) {
         display: block;
@@ -142,6 +147,13 @@ h1 {
         position: relative;
         float: right;
         margin-top: 10px;
+      }
+      a {
+        color: #000;
+      }
+      a:focus,
+      a:hover {
+        color: #000;
       }
     }
     .active_tab {

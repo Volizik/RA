@@ -186,15 +186,23 @@
 
             <div class="drop">
                 <select>
-                    <option>Русские в Анталии</option>
-                    <option rel="icon-temperature">За день</option>
-                    <option>За день</option>
-                    <option>За неделю</option>
-                    <option>За месяц</option>
-                    <option>За квартал</option>
-                    <option>За полугодие</option>
-                    <option>За год</option>
-                    <option>За все время</option>
+                    <option>Русские в Анталии РА</option>
+                    <option rel="icon-temperature">Барахолка РА</option>
+                    <option>Даром РА</option>
+                    <option>Девчата РА</option>
+                    <option>КультуРА</option>
+                    <option>Недвижимость РА</option>
+                    <option>Звери РА</option>
+                    <option>Мамы РА</option>
+                    <option>Привезу & Отвезу</option>
+                    <option>Работа РА</option>
+                    <option>Спорт РА</option>
+                    <option>Товары и услуги РА</option>
+                    <option>Я живу в Анталии</option>
+                    <option>Ярмарка РА</option>
+                    <option>Мои Котельники</option>
+                    <option>Новости Турции - RusTurkey.com</option>
+                    <option>Антикварная барахолка (Москва и Подмосковье) - Картины XIX века</option>
                 </select>
             </div>
 
@@ -207,11 +215,11 @@
             <!--end for mobile menu-->
 
             <ul class="tabs__buttons">
-                <li class="active_tab" data-id="analytics">Аналитика и статистика</li>
-                <li data-id="security">Безопасность</li>
-                <li data-id="generation">Лидогенерация</li>
-                <li data-id="with-post">Действия с постами</li>
-                <li data-id="interview">Гоолосования и опросы</li>
+                <li class="active_tab" data-id="analytics"><a href="#">Аналитика и статистика</a></li>
+                <li data-id="security"><a href="#">Безопасность</a></li>
+                <li data-id="generation"><a href="#">Лидогенерация</a></li>
+                <li data-id="with-post"><a href="#">Действия с постами</a></li>
+                <li data-id="interview"><a href="#">Гоолосования и опросы</a></li>
             </ul>
 
             <div class="tabs__content" data-id="analytics">
@@ -219,12 +227,12 @@
 <div class="scroll-tabs">
         <div>
             <ul class="analytics__tabs">
-                <li class="active" data-id="analytics-general">Общая информация</li>
-                <li data-id="analytics-graphics">График активностей</li>
-                <li data-id="analytics-ratings">Рейтинги</li>
-                <li data-id="analytics-users">Пользователи</li>
-                <li data-id="analytics-posts">Посты</li>
-                <li data-id="analytics-commit">Коментарии</li>
+                <li class="active" data-id="analytics-general"><a href="#">Общая информация</a></li>
+                <li data-id="analytics-graphics"><a href="#">График активностей</a></li>
+                <li data-id="analytics-ratings"><a href="#">Рейтинги</a></li>
+                <li data-id="analytics-users"><a href="#">Пользователи</a></li>
+                <li data-id="analytics-posts"><a href="#">Посты</a></li>
+                <li data-id="analytics-comments"><a href="#">Коментарии</a></li>
             </ul>
         </div>
     </div>
@@ -261,7 +269,7 @@
     <div class="statistics__body">
         <div class="statistics__body__block">
             <div class="statistics__body__block__top">
-                <img src="img/icons/content-commit.png" alt="">
+                <img src="img/icons/content-comments.png" alt="">
                 <p>Комментарии</p>
                 <h3>32625<span>+64</span></h3>
             </div>
@@ -1142,29 +1150,31 @@
                     Посты
                 </label>
                 <div class="drop">
-                    <span>Все посты</span>
-                    <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                    <ul>
-                        <li>За день</li>
-                        <li>За неделю</li>
-                        <li>За месяц</li>
-                        <li>За квартал</li>
-                        <li>За полугодие</li>
-                        <li>За год</li>
-                        <li>За все время</li>
-                    </ul>
+                    <select>
+                        <option>Показано за</option>
+                        <option rel="icon-temperature">За день</option>
+                        <option>За день</option>
+                        <option>За неделю</option>
+                        <option>За месяц</option>
+                        <option>За квартал</option>
+                        <option>За полугодие</option>
+                        <option>За год</option>
+                        <option>За все время</option>
+                    </select>
                 </div>
             </div>
-            <label class="check">
-                <input type="checkbox" name="checkbox" />
-                <span></span>
-                Коментарии
-            </label>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider-round"></span>
-                <span>Учитывать вложенные</span>
-            </label>
+            <div>
+                <label class="check">
+                    <input type="checkbox" name="checkbox" />
+                    <span></span>
+                    Коментарии
+                </label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider-round"></span>
+                    <span>Учитывать вложенные</span>
+                </label>
+            </div>
             <div>
                 <label class="check">
                     <input type="checkbox" name="checkbox" />
@@ -1172,32 +1182,34 @@
                     Реакции
                 </label>
                 <div class="drop">
-                    <span>Возмутительно</span>
-                    <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                    <ul>
-                        <li>За день</li>
-                        <li>За неделю</li>
-                        <li>За месяц</li>
-                        <li>За квартал</li>
-                        <li>За полугодие</li>
-                        <li>За год</li>
-                        <li>За все время</li>
-                    </ul>
+                    <select>
+                        <option>Показано за</option>
+                        <option rel="icon-temperature">За день</option>
+                        <option>За день</option>
+                        <option>За неделю</option>
+                        <option>За месяц</option>
+                        <option>За квартал</option>
+                        <option>За полугодие</option>
+                        <option>За год</option>
+                        <option>За все время</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="actions--right">
             <h3>За период</h3>
             <div class="drop">
-                <span>За 1 месяц</span>
-                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-                <ul>
-                    <li>За 1 месяц</li>
-                    <li>За 2 месяца</li>
-                    <li>За 3 месяца</li>
-                    <li>За 6 месяцев</li>
-                    <li>За 12 месяцев</li>
-                </ul>
+                <select>
+                    <option>Показано за</option>
+                    <option rel="icon-temperature">За день</option>
+                    <option>За день</option>
+                    <option>За неделю</option>
+                    <option>За месяц</option>
+                    <option>За квартал</option>
+                    <option>За полугодие</option>
+                    <option>За год</option>
+                    <option>За все время</option>
+                </select>
             </div>
             <p>или в период с</p><input type="date" value="2017-06-01" max="2030-06-04" min="2017-05-29">
             <p>по</p><input type="date" value="2017-06-01" max="2030-06-04" min="2017-05-29">
@@ -1227,7 +1239,7 @@
 
     <div class="clearfix"></div>
 </div>
-<div class="analytics__content" data-id="analytics-commit">
+<div class="analytics__content" data-id="analytics-comments">
     <h2>Коментарии</h2>
 
     <div class="clearfix"></div>

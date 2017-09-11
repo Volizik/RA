@@ -1,12 +1,12 @@
 <div class="scroll-tabs">
         <div>
             <ul class="analytics__tabs">
-                <li class="active" data-id="analytics-general">Общая информация</li>
-                <li data-id="analytics-graphics">График активностей</li>
-                <li data-id="analytics-ratings">Рейтинги</li>
-                <li data-id="analytics-users">Пользователи</li>
-                <li data-id="analytics-posts">Посты</li>
-                <li data-id="analytics-commit">Коментарии</li>
+                <li class="active" data-id="analytics-general"><a href="#">Общая информация</a></li>
+                <li data-id="analytics-graphics"><a href="#">График активностей</a></li>
+                <li data-id="analytics-ratings"><a href="#">Рейтинги</a></li>
+                <li data-id="analytics-users"><a href="#">Пользователи</a></li>
+                <li data-id="analytics-posts"><a href="#">Посты</a></li>
+                <li data-id="analytics-comments"><a href="#">Коментарии</a></li>
             </ul>
         </div>
     </div>
@@ -57,29 +57,31 @@
                     Посты
                 </label>
                 <div class="drop">
-                    <span>Все посты</span>
-                    <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                    <ul>
-                        <li>За день</li>
-                        <li>За неделю</li>
-                        <li>За месяц</li>
-                        <li>За квартал</li>
-                        <li>За полугодие</li>
-                        <li>За год</li>
-                        <li>За все время</li>
-                    </ul>
+                    <select>
+                        <option>Показано за</option>
+                        <option rel="icon-temperature">За день</option>
+                        <option>За день</option>
+                        <option>За неделю</option>
+                        <option>За месяц</option>
+                        <option>За квартал</option>
+                        <option>За полугодие</option>
+                        <option>За год</option>
+                        <option>За все время</option>
+                    </select>
                 </div>
             </div>
-            <label class="check">
-                <input type="checkbox" name="checkbox" />
-                <span></span>
-                Коментарии
-            </label>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider-round"></span>
-                <span>Учитывать вложенные</span>
-            </label>
+            <div>
+                <label class="check">
+                    <input type="checkbox" name="checkbox" />
+                    <span></span>
+                    Коментарии
+                </label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider-round"></span>
+                    <span>Учитывать вложенные</span>
+                </label>
+            </div>
             <div>
                 <label class="check">
                     <input type="checkbox" name="checkbox" />
@@ -87,32 +89,34 @@
                     Реакции
                 </label>
                 <div class="drop">
-                    <span>Возмутительно</span>
-                    <span class="arrow"><img src="img/icons/down-black.png" alt=""></span>
-                    <ul>
-                        <li>За день</li>
-                        <li>За неделю</li>
-                        <li>За месяц</li>
-                        <li>За квартал</li>
-                        <li>За полугодие</li>
-                        <li>За год</li>
-                        <li>За все время</li>
-                    </ul>
+                    <select>
+                        <option>Показано за</option>
+                        <option rel="icon-temperature">За день</option>
+                        <option>За день</option>
+                        <option>За неделю</option>
+                        <option>За месяц</option>
+                        <option>За квартал</option>
+                        <option>За полугодие</option>
+                        <option>За год</option>
+                        <option>За все время</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="actions--right">
             <h3>За период</h3>
             <div class="drop">
-                <span>За 1 месяц</span>
-                <span class="arrow"><img src="img/icons/down.png" alt=""></span>
-                <ul>
-                    <li>За 1 месяц</li>
-                    <li>За 2 месяца</li>
-                    <li>За 3 месяца</li>
-                    <li>За 6 месяцев</li>
-                    <li>За 12 месяцев</li>
-                </ul>
+                <select>
+                    <option>Показано за</option>
+                    <option rel="icon-temperature">За день</option>
+                    <option>За день</option>
+                    <option>За неделю</option>
+                    <option>За месяц</option>
+                    <option>За квартал</option>
+                    <option>За полугодие</option>
+                    <option>За год</option>
+                    <option>За все время</option>
+                </select>
             </div>
             <p>или в период с</p><input type="date" value="2017-06-01" max="2030-06-04" min="2017-05-29">
             <p>по</p><input type="date" value="2017-06-01" max="2030-06-04" min="2017-05-29">
@@ -142,7 +146,7 @@
 
     <div class="clearfix"></div>
 </div>
-<div class="analytics__content" data-id="analytics-commit">
+<div class="analytics__content" data-id="analytics-comments">
     <h2>Коментарии</h2>
 
     <div class="clearfix"></div>
