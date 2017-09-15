@@ -56,6 +56,10 @@ $(function () {
             $(this).parent().parent().find('.drop').hide();
         }
     });
+
+    // $(document).on('click', '.circle-chart svg>g>g', function () {
+    //     this.append('123');
+    // })
 });
 
 

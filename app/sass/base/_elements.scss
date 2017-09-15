@@ -97,3 +97,52 @@
 .none {
   display: none;
 }
+
+.icon-up {
+  background: url(/img/icons/blue-rating-icon1.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon1.png) center center no-repeat/ contain;
+  }
+}
+.icon-smile {
+  background: url(/img/icons/blue-rating-icon2.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon2.png) center center no-repeat/ contain;
+  }
+}
+.icon-angry {
+  background: url(/img/icons/blue-rating-icon3.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon3.png) center center no-repeat/ contain;
+  }
+}
+.icon-smirk {
+  background: url(/img/icons/blue-rating-icon4.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon4.png) center center no-repeat/ contain;
+  }
+}
+.icon-sad {
+   background: url(/img/icons/blue-rating-icon5.png) center center no-repeat/ contain;
+   &:hover {
+     background: url(/img/icons/yellow-rating-icon5.png) center center no-repeat/ contain;
+   }
+ }
+.icon-rolf {
+  background: url(/img/icons/blue-rating-icon6.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon6.png) center center no-repeat/ contain;
+  }
+}
+.icon-horn {
+  background: url(/img/icons/blue-rating-icon8.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon8.png) center center no-repeat/ contain;
+  }
+}
+.icon-chat {
+  background: url(/img/icons/blue-rating-icon9.png) center center no-repeat/ contain;
+  &:hover {
+    background: url(/img/icons/yellow-rating-icon9.png) center center no-repeat/ contain;
+  }
+}

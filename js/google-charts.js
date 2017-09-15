@@ -31,11 +31,11 @@ $(function () {
     function drawChart2() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['Like 592', 15],
-            ['Super 11 152', 19],
-            ['Ха-ха 15', 15],
-            ['Ух ты 8', 8],
-            ['Сочувствую 2', 12]
+            ['Like 592sdf', 15],
+            ['Super 11 152dsdf sdfsfsdf', 19],
+            ['Ха-ха 15sdfsdf sdf', 15],
+            ['Ух ты 8sd  sdff', 8],
+            ['Сочувствую 2sdsdfsdfsdfsdff', 12]
         ]);
         var options = {
             pieHole: 0.7,
