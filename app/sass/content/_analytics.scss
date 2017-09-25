@@ -254,6 +254,7 @@
     }
   }
 }
+
 [data-id="analytics-users"] {
   box-shadow: 3px 9px 10px 0 #ccc;
   h2 {
@@ -457,7 +458,8 @@
         text-align: left;
       }
       .drop {
-        position: absolute;
+        position: relative;
+        float: left;
         margin: 0;
         width: 145px;
         z-index: 2;
@@ -468,7 +470,7 @@
       p {
         position: relative;
         float: left;
-        margin: 10px 10px 10px 150px;
+        margin: 10px 10px 10px 10px;
         &:nth-child(5) {
           margin-left: 10px;
         }
@@ -479,7 +481,8 @@
           }
         }
       }
-      input {
+      input,
+      .period_picker_input {
         position: relative;
         float: left;
         margin-top: 7px;
